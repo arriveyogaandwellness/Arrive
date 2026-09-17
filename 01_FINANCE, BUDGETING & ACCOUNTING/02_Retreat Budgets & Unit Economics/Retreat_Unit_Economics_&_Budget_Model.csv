@@ -1,0 +1,22 @@
+Category,Revenue / Expense Item,Units / Pax,Unit Rate (USD),Subtotal (USD),Notes
+Revenue,Honeymoon Suite (Private King / Soaking Tub),,,0.00,Over 430 sq ft luxury suite
+Revenue,Queen Suite (Private En-Suite),,,0.00,Private room with en-suite bath
+Revenue,Toucan Villa Suite,,,0.00,3-bedroom villa accommodations
+Revenue,Amapola Estate Suite,,,0.00,5-bedroom estate master villa
+Revenue,Add-On: 60-Minute Massage ($75/pp),,,0.00,Booked min 1 week advance
+Revenue,Add-On: 90-Minute Massage ($125/pp),,,0.00,Booked min 1 week advance
+Revenue,Add-On: Beachfront Reflexology ($50/pp),,,0.00,30-minute beachfront session
+Revenue,Add-On: Manicure / Pedicure ($50-$100),,,0.00,En-suite or under palms
+Revenue,GROSS REVENUE TOTAL,,,0.00,Sum of all retreat bookings & add-ons
+Expense,Amanti Resort & Spa Full Buyout (6 Nights),,,0.00,2 waterfall pools shala cold plunge
+Expense,Executive Private Chef (Farm-to-Table),,,0.00,3 daily organic meals + elixirs
+Expense,Airport Shuttles (Sprinters & Buses),,,0.00,$150/run up to 4 guests + $25/additional
+Expense,Excursions: Rainmaker Suspended Bridges,,,0.00,Guided nature hike & waterfall plunge
+Expense,Excursions: Sacred Mayan Temazcal,,,0.00,Private breathwork & steam lodge
+Expense,Guest Welcome Bags & Branded Journals,,,0.00,Organic tote reef-safe sunscreen
+Expense,Assistant Facilitator / Sound Healer Stipend,,,0.00,On-site guest support
+Expense,Professional Media & Videographer,,,0.00,4K video reel & photo library
+Expense,Yogis Give Back (1% Philanthropic Impact),,,0.00,1% of gross revenue dedicated to conservation
+Expense,TOTAL RETREAT OPERATING EXPENSES,,,0.00,
+Summary,NET PROFIT (EBITDA),,,0.00,Gross Revenue minus Total Operating Expenses
+Summary,NET PROFIT MARGIN (%),,,0.00%,

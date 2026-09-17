@@ -1,0 +1,36 @@
+# Operating System & Cloud Sync files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.tmp.driveupload/
+*.tmp.driveupload
+
+# Large Video & Media Masters (Exceeds GitHub 100MB limit)
+# Note: Master video footage files are securely maintained in the local OneDrive Media Vault
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.m4v
+*.wmv
+*.flv
+*.webm
+
+# Linked Local Junctions & External Repositories
+10_CONNECTED ASSETS & QUICK ACCESS/Media_Vault_Direct_Folder
+10_CONNECTED ASSETS & QUICK ACCESS/Media_Vault_Direct_Folder/
+10_CONNECTED ASSETS & QUICK ACCESS/Website_Files_Direct_Folder
+10_CONNECTED ASSETS & QUICK ACCESS/Website_Files_Direct_Folder/
+
+# Temporary and Local Cache
+scratch/
+*.tmp
+*.log

@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrive Yoga & Wellness — Brand & Style Governance Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas-bg: #FAF5EB;
+      --canvas-surface: #FFFFFF;
+      --canvas-subtle: #F3ECE0;
+      --sunset-orange: #EA580C;
+      --sunset-hover: #C2410C;
+      --sunset-amber: #D9531E;
+      --gold-yellow: #FBAF18;
+      --teak-wood: #78350F;
+      --text-main: #18181B;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: rgba(234, 88, 12, 0.18);
+      --border-card: rgba(0, 0, 0, 0.08);
+      --font-grandeur: 'Cormorant Garamond', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-card: 0 10px 30px -10px rgba(120, 53, 15, 0.08);
+      --shadow-elevated: 0 20px 40px -15px rgba(234, 88, 12, 0.14);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 90px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-group { display: flex; align-items: center; gap: 14px; }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--sunset-orange), var(--gold-yellow));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-grandeur);
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-grandeur);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-text p {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--sunset-orange);
+      font-weight: 700;
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+
+    .btn-sunset {
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: #FFFFFF;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-sunset:hover {
+      background: linear-gradient(135deg, var(--sunset-hover), var(--sunset-orange));
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #FFF7ED;
+      border-color: var(--sunset-orange);
+      color: var(--sunset-orange);
+    }
+
+    .container {
+      max-width: 1350px;
+      margin: 35px auto 0;
+      padding: 0 24px;
+    }
+
+    /* Hero Banner */
+    .hero-box {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      padding: 35px 40px;
+      margin-bottom: 35px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-box::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--sunset-orange), var(--gold-yellow));
+    }
+
+    .hero-title {
+      font-family: var(--font-grandeur);
+      font-size: 40px;
+      font-style: italic;
+      color: var(--sunset-orange);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .hero-desc {
+      font-size: 14.5px;
+      color: var(--text-body);
+      max-width: 800px;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FEF3C7;
+      color: #92400E;
+      padding: 5px 12px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Main Grid Split: Controls on Left, Live Brand Tile on Right */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 35px;
+      align-items: start;
+    }
+
+    @media (max-width: 980px) {
+      .portal-grid { grid-template-columns: 1fr; }
+      .sticky-preview { position: static !important; }
+    }
+
+    .intake-form-col {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .section-card {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .section-card h3 {
+      font-family: var(--font-grandeur);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-card .sec-num {
+      color: var(--sunset-orange);
+      font-family: var(--font-heading);
+      font-size: 14px;
+    }
+
+    .section-subtitle {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    /* Preset Buttons */
+    .presets-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .btn-preset {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-preset:hover, .btn-preset.active {
+      border-color: var(--sunset-orange);
+      background: #FFFBF5;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.15);
+    }
+
+    .preset-name {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .preset-dots {
+      display: flex;
+      gap: 4px;
+    }
+
+    .preset-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    /* Color Pickers Grid */
+    .color-pickers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .color-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+    }
+
+    .color-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+
+    .color-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .color-hex {
+      font-family: monospace;
+      font-size: 12px;
+      color: var(--text-muted);
+      width: 70px;
+      text-align: right;
+    }
+
+    input[type="color"] {
+      -webkit-appearance: none;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      background: none;
+    }
+    input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+    input[type="color"]::-webkit-color-swatch {
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 6px;
+    }
+
+    /* Dropdowns and Text Inputs */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group:last-child { margin-bottom: 0; }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-body);
+      margin-bottom: 6px;
+    }
+
+    select, input[type="text"], textarea {
+      width: 100%;
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus, input[type="text"]:focus, textarea:focus {
+      border-color: var(--sunset-orange);
+    }
+
+    /* Tag Pills */
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .tag-pill {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+
+    .tag-pill.active {
+      background: #FFF7ED;
+      border-color: var(--sunset-orange);
+      color: var(--sunset-orange);
+      font-weight: 700;
+    }
+
+    /* Sticky Live Brand Preview Card */
+    .sticky-preview {
+      position: sticky;
+      top: 95px;
+    }
+
+    .preview-card-wrap {
+      background: var(--canvas-surface);
+      border: 2px solid var(--border-light);
+      border-radius: 18px;
+      padding: 30px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+    }
+
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 12px;
+    }
+
+    .preview-header h4 {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--sunset-orange);
+      font-weight: 800;
+    }
+
+    /* Mock Brand Tile Container */
+    .mock-brand-tile {
+      background: #FAF5EB;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 14px;
+      padding: 30px 26px;
+      transition: all 0.3s ease;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    .mock-headline {
+      font-size: 34px;
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 8px;
+      transition: color 0.3s;
+    }
+
+    .mock-subhead {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      display: block;
+      transition: color 0.3s;
+    }
+
+    .mock-body {
+      font-size: 13.5px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .mock-btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+
+    .mock-palette-strip {
+      display: flex;
+      height: 32px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 20px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .mock-palette-slice {
+      flex: 1;
+      height: 100%;
+    }
+
+    /* Action Buttons in Preview Card */
+    .action-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn-block-sunset {
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-block-sunset:hover {
+      background: linear-gradient(135deg, var(--sunset-hover), var(--sunset-orange));
+      transform: translateY(-1px);
+    }
+
+    .btn-block-outline {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .btn-block-outline:hover {
+      background: #FFF7ED;
+      border-color: var(--sunset-orange);
+      color: var(--sunset-orange);
+    }
+
+    .save-alert {
+      display: none;
+      background: #ECFDF5;
+      border: 1px solid #10B981;
+      color: #065F46;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    @media print {
+      header, .header-actions, .presets-strip, .action-panel { display: none; }
+      .portal-grid { display: block; }
+      body { background: #FFFFFF; color: #000000; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand-group">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">
+        <h1>Arrive Yoga & Wellness</h1>
+        <p>Brand & Style Governance Portal</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="../../START_HERE_OFFICE_OPERATIONS_MANUAL.html" class="btn-outline">Operations Manual</a>
+      <a href="../../Arrive_Yoga_Executive_Dashboard.html" class="btn-sunset">← Executive Dashboard</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Box -->
+    <div class="hero-box">
+      <div class="status-badge">Master Brand Governance</div>
+      <h2 class="hero-title">Where Comfort Meets Grandeur</h2>
+      <p class="hero-desc">
+        Welcome, Carly Anne. This intake is your central command for governing the visual identity, signature color palette, typography hierarchy, imagery style, and somatic voice of the entire Arrive Yoga ecosystem. The design tokens you establish here govern your website designers, retreat pitch decks, social media campaigns, and client experience.
+      </p>
+    </div>
+
+    <div class="portal-grid">
+      <!-- Left Column: Controls & Form -->
+      <div class="intake-form-col">
+        
+        <!-- Section 1: Color Palette Governance -->
+        <div class="section-card">
+          <h3><span class="sec-num">01.</span> Master Color Palette Governance</h3>
+          <p class="section-subtitle">Choose one of your vault-inspired presets or customize every hex token below.</p>
+
+          <div class="presets-strip">
+            <div class="btn-preset active" onclick="applyPreset('sunset')">
+              <span class="preset-name">Sunset Grandeur</span>
+              <div class="preset-dots">
+                <span class="preset-dot" style="background: #EA580C;"></span>
+                <span class="preset-dot" style="background: #FBAF18;"></span>
+                <span class="preset-dot" style="background: #78350F;"></span>
+                <span class="preset-dot" style="background: #FAF5EB;"></span>
+              </div>
+            </div>
+
+            <div class="btn-preset" onclick="applyPreset('biophilic')">
+              <span class="preset-name">Luxe Biophilic</span>
+              <div class="preset-dots">
+                <span class="preset-dot" style="background: #0F281E;"></span>
+                <span class="preset-dot" style="background: #C5A880;"></span>
+                <span class="preset-dot" style="background: #7D9D8B;"></span>
+                <span class="preset-dot" style="background: #F5F2EB;"></span>
+              </div>
+            </div>
+
+            <div class="btn-preset" onclick="applyPreset('japandi')">
+              <span class="preset-name">Modern Zen</span>
+              <div class="preset-dots">
+                <span class="preset-dot" style="background: #4F6D5A;"></span>
+                <span class="preset-dot" style="background: #8C7B6B;"></span>
+                <span class="preset-dot" style="background: #EAE5DC;"></span>
+                <span class="preset-dot" style="background: #232323;"></span>
+              </div>
+            </div>
+
+            <div class="btn-preset" onclick="applyPreset('somatic')">
+              <span class="preset-name">Sunset Somatic</span>
+              <div class="preset-dots">
+                <span class="preset-dot" style="background: #B45309;"></span>
+                <span class="preset-dot" style="background: #9F1239;"></span>
+                <span class="preset-dot" style="background: #D97706;"></span>
+                <span class="preset-dot" style="background: #FFFBEB;"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="color-pickers-grid">
+            <div class="color-row">
+              <span class="color-label">Primary Brand Accent</span>
+              <div class="color-input-wrap">
+                <span class="color-hex" id="hexPrimary">#EA580C</span>
+                <input type="color" id="colPrimary" value="#EA580C" oninput="updateColor('primary', this.value)">
+              </div>
+            </div>
+
+            <div class="color-row">
+              <span class="color-label">Secondary / Warm Gold</span>
+              <div class="color-input-wrap">
+                <span class="color-hex" id="hexSecondary">#FBAF18</span>
+                <input type="color" id="colSecondary" value="#FBAF18" oninput="updateColor('secondary', this.value)">
+              </div>
+            </div>
+
+            <div class="color-row">
+              <span class="color-label">Grounding Teak / Earth</span>
+              <div class="color-input-wrap">
+                <span class="color-hex" id="hexTeak">#78350F</span>
+                <input type="color" id="colTeak" value="#78350F" oninput="updateColor('teak', this.value)">
+              </div>
+            </div>
+
+            <div class="color-row">
+              <span class="color-label">Canvas Background (Sand)</span>
+              <div class="color-input-wrap">
+                <span class="color-hex" id="hexCanvas">#FAF5EB</span>
+                <input type="color" id="colCanvas" value="#FAF5EB" oninput="updateColor('canvas', this.value)">
+              </div>
+            </div>
+
+            <div class="color-row">
+              <span class="color-label">Surface / Card White</span>
+              <div class="color-input-wrap">
+                <span class="color-hex" id="hexSurface">#FFFFFF</span>
+                <input type="color" id="colSurface" value="#FFFFFF" oninput="updateColor('surface', this.value)">
+              </div>
+            </div>
+
+            <div class="color-row">
+              <span class="color-label">Obsidian Charcoal Text</span>
+              <div class="color-input-wrap">
+                <span class="color-hex" id="hexText">#18181B</span>
+                <input type="color" id="colText" value="#18181B" oninput="updateColor('text', this.value)">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 2: Typography Hierarchy -->
+        <div class="section-card">
+          <h3><span class="sec-num">02.</span> Typography Hierarchy</h3>
+          <p class="section-subtitle">Select font families for high-fashion display headlines, subheads, and body copy.</p>
+
+          <div class="form-group">
+            <label>1. Hero Display Headline Font (Serif)</label>
+            <select id="fontDisplay" onchange="updateFont('display', this.value)">
+              <option value="'Cormorant Garamond', Georgia, serif">Cormorant Garamond (Signature "Where Comfort Meets Grandeur")</option>
+              <option value="'Playfair Display', Georgia, serif">Playfair Display (High-Fashion Editorial)</option>
+              <option value="'Cinzel', Georgia, serif">Cinzel (Regal, Architectural Luxury)</option>
+              <option value="'Lora', Georgia, serif">Lora (Warm, Grounded Literary)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>2. Subheadings & Structural UI Font (Sans-Serif)</label>
+            <select id="fontHeading" onchange="updateFont('heading', this.value)">
+              <option value="'Syne', sans-serif">Syne (Bold, Architectural, Contemporary)</option>
+              <option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans (Clean, Polished, Modern)</option>
+              <option value="'Montserrat', sans-serif">Montserrat (Geometric, Structured)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>3. Body Copy & Long-Form Reading</label>
+            <select id="fontBody" onchange="updateFont('body', this.value)">
+              <option value="'Plus Jakarta Sans', sans-serif">Plus Jakarta Sans (Maximum legibility across screens)</option>
+              <option value="'Lora', serif">Lora (Warm narrative serif)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Section 3: Visual Textures & Brand Adjectives -->
+        <div class="section-card">
+          <h3><span class="sec-num">03.</span> Visual Textures & Core Adjectives</h3>
+          <p class="section-subtitle">Click to activate the natural elements and adjectives that govern your moodboards.</p>
+
+          <label style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-body);">Core Brand Adjectives (Click to toggle)</label>
+          <div class="tags-container" id="adjectiveTags">
+            <span class="tag-pill active" onclick="toggleTag(this)">Trauma-Aware</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Sovereign Sanctuary</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Grounded Luxury</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Poetic</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Unapologetic</span>
+            <span class="tag-pill" onclick="toggleTag(this)">High-Fashion Somatics</span>
+            <span class="tag-pill" onclick="toggleTag(this)">Ancestral Warmth</span>
+          </div>
+
+          <label style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: var(--text-body); margin-top: 18px; display: block;">Approved Natural Textures & Mood Elements</label>
+          <div class="tags-container" id="textureTags">
+            <span class="tag-pill active" onclick="toggleTag(this)">Costa Rican Teak Wood</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Volcanic Black Sand</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Lush Palm Canopy</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Sunlit Cream Linen</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Brushed Gold Leaf</span>
+            <span class="tag-pill active" onclick="toggleTag(this)">Waterfall Mist</span>
+          </div>
+        </div>
+
+        <!-- Section 4: Brand Voice & Non-Negotiables -->
+        <div class="section-card">
+          <h3><span class="sec-num">04.</span> Voice, Slogans & Linguistic Boundaries</h3>
+          <p class="section-subtitle">Official approved copy mantras and anti-performative guidelines.</p>
+
+          <div class="form-group">
+            <label>Official Slogans</label>
+            <input type="text" id="tagline1" value="Where Comfort Meets Grandeur" oninput="updateMockText()">
+          </div>
+
+          <div class="form-group">
+            <label>Core Philosophy Slogan</label>
+            <input type="text" id="tagline2" value="Root down. Rise up. Arrive. • Every Body Is A Yoga Body" oninput="updateMockText()">
+          </div>
+
+          <div class="form-group">
+            <label>Anti-Performative Brand Boundaries (What We Avoid)</label>
+            <textarea rows="2" id="antiBrand">No performative flexibility contests. No toxic positivity. No contortionist guilt. We prioritize trauma-aware nervous system co-regulation over fitness performance.</textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky Live Brand Preview Tile -->
+      <div class="sticky-preview">
+        <div class="preview-card-wrap">
+          <div class="preview-header">
+            <h4>Live Brand Governance Preview</h4>
+            <span style="font-size: 11px; color: var(--text-muted);">Real-Time Render</span>
+          </div>
+
+          <!-- The Live Updating Tile -->
+          <div class="mock-brand-tile" id="mockTile">
+            <span class="mock-subhead" id="mockSub">Arrive Yoga & Wellness Center</span>
+            <h3 class="mock-headline" id="mockHead">Where Comfort Meets Grandeur</h3>
+            <p class="mock-body" id="mockBody">
+              This isn’t performative yoga. No flexibility contest. No comparison. It’s a guided, human return to yourself—trauma-aware, nervous-system supportive, and accessible for every body.
+            </p>
+            <button class="mock-btn" id="mockBtn">Reserve Your Suite</button>
+
+            <!-- Live Color Palette Strip -->
+            <div class="mock-palette-strip">
+              <div class="mock-palette-slice" id="swatchPrimary" style="background: #EA580C;" title="Primary Accent"></div>
+              <div class="mock-palette-slice" id="swatchSecondary" style="background: #FBAF18;" title="Secondary Accent"></div>
+              <div class="mock-palette-slice" id="swatchTeak" style="background: #78350F;" title="Teak Wood"></div>
+              <div class="mock-palette-slice" id="swatchCanvas" style="background: #FAF5EB;" title="Canvas Sand"></div>
+              <div class="mock-palette-slice" id="swatchText" style="background: #18181B;" title="Obsidian Charcoal"></div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="action-panel">
+            <button class="btn-block-sunset" onclick="saveGovernance()">💾 Save & Apply Brand Governance</button>
+            <button class="btn-block-outline" onclick="exportJSON()">📥 Export Brand Tokens (.JSON)</button>
+            <button class="btn-block-outline" onclick="exportMarkdown()">📄 Export Brand Guidelines (.MD)</button>
+            <button class="btn-block-outline" onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <div class="save-alert" id="saveAlert">✓ Brand tokens saved to local office storage!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // State
+    const state = {
+      primary: '#EA580C',
+      secondary: '#FBAF18',
+      teak: '#78350F',
+      canvas: '#FAF5EB',
+      surface: '#FFFFFF',
+      text: '#18181B',
+      fontDisplay: "'Cormorant Garamond', Georgia, serif",
+      fontHeading: "'Syne', sans-serif",
+      fontBody: "'Plus Jakarta Sans', sans-serif"
+    };
+
+    const presets = {
+      sunset: {
+        primary: '#EA580C',
+        secondary: '#FBAF18',
+        teak: '#78350F',
+        canvas: '#FAF5EB',
+        surface: '#FFFFFF',
+        text: '#18181B',
+        fontDisplay: "'Cormorant Garamond', Georgia, serif"
+      },
+      biophilic: {
+        primary: '#0F281E',
+        secondary: '#C5A880',
+        teak: '#7D9D8B',
+        canvas: '#F5F2EB',
+        surface: '#FFFFFF',
+        text: '#1A1A1A',
+        fontDisplay: "'Cormorant Garamond', Georgia, serif"
+      },
+      japandi: {
+        primary: '#4F6D5A',
+        secondary: '#8C7B6B',
+        teak: '#6C6258',
+        canvas: '#EAE5DC',
+        surface: '#FFFFFF',
+        text: '#232323',
+        fontDisplay: "'Playfair Display', Georgia, serif"
+      },
+      somatic: {
+        primary: '#B45309',
+        secondary: '#D97706',
+        teak: '#9F1239',
+        canvas: '#FFFBEB',
+        surface: '#FFFFFF',
+        text: '#1C1917',
+        fontDisplay: "'Cinzel', Georgia, serif"
+      }
+    };
+
+    function applyPreset(name) {
+      document.querySelectorAll('.btn-preset').forEach(b => b.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+      const p = presets[name];
+      if (!p) return;
+
+      state.primary = p.primary;
+      state.secondary = p.secondary;
+      state.teak = p.teak;
+      state.canvas = p.canvas;
+      state.surface = p.surface;
+      state.text = p.text;
+      if (p.fontDisplay) state.fontDisplay = p.fontDisplay;
+
+      document.getElementById('colPrimary').value = state.primary;
+      document.getElementById('colSecondary').value = state.secondary;
+      document.getElementById('colTeak').value = state.teak;
+      document.getElementById('colCanvas').value = state.canvas;
+      document.getElementById('colSurface').value = state.surface;
+      document.getElementById('colText').value = state.text;
+
+      document.getElementById('hexPrimary').innerText = state.primary;
+      document.getElementById('hexSecondary').innerText = state.secondary;
+      document.getElementById('hexTeak').innerText = state.teak;
+      document.getElementById('hexCanvas').innerText = state.canvas;
+      document.getElementById('hexSurface').innerText = state.surface;
+      document.getElementById('hexText').innerText = state.text;
+
+      renderPreview();
+    }
+
+    function updateColor(key, val) {
+      state[key] = val;
+      const hexEl = document.getElementById('hex' + key.charAt(0).toUpperCase() + key.slice(1));
+      if (hexEl) hexEl.innerText = val.toUpperCase();
+      renderPreview();
+    }
+
+    function updateFont(target, val) {
+      if (target === 'display') state.fontDisplay = val;
+      if (target === 'heading') state.fontHeading = val;
+      if (target === 'body') state.fontBody = val;
+      renderPreview();
+    }
+
+    function toggleTag(el) {
+      el.classList.toggle('active');
+    }
+
+    function updateMockText() {
+      const h = document.getElementById('tagline1').value || 'Where Comfort Meets Grandeur';
+      document.getElementById('mockHead').innerText = h;
+    }
+
+    function renderPreview() {
+      const tile = document.getElementById('mockTile');
+      const head = document.getElementById('mockHead');
+      const sub = document.getElementById('mockSub');
+      const body = document.getElementById('mockBody');
+      const btn = document.getElementById('mockBtn');
+
+      tile.style.backgroundColor = state.canvas;
+      tile.style.borderColor = state.secondary + '40';
+
+      head.style.fontFamily = state.fontDisplay;
+      head.style.color = state.primary;
+
+      sub.style.fontFamily = state.fontHeading;
+      sub.style.color = state.teak;
+
+      body.style.fontFamily = state.fontBody;
+      body.style.color = state.text;
+
+      btn.style.fontFamily = state.fontHeading;
+      btn.style.background = `linear-gradient(135deg, ${state.primary}, ${state.secondary})`;
+
+      document.getElementById('swatchPrimary').style.backgroundColor = state.primary;
+      document.getElementById('swatchSecondary').style.backgroundColor = state.secondary;
+      document.getElementById('swatchTeak').style.backgroundColor = state.teak;
+      document.getElementById('swatchCanvas').style.backgroundColor = state.canvas;
+      document.getElementById('swatchText').style.backgroundColor = state.text;
+    }
+
+    function saveGovernance() {
+      const activeAdjectives = Array.from(document.querySelectorAll('#adjectiveTags .tag-pill.active')).map(el => el.innerText);
+      const activeTextures = Array.from(document.querySelectorAll('#textureTags .tag-pill.active')).map(el => el.innerText);
+
+      const payload = {
+        colors: { ...state },
+        adjectives: activeAdjectives,
+        textures: activeTextures,
+        taglines: [
+          document.getElementById('tagline1').value,
+          document.getElementById('tagline2').value
+        ],
+        antiBrand: document.getElementById('antiBrand').value,
+        timestamp: new Date().toISOString()
+      };
+
+      localStorage.setItem('arrive_brand_governance', JSON.stringify(payload));
+      
+      const alertEl = document.getElementById('saveAlert');
+      alertEl.style.display = 'block';
+      setTimeout(() => { alertEl.style.display = 'none'; }, 3500);
+    }
+
+    function exportJSON() {
+      const saved = localStorage.getItem('arrive_brand_governance');
+      const data = saved ? JSON.parse(saved) : { colors: state };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Arrive_Yoga_Brand_Tokens.json';
+      a.click();
+    }
+
+    function exportMarkdown() {
+      const md = `# Arrive Yoga & Wellness — Brand Governance Guide
+Generated: ${new Date().toLocaleDateString()}
+Founder: Carly Anne Kasinpila
+
+## 1. Master Color Palette Tokens
+- Primary Brand Accent: ${state.primary}
+- Secondary Accent: ${state.secondary}
+- Teak Earth Wood: ${state.teak}
+- Canvas Background: ${state.canvas}
+- Surface Card: ${state.surface}
+- Obsidian Charcoal Text: ${state.text}
+
+## 2. Typography
+- Hero Display: ${state.fontDisplay}
+- Subheadings & UI: ${state.fontHeading}
+- Body Text: ${state.fontBody}
+
+## 3. Official Taglines
+- Primary: "${document.getElementById('tagline1').value}"
+- Secondary: "${document.getElementById('tagline2').value}"
+
+## 4. Boundaries
+${document.getElementById('antiBrand').value}
+`;
+      const blob = new Blob([md], { type: 'text/markdown' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Arrive_Yoga_Brand_Governance_Guide.md';
+      a.click();
+    }
+
+    // Initialize from storage or defaults
+    const existing = localStorage.getItem('arrive_brand_governance');
+    if (existing) {
+      try {
+        const loaded = JSON.parse(existing);
+        Object.assign(state, loaded.colors);
+        document.getElementById('colPrimary').value = state.primary;
+        document.getElementById('colSecondary').value = state.secondary;
+        document.getElementById('colTeak').value = state.teak;
+        document.getElementById('colCanvas').value = state.canvas;
+        document.getElementById('colSurface').value = state.surface;
+        document.getElementById('colText').value = state.text;
+      } catch(e) {}
+    }
+    renderPreview();
+  </script>
+</body>
+</html>

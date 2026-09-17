@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrive Yoga & Wellness — Master Office Operations Manual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas-bg: #FAF5EB;
+      --canvas-surface: #FFFFFF;
+      --canvas-subtle: #F3ECE0;
+      --sunset-orange: #EA580C;
+      --sunset-hover: #C2410C;
+      --sunset-amber: #D9531E;
+      --gold-yellow: #FBAF18;
+      --teak-wood: #78350F;
+      --jungle-green: #1B4332;
+      --text-main: #18181B;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: rgba(234, 88, 12, 0.18);
+      --border-card: rgba(0, 0, 0, 0.08);
+      --font-grandeur: 'Cormorant Garamond', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-card: 0 10px 30px -10px rgba(120, 53, 15, 0.08);
+      --shadow-elevated: 0 20px 40px -15px rgba(234, 88, 12, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding-bottom: 90px;
+    }
+
+    /* Top Sticky Header */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--sunset-orange), var(--gold-yellow));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-grandeur);
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-grandeur);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-text p {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--sunset-orange);
+      font-weight: 700;
+    }
+
+    .nav-buttons {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background: #FFF7ED;
+      border-color: var(--sunset-orange);
+      color: var(--sunset-orange);
+    }
+
+    .btn-sunset {
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: #FFFFFF;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-sunset:hover {
+      background: linear-gradient(135deg, var(--sunset-hover), var(--sunset-orange));
+      transform: translateY(-1px);
+    }
+
+    /* Layout Wrapper */
+    .layout-wrapper {
+      max-width: 1300px;
+      margin: 35px auto 0;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: 950px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sticky-sidebar {
+        position: static !important;
+        margin-bottom: 30px;
+      }
+    }
+
+    /* Sidebar Navigation */
+    .sticky-sidebar {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .sidebar-title {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sunset-orange);
+      font-weight: 800;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 8px;
+    }
+
+    .toc-nav {
+      list-style: none;
+    }
+
+    .toc-nav li {
+      margin-bottom: 8px;
+    }
+
+    .toc-nav a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+      display: block;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .toc-nav a:hover {
+      background: #FFF7ED;
+      color: var(--sunset-orange);
+      font-weight: 600;
+    }
+
+    /* Main Content Reader */
+    .manual-reader {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 18px;
+      padding: 50px 60px;
+      box-shadow: var(--shadow-card);
+    }
+
+    @media (max-width: 600px) {
+      .manual-reader { padding: 30px 20px; }
+    }
+
+    .doc-hero {
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 25px;
+      margin-bottom: 35px;
+    }
+
+    .doc-hero h2 {
+      font-family: var(--font-grandeur);
+      font-size: 44px;
+      font-style: italic;
+      color: var(--sunset-orange);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    .doc-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .doc-meta strong {
+      color: var(--text-main);
+    }
+
+    .quote-callout {
+      background: #FFFBF5;
+      border-left: 4px solid var(--sunset-orange);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 24px;
+      margin: 25px 0 35px;
+      font-family: var(--font-grandeur);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--teak-wood);
+      line-height: 1.5;
+    }
+
+    .section-block {
+      margin-bottom: 50px;
+    }
+
+    .section-title {
+      font-family: var(--font-grandeur);
+      font-size: 30px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title .sec-num {
+      color: var(--sunset-orange);
+      font-family: var(--font-heading);
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: var(--text-body);
+      font-size: 14.5px;
+      margin-bottom: 16px;
+      line-height: 1.7;
+    }
+
+    /* Table Design */
+    .table-container {
+      overflow-x: auto;
+      margin: 20px 0 30px;
+      border: 1px solid var(--border-card);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 13px;
+    }
+
+    th {
+      background: var(--canvas-subtle);
+      color: var(--text-main);
+      font-family: var(--font-heading);
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--border-light);
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      color: var(--text-body);
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #FFFDF9; }
+
+    td a {
+      color: var(--sunset-orange);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    td a:hover { text-decoration: underline; }
+
+    /* Timeline Box */
+    .timeline-container {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 20px 0;
+    }
+
+    .timeline-phase {
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline-phase:last-child { margin-bottom: 0; }
+
+    .timeline-phase::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--sunset-orange);
+      box-shadow: 0 0 6px var(--sunset-orange);
+    }
+
+    .timeline-phase::after {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 22px;
+      bottom: -16px;
+      width: 2px;
+      background: rgba(234, 88, 12, 0.2);
+    }
+
+    .timeline-phase:last-child::after { display: none; }
+
+    .phase-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      margin-bottom: 8px;
+    }
+
+    .phase-list {
+      list-style: none;
+    }
+
+    .phase-list li {
+      font-size: 13px;
+      color: var(--text-body);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .phase-list li::before {
+      content: "✓";
+      color: var(--jungle-green);
+      font-weight: bold;
+    }
+
+    /* Card Highlights */
+    .card-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 20px 0;
+    }
+
+    @media (max-width: 700px) {
+      .card-grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .info-card {
+      background: #FFFDF9;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .info-card h4 {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      color: var(--sunset-orange);
+      margin-bottom: 6px;
+    }
+
+    .info-card p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--canvas-subtle);
+      margin-top: 40px;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    @media print {
+      header, .sticky-sidebar, .nav-buttons { display: none; }
+      .layout-wrapper { display: block; margin: 0; padding: 0; max-width: 100%; }
+      .manual-reader { border: none; box-shadow: none; padding: 0; }
+      body { background: #FFFFFF; color: #000000; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Header -->
+  <header>
+    <div class="brand-group">
+      <div class="brand-icon">A</div>
+      <div class="brand-text">
+        <h1>Arrive Yoga & Wellness</h1>
+        <p>Master Office Operations Manual</p>
+      </div>
+    </div>
+    <div class="nav-buttons">
+      <a href="Arrive_Yoga_Executive_Dashboard.html" class="btn-sunset">← Open Executive Dashboard</a>
+      <button onclick="window.print()" class="btn-action">🖨️ Print / Save PDF</button>
+    </div>
+  </header>
+
+  <div class="layout-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="sticky-sidebar">
+      <div class="sidebar-title">Table of Contents</div>
+      <ul class="toc-nav">
+        <li><a href="#welcome">1. Welcome & Purpose</a></li>
+        <li><a href="#directory">2. 11-Department Map</a></li>
+        <li><a href="#naming">3. SOPs & File Naming</a></li>
+        <li><a href="#timeline">4. 6-Month Retreat Timeline</a></li>
+        <li><a href="#rates">5. Verified Rates & Specs</a></li>
+        <li><a href="#method">6. The ARRIVE Somatic Method</a></li>
+        <li><a href="#quicktools">7. Quick Links & Tools</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Reader -->
+    <main class="manual-reader">
+      <div class="doc-hero">
+        <h2>Where Structure Meets Soul</h2>
+        <div class="doc-meta">
+          <span><strong>Founder & CEO:</strong> Carly Anne Kasinpila (500 E-RYT)</span>
+          <span><strong>Ecosystem:</strong> Arrive Yoga, The Art of Arrival, Arrive Consulting, Yogis Give Back</span>
+          <span><strong>Status:</strong> Turnkey Ready</span>
+        </div>
+      </div>
+
+      <div class="quote-callout">
+        "This isn't performative yoga. No flexibility contest. No comparison. It is a guided, trauma-aware human return to yourself—where every body is a yoga body."<br>
+        <span style="font-size: 14px; font-family: var(--font-body); font-style: normal; color: var(--sunset-orange); font-weight: 700; margin-top: 6px; display: block;">— Carly Anne Kasinpila</span>
+      </div>
+
+      <!-- Section 1 -->
+      <section class="section-block" id="welcome">
+        <h3 class="section-title"><span class="sec-num">01.</span> Executive Welcome & Hub Purpose</h3>
+        <p>
+          Welcome to your centralized corporate office structure. This back-office hub has been built from the ground up to support the multidimensional expansion of <strong>Arrive Yoga & Wellness Center LLC</strong>, <strong>The Art of Arrival Retreats</strong>, <strong>Arrive Consulting</strong>, and <strong>Yogis Give Back</strong>.
+        </p>
+        <p>
+          Every facet of operations—from corporate governance and high-ticket retreat budgeting at Amanti Resort to trauma-informed somatic curriculum and press media kits—has been organized into 11 dedicated departments. All files from your desktop retreat vault have been copied and categorized into their exact homes.
+        </p>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="section-block" id="directory">
+        <h3 class="section-title"><span class="sec-num">02.</span> 11-Department Corporate Map</h3>
+        <p>Click any department link below to jump directly to its files in your office hub:</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Department</th>
+                <th>Core Purpose</th>
+                <th>Primary Documents & Assets</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>00_EXECUTIVE</strong></td>
+                <td>Corporate charters, bylaws, strategic OKRs</td>
+                <td><a href="00_EXECUTIVE%20&%20GOVERNANCE/01_Charter%20&%20Corporate%20Bylaws/Carly%20Anne%20Professional%20Bio.docx">Carly Anne Bio</a>, Corporate Charter, 3-Yr OKRs</td>
+              </tr>
+              <tr>
+                <td><strong>01_FINANCE</strong></td>
+                <td>Unit economics, clean budgets, invoicing</td>
+                <td><a href="01_FINANCE,%20BUDGETING%20&%20ACCOUNTING/02_Retreat%20Budgets%20&%20Unit%20Economics/Retreat_Unit_Economics_&_Budget_Model.csv">Unit Economics CSV</a>, Expense Log, Invoices</td>
+              </tr>
+              <tr>
+                <td><strong>02_LEGAL</strong></td>
+                <td>Waivers, 33/33/34% terms, contracts, trademarks</td>
+                <td><a href="02_LEGAL,%20CONTRACTS%20&%20RISK%20MANAGEMENT/01_Client%20Waivers%20&%20Terms%20of%20Service/Payment%20Terms%20&%20Policies/Screenshot%202025-07-12%20at%205.21.43%E2%80%AFPM.png">Payment Policy</a>, Liability Waiver, ICAs, Trademarks</td>
+              </tr>
+              <tr>
+                <td><strong>03_OPERATIONS</strong></td>
+                <td>Amanti Resort specs, shuttle fleets, emergency EAP</td>
+                <td><a href="03_OPERATIONS%20&%20RETREAT%20LOGISTICS/02_Venues%20&%20Villa%20Buyouts/Accommodations%20&%20Suites/Amapola%20Estate/">Amapola & Toucan Photos</a>, Fleet Specs, Emergency Plan</td>
+              </tr>
+              <tr>
+                <td><strong>04_CURRICULUM</strong></td>
+                <td>The ARRIVE Method™, 6-Day elemental schedule</td>
+                <td><a href="04_THE ARRIVE METHOD & CURRICULUM/01_The ARRIVE Framework & Somatic Pillars/Pillars The Arrive Yoga Method Website.docx">Method Pillars</a>, Why Retreat Works, 200-Hr YTT</td>
+              </tr>
+              <tr>
+                <td><strong>05_GUEST EXPERIENCE</strong></td>
+                <td>Intake forms, spa menu, packing guides</td>
+                <td><a href="05_GUEST%20EXPERIENCE%20&%20CONCIERGE/Guest_Intake_Digital_Portal.html">Guest Intake Portal</a>, Spa Menu, Welcome Guide</td>
+              </tr>
+              <tr>
+                <td><strong>06_BRAND & PR</strong></td>
+                <td>"Where Comfort Meets Grandeur" layout, video footage</td>
+                <td><a href="06_BRAND,%20MARKETING%20&%20PR/01_Brand%20Identity%20Guidelines%20&%20Vector%20Assets/Brand_Style_Governance_Intake_Portal.html">Brand Governance Intake</a>, Video B-Roll, NY Weekly Press Kit</td>
+              </tr>
+              <tr>
+                <td><strong>07_SALES</strong></td>
+                <td>Clean CRM pipeline, discovery script, B2B proposals</td>
+                <td><a href="07_SALES,%20RETREAT%20ENROLLMENT%20&%20PARTNERSHIPS/01_Retreat%20Application%20&%20Pipeline%20Tracker/Retreat_Application_&%20Pipeline_Tracker.csv">Pipeline CSV (Clean)</a>, High-Ticket Script</td>
+              </tr>
+              <tr>
+                <td><strong>08_HUMAN RESOURCES</strong></td>
+                <td>Org chart, facilitator onboarding, team roster</td>
+                <td><a href="08_HUMAN%20RESOURCES%20&%20TEAM%20OPERATIONS/01_Master%20Org%20Chart%20&%20Role%20Scorecards/Master_Org_Chart_&%20Role_Scorecards.md">Org Chart</a>, Staff Code of Conduct, Roster</td>
+              </tr>
+              <tr>
+                <td><strong>09_TECHNOLOGY</strong></td>
+                <td>Tech inventory, Stripe/Typeform automation blueprint</td>
+                <td><a href="09_TECHNOLOGY,%20SYSTEMS%20&%20AUTOMATIONS/01_Master%20Tech%20Stack%20&%20Software%20Inventory/Master_Tech_Stack_&%20Software_Registry.md">Tech Stack</a>, Booking Flow Blueprint</td>
+              </tr>
+              <tr>
+                <td><strong>10_ARCHIVES</strong></td>
+                <td>Direct shortcuts to source vault & web prototypes</td>
+                <td><a href="10_CONNECTED%20ASSETS%20&%20QUICK%20ACCESS/Connected_Assets_README.md">Connected Assets Hub</a> (Vault & Website links)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="section-block" id="naming">
+        <h3 class="section-title"><span class="sec-num">03.</span> SOPs & File Naming Conventions</h3>
+        <p>
+          To ensure effortless document retrieval and team synchronization, all files created by team members must follow standard ISO naming rules:
+        </p>
+
+        <div class="card-grid-2">
+          <a href="06_BRAND,%20MARKETING%20&%20PR/01_Brand%20Identity%20Guidelines%20&%20Vector%20Assets/Brand_Style_Governance_Intake_Portal.html" class="info-card" style="text-decoration: none; display: block; border-color: var(--sunset-orange); background: #FFFBF5;">
+            <h4 style="color: var(--sunset-orange);">🎨 Brand Style Governance Portal &rarr;</h4>
+            <p>Carly Anne's master intake for styling, color palettes, fonts, and moodboard rules.</p>
+          </a>
+          <div class="info-card">
+            <h4>Standard Naming Syntax</h4>
+            <p><code>YYYY-MM-DD_[DEPT]_[Document_Name]_[vX.X].[ext]</code></p>
+            <p style="margin-top: 6px; font-size: 12px; color: var(--sunset-orange);">
+              Example: <em>2026-08-15_OPS_CostaRica_Flight_Manifest_v1.csv</em>
+            </p>
+          </div>
+          <div class="info-card">
+            <h4>Version Control Rules</h4>
+            <p>• <strong>Working Drafts:</strong> Append <code>_DRAFT</code> to filename.</p>
+            <p>• <strong>Approved Final:</strong> Remove draft tag, lock editing, and export PDF.</p>
+            <p>• <strong>Archived:</strong> Move legacy versions into department archive folder.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="section-block" id="timeline">
+        <h3 class="section-title"><span class="sec-num">04.</span> Master 6-Month Retreat Execution Timeline</h3>
+        <p>Your step-by-step roadmap from initial venue lock through post-retreat alumni integration:</p>
+
+        <div class="timeline-container">
+          <div class="timeline-phase">
+            <div class="phase-title">Phase 1: T-180 Days (6 Months Out) — Strategy & Venue Lock</div>
+            <ul class="phase-list">
+              <li>Sign exclusive buyout agreement with Amanti Resort & Spa (Playa Hermosa)</li>
+              <li>Finalize suite tier pricing (Amapola, Toucan, Queen, Honeymoon)</li>
+              <li>Open high-ticket waitlist and launch 7-part email launch sequence</li>
+            </ul>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-title">Phase 2: T-120 Days (4 Months Out) — Enrollment & Discovery</div>
+            <ul class="phase-list">
+              <li>Conduct somatic discovery calls; log prospects into Application Pipeline CSV</li>
+              <li>Collect 33% reservation deposits to lock suites</li>
+              <li>Execute Participant Liability Waivers and Medical Declarations</li>
+              <li>Confirm excursion partners (Rainmaker Canopy & Mayan Temazcal)</li>
+            </ul>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-title">Phase 3: T-60 Days (2 Months Out) — Balances & Guest Care</div>
+            <ul class="phase-list">
+              <li>Collect second 33% payment; enforce 50% non-refundable balance rule</li>
+              <li>Send Guest Welcome Packet & Costa Rica Packing Guide to all attendees</li>
+              <li>Review dietary restrictions and deliver allergen profiles to Chef Mateo</li>
+            </ul>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-title">Phase 4: T-30 Days (1 Month Out) — Flight Logistics & Shuttles</div>
+            <ul class="phase-list">
+              <li>Collect inbound/outbound SJO flight details into Flight Manifest CSV</li>
+              <li>Group guests into Sprinter 1/2 and Bus 1/2 shuttle schedules</li>
+              <li>Verify on-call bilingual physician and nearest emergency clinic protocols</li>
+              <li>Finalize assistant facilitator onboarding and props/equipment inventory</li>
+            </ul>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-title">Phase 5: T-0 Days (Arrival Week in Costa Rica)</div>
+            <ul class="phase-list">
+              <li>Day 1: Coordinate SJO airport pickups, welcome dinner & Earth Root circle</li>
+              <li>Days 2–5: Facilitate 6-Day Elemental Method (Water, Fire, Air, Ether)</li>
+              <li>Day 6: Closing circle, Yogis Give Back 1% dedication, and SJO departures</li>
+            </ul>
+          </div>
+
+          <div class="timeline-phase">
+            <div class="phase-title">Phase 6: T+14 Days (Post-Retreat Integration)</div>
+            <ul class="phase-list">
+              <li>Send 30-Day Somatic Integration Journal Prompts and playlist links</li>
+              <li>Send NPS survey and collect video testimonials</li>
+              <li>Close accounting ledger and reconcile vendor expense reimbursements</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="section-block" id="rates">
+        <h3 class="section-title"><span class="sec-num">05.</span> Verified Client Specifications & Rates</h3>
+        <p>Accurate specifications and pricing extracted directly from your vault source documents:</p>
+
+        <div class="card-grid-2">
+          <div class="info-card">
+            <h4>Transportation Fleets & Rates</h4>
+            <p>• <strong>Sprinter 1:</strong> Up to 14 Pax (or 9 + Luggage)</p>
+            <p>• <strong>Sprinter 2:</strong> Up to 17 Pax (or 12 + Luggage)</p>
+            <p>• <strong>Bus 1 & Bus 2:</strong> Up to 24 & 50 Pax (Under-bus luggage)</p>
+            <p>• <strong>Airport Route:</strong> $150 / run (up to 4 guests) + $25/additional</p>
+          </div>
+          <div class="info-card">
+            <h4>Spa Services Add-Ons</h4>
+            <p>• <strong>60-Min Full Body Massage:</strong> $75 per person</p>
+            <p>• <strong>90-Min Full Body Massage:</strong> $125 per person</p>
+            <p>• <strong>30-Min Beachfront Reflexology:</strong> $50 per person</p>
+            <p>• <strong>Manicure / Pedicure / Both:</strong> $50 / $60 / $100</p>
+          </div>
+          <div class="info-card">
+            <h4>Payment Terms & Schedule</h4>
+            <p>• <strong>1st Payment:</strong> 33% due at reservation</p>
+            <p>• <strong>2nd Payment:</strong> 33% due 3 months prior</p>
+            <p>• <strong>Final Balance:</strong> 34% due 30 days prior</p>
+            <p>• <strong>Late Fee:</strong> 5% fee for payments past 5 calendar days</p>
+          </div>
+          <div class="info-card">
+            <h4>Amanti Sanctuary Layout</h4>
+            <p>• <strong>Amapola Estate:</strong> &gt;430 sq ft suites, private kitchenette, pool</p>
+            <p>• <strong>Toucan Villa:</strong> 3-bedroom villa, wrap-around rainforest deck</p>
+            <p>• <strong>Amenities:</strong> 2 waterfall pools, shala deck, cold immersion plunge</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="section-block" id="method">
+        <h3 class="section-title"><span class="sec-num">06.</span> The ARRIVE Somatic Methodology</h3>
+        <p>The 6 core pillars that define the Arrive Yoga teaching container:</p>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Pillar</th>
+                <th>Element</th>
+                <th>Somatic Focus & Student Transformation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>A — Anchor</strong></td>
+                <td>Earth</td>
+                <td>Ground the body, settle the breath, and establish nervous system safety.</td>
+              </tr>
+              <tr>
+                <td><strong>R — Reveal</strong></td>
+                <td>Water</td>
+                <td>Notice sensations, chronic holdings, and truth without judgment.</td>
+              </tr>
+              <tr>
+                <td><strong>R — Rewrite</strong></td>
+                <td>Fire</td>
+                <td>Shift old narratives into empowered, self-respecting neuroplastic choices.</td>
+              </tr>
+              <tr>
+                <td><strong>I — Integrate</strong></td>
+                <td>Heart</td>
+                <td>Take the tools off the mat so change translates into enduring daily behavior.</td>
+              </tr>
+              <tr>
+                <td><strong>V — Voice</strong></td>
+                <td>Air</td>
+                <td>Use breath, sound, affirmations, and clear language to express authentic truth.</td>
+              </tr>
+              <tr>
+                <td><strong>E — Embody</strong></td>
+                <td>Avatar</td>
+                <td>Live the work through posture, presence, fluid flow, and grounded leadership.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="section-block" id="quicktools">
+        <h3 class="section-title"><span class="sec-num">07.</span> Quick Tools & Launchers</h3>
+        <p>One-click tools ready for your daily workflow:</p>
+        
+        <div class="card-grid-2">
+          <a href="Arrive_Yoga_Executive_Dashboard.html" class="info-card" style="text-decoration: none; display: block; border-color: var(--sunset-orange);">
+            <h4 style="color: var(--sunset-orange);">📊 Executive Operations Dashboard &rarr;</h4>
+            <p>Open live financial calculator, interactive checklist, and department quick-links.</p>
+          </a>
+          <a href="05_GUEST%20EXPERIENCE%20&%20CONCIERGE/Guest_Intake_Digital_Portal.html" class="info-card" style="text-decoration: none; display: block;">
+            <h4>📝 Guest Intake Digital Portal &rarr;</h4>
+            <p>Send to guests for medical history, dietary preferences, and flight details.</p>
+          </a>
+          <a href="00_EXECUTIVE%20&%20GOVERNANCE/Executive_One_Pager_Printable.html" class="info-card" style="text-decoration: none; display: block;">
+            <h4>📄 Executive One-Pager (Printable) &rarr;</h4>
+            <p>High-end corporate overview for corporate sponsors and luxury partners.</p>
+          </a>
+          <a href="05_GUEST%20EXPERIENCE%20&%20CONCIERGE/03_Welcome%20Packets%20&%20Pre-Travel%20Checklists/Costa_Rica_Guest_Welcome_Packet_Printable.html" class="info-card" style="text-decoration: none; display: block;">
+            <h4>🌴 Costa Rica Guest Travel Guide &rarr;</h4>
+            <p>Printable luxury travel, customs, and packing booklet for enrolled attendees.</p>
+          </a>
+        </div>
+      </section>
+
+      <footer>
+        <span>Arrive Yoga & Wellness Center LLC | Executive Back-Office</span>
+        <span>Founder: Carly Anne Kasinpila</span>
+        <span>Version 1.0 (Web UI Edition)</span>
+      </footer>
+    </main>
+  </div>
+
+
+  <script>
+    // Adopt Master Brand Governance Tokens
+    const brandGov = localStorage.getItem('arrive_brand_governance');
+    if (brandGov) {
+      try {
+        const parsed = JSON.parse(brandGov);
+        if (parsed.colors) {
+          const root = document.documentElement;
+          if (parsed.colors.primary) root.style.setProperty('--sunset-orange', parsed.colors.primary);
+          if (parsed.colors.secondary) root.style.setProperty('--gold-yellow', parsed.colors.secondary);
+          if (parsed.colors.teak) root.style.setProperty('--teak-wood', parsed.colors.teak);
+          if (parsed.colors.canvas) root.style.setProperty('--canvas-bg', parsed.colors.canvas);
+          if (parsed.colors.fontDisplay) root.style.setProperty('--font-grandeur', parsed.colors.fontDisplay);
+        }
+      } catch(e) {}
+    }
+  </script>
+</body>
+
+</html>

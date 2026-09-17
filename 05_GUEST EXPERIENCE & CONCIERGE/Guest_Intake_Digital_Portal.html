@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrive Yoga — Guest Intake & Health Declaration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas-bg: #FAF5EB;
+      --canvas-surface: #FFFFFF;
+      --canvas-subtle: #F3ECE0;
+      --sunset-orange: #EA580C;
+      --sunset-hover: #C2410C;
+      --sunset-amber: #D9531E;
+      --gold-yellow: #FBAF18;
+      --teak-wood: #78350F;
+      --text-main: #18181B;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: rgba(234, 88, 12, 0.18);
+      --border-card: rgba(0, 0, 0, 0.08);
+      --font-grandeur: 'Cormorant Garamond', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-card: 0 10px 30px -10px rgba(120, 53, 15, 0.08);
+      --shadow-elevated: 0 20px 40px -15px rgba(234, 88, 12, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 40px 20px 80px;
+    }
+
+    .top-nav {
+      max-width: 850px;
+      margin: 0 auto 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-back {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--canvas-surface);
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-card);
+      transition: all 0.2s;
+    }
+
+    .btn-back:hover {
+      background: #FFF7ED;
+      transform: translateY(-1px);
+    }
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 45px 50px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--gold-yellow), var(--sunset-orange));
+      border-radius: 18px 18px 0 0;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 35px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 25px;
+    }
+
+    .brand-eyebrow {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--sunset-orange);
+      font-weight: 800;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    h1 {
+      font-family: var(--font-grandeur);
+      font-size: 38px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--sunset-orange);
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 13.5px;
+      color: var(--text-body);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-family: var(--font-grandeur);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 32px 0 16px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title .sec-num {
+      color: var(--sunset-orange);
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .full-width { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-body);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--sunset-orange);
+      box-shadow: 0 0 10px rgba(234, 88, 12, 0.15);
+      background: #FFFFFF;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      background: var(--canvas-bg);
+      padding: 7px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border-card);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s;
+    }
+
+    .checkbox-item:hover {
+      border-color: var(--sunset-orange);
+      background: #FFF7ED;
+    }
+
+    .checkbox-item input {
+      width: auto;
+      accent-color: var(--sunset-orange);
+    }
+
+    .btn-bar {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 40px;
+      border-top: 1px solid var(--canvas-subtle);
+      padding-top: 25px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+
+    .btn-sunset {
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-sunset:hover {
+      background: linear-gradient(135deg, var(--sunset-hover), var(--sunset-orange));
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: #FFF7ED;
+      border-color: var(--sunset-orange);
+      color: var(--sunset-orange);
+    }
+
+    @media print {
+      body { background: white; color: black; padding: 0; }
+      .top-nav, .btn-bar { display: none; }
+      .container { border: none; box-shadow: none; padding: 0; width: 100%; max-width: 100%; }
+      .container::before { display: none; }
+      input, select, textarea { background: #FFFFFF; border: 1px solid #CCC; color: black; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav">
+    <a href="../../Arrive_Yoga_Executive_Dashboard.html" class="btn-back">← Back to Executive Dashboard</a>
+    <a href="../../START_HERE_OFFICE_OPERATIONS_MANUAL.html" class="btn-back">📖 Operations Manual</a>
+  </div>
+
+  <div class="container">
+    <header>
+      <span class="brand-eyebrow">Arrive Yoga & Wellness • The Art of Arrival</span>
+      <h1>Where Comfort Meets Grandeur</h1>
+      <p class="subtitle">Guest Intake & Health Declaration • Amanti Resort & Spa, Costa Rica</p>
+    </header>
+
+    <form id="intakeForm">
+      <!-- Personal Info -->
+      <div class="section-title"><span class="sec-num">01.</span> Guest Identification</div>
+      <div class="form-grid">
+        <div>
+          <label>Full Legal Name (as on passport)</label>
+          <input type="text" id="fullName" required placeholder="Jane Doe">
+        </div>
+        <div>
+          <label>Preferred Name / Pronouns</label>
+          <input type="text" id="preferredName" placeholder="Jane (she/her)">
+        </div>
+        <div>
+          <label>Email Address</label>
+          <input type="email" id="email" required placeholder="jane@example.com">
+        </div>
+        <div>
+          <label>WhatsApp / Mobile Phone</label>
+          <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+        </div>
+        <div>
+          <label>Passport Number & Country</label>
+          <input type="text" id="passport" placeholder="P12345678 (USA)">
+        </div>
+        <div>
+          <label>Reserved Suite</label>
+          <select id="suite">
+            <option value="Amapola 5-Bedroom Estate">Amapola 5-Bedroom Estate (>430 sq ft)</option>
+            <option value="Toucan 3-Bedroom Villa">Toucan 3-Bedroom Villa (Rainforest Deck)</option>
+            <option value="Macaw 2-Bedroom Villa">Macaw 2-Bedroom Villa (Dipping Pool)</option>
+            <option value="Honeymoon Suite">Honeymoon Suite (Soaking Tub & Balcony)</option>
+            <option value="Queen Suite">Queen Suite (Private Room & En-Suite)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Health & Somatics -->
+      <div class="section-title"><span class="sec-num">02.</span> Somatic & Medical Health Declaration</div>
+      <div class="form-grid">
+        <div class="full-width">
+          <label>Physical Conditions, Injuries or Surgeries (Past 24 Months)</label>
+          <textarea rows="2" id="injuries" placeholder="Please share any chronic joint, spine, or mobility conditions so our facilitators can support you safely..."></textarea>
+        </div>
+        <div>
+          <label>Yoga Experience Level</label>
+          <select id="experience">
+            <option value="Beginner">Beginner (Every body is a yoga body)</option>
+            <option value="Intermediate">Intermediate (Consistent practice)</option>
+            <option value="Advanced / Teacher">Advanced / Yoga Teacher</option>
+          </select>
+        </div>
+        <div>
+          <label>Emergency Contact (Full Name & Phone)</label>
+          <input type="text" id="emergencyContact" required placeholder="John Doe (+1 555-111-2222)">
+        </div>
+      </div>
+
+      <!-- Dietary Protocols -->
+      <div class="section-title"><span class="sec-num">03.</span> Dietary Preferences & Allergies (Chef Mateo)</div>
+      <div class="form-grid">
+        <div>
+          <label>Primary Dietary Style</label>
+          <select id="diet">
+            <option value="Omnivore">Omnivore (Organic local meats/poultry/fish)</option>
+            <option value="Pescatarian">Pescatarian (Local wild seafood)</option>
+            <option value="Vegetarian">Vegetarian (Plant-forward & eggs/dairy)</option>
+            <option value="Vegan">Strict Vegan (100% plant-based)</option>
+            <option value="Keto / Low-Carb">Keto / Low-Carb</option>
+          </select>
+        </div>
+        <div class="full-width">
+          <label>Allergens (Strictly Handled in Kitchen)</label>
+          <div class="checkbox-group">
+            <label class="checkbox-item"><input type="checkbox" name="allergen" value="Gluten"> Gluten-Free</label>
+            <label class="checkbox-item"><input type="checkbox" name="allergen" value="Dairy"> Dairy-Free</label>
+            <label class="checkbox-item"><input type="checkbox" name="allergen" value="Tree Nuts"> Tree Nuts</label>
+            <label class="checkbox-item"><input type="checkbox" name="allergen" value="Peanuts"> Peanuts</label>
+            <label class="checkbox-item"><input type="checkbox" name="allergen" value="Shellfish"> Shellfish</label>
+            <label class="checkbox-item"><input type="checkbox" name="allergen" value="Soy"> Soy-Free</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Details -->
+      <div class="section-title"><span class="sec-num">04.</span> SJO Flight & Airport Shuttle Logistics</div>
+      <div class="form-grid">
+        <div>
+          <label>Inbound Airline & Flight Number</label>
+          <input type="text" id="flightIn" placeholder="Delta DL 1842">
+        </div>
+        <div>
+          <label>SJO Arrival Date & Time</label>
+          <input type="text" id="timeIn" placeholder="1:30 PM (Aug 15)">
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="btn-bar">
+        <button type="button" class="btn btn-outline" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        <button type="button" class="btn btn-sunset" onclick="exportCSV()">💾 Save & Export to CSV</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Load Brand Governance Tokens from Carly's Portal if set
+    const brandGov = localStorage.getItem('arrive_brand_governance');
+    if (brandGov) {
+      try {
+        const parsed = JSON.parse(brandGov);
+        if (parsed.colors) {
+          const root = document.documentElement;
+          if (parsed.colors.primary) root.style.setProperty('--sunset-orange', parsed.colors.primary);
+          if (parsed.colors.secondary) root.style.setProperty('--gold-yellow', parsed.colors.secondary);
+          if (parsed.colors.teak) root.style.setProperty('--teak-wood', parsed.colors.teak);
+          if (parsed.colors.canvas) root.style.setProperty('--canvas-bg', parsed.colors.canvas);
+          if (parsed.colors.fontDisplay) root.style.setProperty('--font-grandeur', parsed.colors.fontDisplay);
+        }
+      } catch(e) {}
+    }
+
+    function exportCSV() {
+      const name = document.getElementById('fullName').value || 'Guest';
+      const email = document.getElementById('email').value || '';
+      const suite = document.getElementById('suite').value || '';
+      const diet = document.getElementById('diet').value || '';
+      const flight = document.getElementById('flightIn').value || '';
+      const emergency = document.getElementById('emergencyContact').value || '';
+
+      const csvContent = "data:text/csv;charset=utf-8," +
+        "Name,Email,Suite,Diet,Flight,EmergencyContact\\n" +
+        `"${name}","${email}","${suite}","${diet}","${flight}","${emergency}"`;
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", encodedUri);
+      link.setAttribute("download", `Guest_Intake_${name.replace(/\\s+/g, '_')}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>

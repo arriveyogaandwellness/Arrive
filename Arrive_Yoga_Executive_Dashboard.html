@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrive Yoga & Wellness — Corporate Office Operations Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Client Styling extracted from source materials */
+      --canvas-bg: #FAF5EB;
+      --canvas-surface: #FFFFFF;
+      --canvas-subtle: #F3ECE0;
+      --sunset-orange: #EA580C;
+      --sunset-hover: #C2410C;
+      --sunset-amber: #D9531E;
+      --gold-yellow: #FBAF18;
+      --marigold: #F59E0B;
+      --teak-wood: #78350F;
+      --jungle-green: #1B4332;
+      --text-main: #18181B;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: rgba(234, 88, 12, 0.18);
+      --border-card: rgba(0, 0, 0, 0.08);
+      --border-accent: rgba(234, 88, 12, 0.4);
+      --font-grandeur: 'Cormorant Garamond', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-card: 0 10px 30px -10px rgba(120, 53, 15, 0.08);
+      --shadow-elevated: 0 20px 40px -15px rgba(234, 88, 12, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--canvas-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 10%, rgba(251, 175, 24, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(234, 88, 12, 0.06) 0%, transparent 50%);
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .brand-block { display: flex; align-items: center; gap: 16px; }
+
+    .brand-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--sunset-orange), var(--gold-yellow));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-grandeur);
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      box-shadow: 0 6px 16px rgba(234, 88, 12, 0.3);
+    }
+
+    .brand-titles h1 {
+      font-family: var(--font-grandeur);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+    }
+
+    .brand-titles p {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--sunset-orange);
+      font-weight: 700;
+    }
+
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+
+    .status-pill {
+      background: #FFF7ED;
+      border: 1px solid var(--sunset-orange);
+      color: var(--sunset-orange);
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-pill::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background-color: var(--sunset-orange);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--sunset-orange);
+    }
+
+    .btn-sunset {
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: #FFFFFF;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+    }
+
+    .btn-sunset:hover {
+      background: linear-gradient(135deg, var(--sunset-hover), var(--sunset-orange));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(234, 88, 12, 0.35);
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 35px 24px;
+    }
+
+    /* Hero Banner matching "Where Comfort Meets Grandeur" */
+    .hero-banner {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-light);
+      border-radius: 18px;
+      padding: 45px 50px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 8px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--sunset-orange), var(--gold-yellow));
+    }
+
+    .grandeur-title {
+      font-family: var(--font-grandeur);
+      font-size: 48px;
+      font-style: italic;
+      font-weight: 600;
+      color: var(--sunset-orange);
+      line-height: 1.15;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-body);
+      max-width: 780px;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+
+    .tagline-strip {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-family: var(--font-heading);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--teak-wood);
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .tagline-strip span { display: flex; align-items: center; gap: 6px; }
+    .tagline-strip span::before { content: "•"; color: var(--sunset-orange); }
+
+    .hero-real-metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      border-top: 1px solid var(--border-card);
+      padding-top: 24px;
+    }
+
+    .metric-card {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .metric-val {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--sunset-orange);
+      margin-bottom: 2px;
+    }
+
+    .metric-lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .section-header h3 {
+      font-family: var(--font-grandeur);
+      font-size: 32px;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .section-header p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Real Verified Data Cards (From Client Files) */
+    .real-data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 45px;
+    }
+
+    .real-card {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .real-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 12px;
+    }
+
+    .real-card-header h4 {
+      font-family: var(--font-grandeur);
+      font-size: 22px;
+      color: var(--sunset-orange);
+      font-weight: 700;
+    }
+
+    .real-badge {
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .spec-list {
+      list-style: none;
+    }
+
+    .spec-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+      font-size: 13px;
+    }
+
+    .spec-list li:last-child { border-bottom: none; }
+    .spec-name { color: var(--text-muted); font-weight: 500; }
+    .spec-val { color: var(--text-main); font-weight: 700; text-align: right; }
+
+    /* Department Cards */
+    .dept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+
+    .dept-card {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 14px;
+      padding: 24px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-card);
+    }
+
+    .dept-card:hover {
+      border-color: var(--sunset-orange);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .dept-number {
+      font-family: var(--font-heading);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--sunset-orange);
+      font-weight: 800;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .dept-title {
+      font-family: var(--font-grandeur);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .dept-desc {
+      font-size: 12.5px;
+      color: var(--text-body);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .dept-files {
+      list-style: none;
+      border-top: 1px solid var(--canvas-subtle);
+      padding-top: 12px;
+      margin-bottom: 16px;
+    }
+
+    .dept-files li {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 3px 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dept-files li::before {
+      content: "•";
+      color: var(--sunset-orange);
+      font-weight: bold;
+    }
+
+    .dept-link {
+      font-size: 12px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      color: var(--sunset-orange);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .dept-card:hover .dept-link { gap: 10px; color: var(--sunset-hover); }
+
+    /* Interactive Workspace Tools Split */
+    .tools-split {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    @media (max-width: 992px) {
+      .tools-split { grid-template-columns: 1fr; }
+    }
+
+    .tool-box {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .tool-box h4 {
+      font-family: var(--font-grandeur);
+      font-size: 28px;
+      color: var(--text-main);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .tool-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* Clean Input Calculator */
+    .calc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .calc-row label {
+      font-size: 13px;
+      color: var(--text-body);
+      font-weight: 600;
+    }
+
+    .calc-row input {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      font-family: var(--font-heading);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 8px;
+      width: 140px;
+      text-align: right;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .calc-row input:focus {
+      border-color: var(--sunset-orange);
+      box-shadow: 0 0 10px rgba(234, 88, 12, 0.2);
+    }
+
+    .calc-summary {
+      border-top: 2px solid var(--canvas-subtle);
+      padding-top: 18px;
+      margin-top: 20px;
+    }
+
+    .calc-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .calc-line.total {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--sunset-orange);
+      border-top: 1px solid var(--border-light);
+      padding-top: 12px;
+      margin-top: 12px;
+    }
+
+    /* Move-In Ready Action List */
+    .action-progress {
+      height: 8px;
+      background: var(--canvas-subtle);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .action-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-yellow), var(--sunset-orange));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .action-items {
+      list-style: none;
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-card);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .action-item:hover {
+      border-color: var(--sunset-orange);
+      background: #FFFBF5;
+    }
+
+    .action-item input[type="checkbox"] {
+      accent-color: var(--sunset-orange);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .action-item span {
+      font-size: 13px;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .action-item.completed span {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    /* The ARRIVE Somatic Pillars */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .pillar-card {
+      background: var(--canvas-surface);
+      border: 1px solid var(--border-card);
+      border-top: 4px solid var(--sunset-orange);
+      border-radius: 10px;
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+
+    .pillar-letter {
+      font-family: var(--font-grandeur);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .pillar-name {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .pillar-cue {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="brand-block">
+      <div class="brand-badge">A</div>
+      <div class="brand-titles">
+        <h1>Arrive Yoga & Wellness</h1>
+        <p>Corporate Office Operations Hub</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="06_BRAND,%20MARKETING%20&%20PR/01_Brand%20Identity%20Guidelines%20&%20Vector%20Assets/Brand_Style_Governance_Intake_Portal.html" class="btn-sunset" style="background: linear-gradient(135deg, #FBAF18, #EA580C);">🎨 Brand Style Intake</a>
+      <div class="status-pill">Ready to Step In</div>
+      <a href="START_HERE_OFFICE_OPERATIONS_MANUAL.html" class="btn-sunset">Operations Manual</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Banner with Client's Signature Styling -->
+    <div class="hero-banner">
+      <h2 class="grandeur-title">Where Comfort Meets Grandeur</h2>
+      <p class="hero-subtitle">
+        Welcome, Carly Anne. Your complete corporate office structure has been established and fully organized. Every original file, villa photo, menu, policy, and bio from your retreat vault is indexed and filed into its designated corporate department—with zero mock data and clean registers ready for your business.
+      </p>
+
+      <div class="tagline-strip">
+        <span>Root down. Rise up. Arrive.</span>
+        <span>Yoga For Every Body (And Every Season of Life)</span>
+        <span>Trauma-Aware Somatics</span>
+      </div>
+
+      <div class="hero-real-metrics">
+        <div class="metric-card">
+          <div class="metric-val">11</div>
+          <div class="metric-lbl">Corporate Departments</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">Amanti Resort</div>
+          <div class="metric-lbl">Playa Hermosa, Costa Rica</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">5 Suites & Villas</div>
+          <div class="metric-lbl">Amapola, Toucan, Queen, Suites</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-val">1% Pledge</div>
+          <div class="metric-lbl">Yogis Give Back Philanthropy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real Client Data Hub (From Source Documents) -->
+    <div class="section-header">
+      <div>
+        <h3>Real Retreat Specifications & Rates</h3>
+        <p>Direct specifications, pricing, and policies extracted from your source vault files.</p>
+      </div>
+    </div>
+
+    <div class="real-data-grid">
+      <!-- 1. Real Accommodations -->
+      <div class="real-card">
+        <div class="real-card-header">
+          <h4>Amanti Accommodations</h4>
+          <span class="real-badge">Suites</span>
+        </div>
+        <ul class="spec-list">
+          <li>
+            <span class="spec-name">Amapola 5-Bedroom Estate</span>
+            <span class="spec-val">&gt; 430 sq ft, Gourmet Kitchen, Private Pool</span>
+          </li>
+          <li>
+            <span class="spec-name">Toucan 3-Bedroom Villa</span>
+            <span class="spec-val">Wrap-around rainforest deck</span>
+          </li>
+          <li>
+            <span class="spec-name">Macaw 2-Bedroom Villa</span>
+            <span class="spec-val">Private dipping pool</span>
+          </li>
+          <li>
+            <span class="spec-name">Honeymoon Suite</span>
+            <span class="spec-val">En-suite tub & jungle balcony</span>
+          </li>
+          <li>
+            <span class="spec-name">Queen Suites</span>
+            <span class="spec-val">Private room & en-suite bath</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 2. Real Transportation Specs & Pricing -->
+      <div class="real-card">
+        <div class="real-card-header">
+          <h4>Transportation Fleets & Pricing</h4>
+          <span class="real-badge">Logistics</span>
+        </div>
+        <ul class="spec-list">
+          <li>
+            <span class="spec-name">Sprinter 1</span>
+            <span class="spec-val">Up to 14 Pax (or 9 + Luggage)</span>
+          </li>
+          <li>
+            <span class="spec-name">Sprinter 2</span>
+            <span class="spec-val">Up to 17 Pax (or 12 + Luggage)</span>
+          </li>
+          <li>
+            <span class="spec-name">Bus 1 & Bus 2</span>
+            <span class="spec-val">Up to 24 & 50 Pax (Under-bus luggage)</span>
+          </li>
+          <li>
+            <span class="spec-name">Airport Route (SJO Run)</span>
+            <span class="spec-val">$150 (up to 4 guests) + $25/additional</span>
+          </li>
+          <li>
+            <span class="spec-name">Tours & Activities</span>
+            <span class="spec-val">$15 – $50 per person depending on trip</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 3. Real Spa Services & Add-Ons -->
+      <div class="real-card">
+        <div class="real-card-header">
+          <h4>Spa Services Add-Ons</h4>
+          <span class="real-badge">Wellness</span>
+        </div>
+        <ul class="spec-list">
+          <li>
+            <span class="spec-name">60-Min Full Body Massage</span>
+            <span class="spec-val">$75 per person</span>
+          </li>
+          <li>
+            <span class="spec-name">90-Min Full Body Massage</span>
+            <span class="spec-val">$125 per person</span>
+          </li>
+          <li>
+            <span class="spec-name">30-Min Beachfront Reflexology</span>
+            <span class="spec-val">$50 per person</span>
+          </li>
+          <li>
+            <span class="spec-name">Manicure / Pedicure / Both</span>
+            <span class="spec-val">$50 / $60 / $100</span>
+          </li>
+          <li>
+            <span class="spec-name">Facials, Wraps & Exfoliation</span>
+            <span class="spec-val">On Request (Book 1 wk advance)</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 4. Real Payment Terms & Policies -->
+      <div class="real-card">
+        <div class="real-card-header">
+          <h4>Payment Terms & Policies</h4>
+          <span class="real-badge">Legal</span>
+        </div>
+        <ul class="spec-list">
+          <li>
+            <span class="spec-name">Reservation Deposit</span>
+            <span class="spec-val">33% due to reserve dates & rooms</span>
+          </li>
+          <li>
+            <span class="spec-name">Second Payment</span>
+            <span class="spec-val">33% due 3 months prior to event</span>
+          </li>
+          <li>
+            <span class="spec-name">Final Balance</span>
+            <span class="spec-val">34% due 30 days prior to event</span>
+          </li>
+          <li>
+            <span class="spec-name">Late Fee Policy</span>
+            <span class="spec-val">5% late fee after 5 calendar days</span>
+          </li>
+          <li>
+            <span class="spec-name">Cancellation Policy</span>
+            <span class="spec-val">50% balance non-refundable under 60 days</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 11 Corporate Departments -->
+    <div class="section-header">
+      <div>
+        <h3>11 Corporate Office Departments</h3>
+        <p>All client files, documents, and master templates organized into logical business units.</p>
+      </div>
+    </div>
+
+    <div class="dept-grid">
+      <!-- 00 Executive -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 00</span>
+          <h4 class="dept-title">Executive & Governance</h4>
+          <p class="dept-desc">Corporate charter, operating agreement, Carly Anne Kasinpila full professional biography, and 3-year OKRs.</p>
+          <ul class="dept-files">
+            <li>Carly Anne Professional Bio.docx</li>
+            <li>Meet Your Host & The Heart Behind Art of Arrival.docx</li>
+            <li>Corporate_Charter_&_Company_Overview.md</li>
+            <li>Annual_Strategic_Roadmap_&_OKRs.md</li>
+          </ul>
+        </div>
+        <a href="00_EXECUTIVE%20&%20GOVERNANCE/01_Charter%20&%20Corporate%20Bylaws/Carly%20Anne%20Professional%20Bio.docx" class="dept-link">Open Bio & Charter &rarr;</a>
+      </div>
+
+      <!-- 01 Finance -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 01</span>
+          <h4 class="dept-title">Finance & Accounting</h4>
+          <p class="dept-desc">Unit economics budget model, clean accounts payable logs, blank invoices, and CPA financial working papers.</p>
+          <ul class="dept-files">
+            <li>Retreat_Unit_Economics_&_Budget_Model.csv</li>
+            <li>Vendor_Expense_&_Reimbursement_Log.csv</li>
+            <li>Client_Invoice_Template.md</li>
+          </ul>
+        </div>
+        <a href="01_FINANCE,%20BUDGETING%20&%20ACCOUNTING/02_Retreat%20Budgets%20&%20Unit%20Economics/Retreat_Unit_Economics_&_Budget_Model.csv" class="dept-link">Open Budget Model &rarr;</a>
+      </div>
+
+      <!-- 02 Legal -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 02</span>
+          <h4 class="dept-title">Legal & Risk Management</h4>
+          <p class="dept-desc">Official 33/33/34% payment policy screenshot, participant liability waivers, contractor agreements, and IP trademark registry.</p>
+          <ul class="dept-files">
+            <li>Screenshot 2025-07-12 at 5.21.43 PM.png (Payment Policy)</li>
+            <li>Retreat_Participant_Agreement_&_Liability_Waiver.md</li>
+            <li>The_Arrive_Method_Trademark_&_IP_Registry.md</li>
+          </ul>
+        </div>
+        <a href="02_LEGAL,%20CONTRACTS%20&%20RISK%20MANAGEMENT/01_Client%20Waivers%20&%20Terms%20of%20Service/Payment%20Terms%20&%20Policies/Screenshot%202025-07-12%20at%205.21.43%E2%80%AFPM.png" class="dept-link" target="_blank">View Payment Terms &rarr;</a>
+      </div>
+
+      <!-- 03 Operations -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 03</span>
+          <h4 class="dept-title">Operations & Retreat Logistics</h4>
+          <p class="dept-desc">Amanti Resort villa photos (Amapola, Toucan, Honeymoon), Sprinter & bus fleet pricing screenshot, and Chef Mateo menu photos.</p>
+          <ul class="dept-files">
+            <li>Accommodations & Suites (Amapola, Toucan, Queen)</li>
+            <li>Screenshot 2025-07-12 at 5.20.15 PM.png (Fleet Specs)</li>
+            <li>Chef Mateo Menus & Photos (Bfast/Lunch/Dinner)</li>
+            <li>Costa_Rica_Emergency_Action_Plan.md</li>
+          </ul>
+        </div>
+        <a href="03_OPERATIONS%20&%20RETREAT%20LOGISTICS/02_Venues%20&%20Villa%20Buyouts/Accommodations%20&%20Suites/Amapola%20Estate/" class="dept-link">Open Accommodations &rarr;</a>
+      </div>
+
+      <!-- 04 Curriculum -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 04</span>
+          <h4 class="dept-title">The ARRIVE Method & Curriculum</h4>
+          <p class="dept-desc">Client original documents: Pillars The Arrive Yoga Method Website, Why The Art of Arrival Retreat Works, and Table of Contents draft.</p>
+          <ul class="dept-files">
+            <li>Pillars The Arrive Yoga Method Website.docx</li>
+            <li>3 PM _Why The Art of Arrival Retreat Works Updated 2_12 .docx</li>
+            <li>Table of Contents draft.docx</li>
+            <li>200_Hour_ARRIVE_Somatic_YTT_Curriculum_Blueprint.md</li>
+          </ul>
+        </div>
+        <a href="04_THE%20ARRIVE%20METHOD%20&%20CURRICULUM/01_The%20ARRIVE%20Framework%20&%20Somatic%20Pillars/Pillars%20The%20Arrive%20Yoga%20Method%20Website.docx" class="dept-link">Open Method Pillars &rarr;</a>
+      </div>
+
+      <!-- 05 Guest Experience -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 05</span>
+          <h4 class="dept-title">Guest Experience & Concierge</h4>
+          <p class="dept-desc">Add Ons Upon Request (Spa pricing docx), interactive Guest Intake digital form, and printable Costa Rica travel guide.</p>
+          <ul class="dept-files">
+            <li>Add Ons Upon Request.docx (Massage & Spa Menu)</li>
+            <li>Guest_Intake_Digital_Portal.html</li>
+            <li>Costa_Rica_Guest_Welcome_Packet_Printable.html</li>
+          </ul>
+        </div>
+        <a href="05_GUEST%20EXPERIENCE%20&%20CONCIERGE/04_VIP%20Concierge%20&%20Custom%20Spa%20Add-Ons/Add%20Ons%20Upon%20Request.docx" class="dept-link">Open Spa Services Doc &rarr;</a>
+      </div>
+
+      <!-- 06 Brand & Marketing -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 06</span>
+          <h4 class="dept-title">Brand, Marketing & PR</h4>
+          <p class="dept-desc">"Where Comfort Meets Grandeur" original design screenshot, raw video footage (Promo for Retreat, ILO, 121231), and press kit.</p>
+          <ul class="dept-files">
+            <li>Screenshot 2025-07-26 at 2.08.53 AM.png (Original Style)</li>
+            <li>Video Footage (Copy of ILO.mp4, Promo for Retreat.mov)</li>
+            <li>Press Kit & Media Features (NY Weekly, Bio)</li>
+          </ul>
+        </div>
+        <a href="06_BRAND,%20MARKETING%20&%20PR/01_Brand%20Identity%20Guidelines%20&%20Vector%20Assets/Brand_Style_Governance_Intake_Portal.html" class="dept-link" target="_blank">Open Brand Governance &rarr;</a>
+      </div>
+
+      <!-- 07 Sales -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 07</span>
+          <h4 class="dept-title">Sales & Retreat Enrollment</h4>
+          <p class="dept-desc">Clean application CRM tracker (0 mock names, ready to log real guests), discovery call script, and corporate B2B wellness proposal.</p>
+          <ul class="dept-files">
+            <li>Retreat_Application_&_Pipeline_Tracker.csv (Clean Slate)</li>
+            <li>Retreat_Discovery_Call_&_Enrollment_Script.md</li>
+            <li>Corporate_Wellness_Executive_Proposal.md</li>
+          </ul>
+        </div>
+        <a href="07_SALES,%20RETREAT%20ENROLLMENT%20&%20PARTNERSHIPS/01_Retreat%20Application%20&%20Pipeline%20Tracker/Retreat_Application_&%20Pipeline_Tracker.csv" class="dept-link">Open CRM Tracker &rarr;</a>
+      </div>
+
+      <!-- 08 HR -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 08</span>
+          <h4 class="dept-title">Human Resources & Team</h4>
+          <p class="dept-desc">Master org chart, assistant facilitator onboarding packet, and team roster (Carly Anne Kasinpila ready for new hires).</p>
+          <ul class="dept-files">
+            <li>Master_Org_Chart_&_Role_Scorecards.md</li>
+            <li>Retreat_Assistant_Facilitator_Onboarding_Packet.md</li>
+            <li>Team_Contact_&_Contractor_Roster.csv</li>
+          </ul>
+        </div>
+        <a href="08_HUMAN%20RESOURCES%20&%20TEAM%20OPERATIONS/01_Master%20Org%20Chart%20&%20Role%20Scorecards/Master_Org_Chart_&%20Role_Scorecards.md" class="dept-link">Open Org Chart &rarr;</a>
+      </div>
+
+      <!-- 09 Tech -->
+      <div class="dept-card">
+        <div>
+          <span class="dept-number">FOLDER 09</span>
+          <h4 class="dept-title">Technology & Automations</h4>
+          <p class="dept-desc">Master software inventory, booking automation blueprint (Stripe, Typeform, Airtable, Mailchimp), and security password policies.</p>
+          <ul class="dept-files">
+            <li>Master_Tech_Stack_&_Software_Registry.md</li>
+            <li>Booking_Automation_Workflow_Blueprint.md</li>
+          </ul>
+        </div>
+        <a href="09_TECHNOLOGY,%20SYSTEMS%20&%20AUTOMATIONS/01_Master%20Tech%20Stack%20&%20Software%20Inventory/Master_Tech_Stack_&%20Software_Registry.md" class="dept-link">Open Tech Stack &rarr;</a>
+      </div>
+
+      <!-- 10 Connected Assets -->
+      <div class="dept-card" style="border-color: var(--sunset-orange);">
+        <div>
+          <span class="dept-number">FOLDER 10</span>
+          <h4 class="dept-title" style="color: var(--sunset-orange);">Connected Archives & Prototypes</h4>
+          <p class="dept-desc">Direct shortcuts into the client's original desktop media vault and interactive website style prototypes.</p>
+          <ul class="dept-files">
+            <li>Media_Vault_Direct_Folder (Source Vault)</li>
+            <li>Website_Files_Direct_Folder (Web Prototypes)</li>
+          </ul>
+        </div>
+        <a href="10_CONNECTED%20ASSETS%20&%20QUICK%20ACCESS/Connected_Assets_README.md" class="dept-link">Open Archives Hub &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Move-In Ready Workspace Split: Clean Calculator & Action Items -->
+    <div class="tools-split">
+      <!-- Clean Live Calculator (Zero Mock Data) -->
+      <div class="tool-box">
+        <h4>Retreat Unit Economics Workspace</h4>
+        <p class="tool-subtitle">Clean calculation tool. Enter your real numbers to calculate revenue and profit margins.</p>
+
+        <div class="calc-row">
+          <label>Enrolled Guests:</label>
+          <input type="number" id="realGuests" placeholder="0" min="0" oninput="runLiveCalculation()">
+        </div>
+
+        <div class="calc-row">
+          <label>Average Ticket Price ($ USD):</label>
+          <input type="number" id="realPrice" placeholder="0" min="0" step="50" oninput="runLiveCalculation()">
+        </div>
+
+        <div class="calc-row">
+          <label>Amanti Resort Buyout ($ USD):</label>
+          <input type="number" id="realResort" placeholder="0" min="0" oninput="runLiveCalculation()">
+        </div>
+
+        <div class="calc-row">
+          <label>Chef & Dining Expenses ($ USD):</label>
+          <input type="number" id="realChef" placeholder="0" min="0" oninput="runLiveCalculation()">
+        </div>
+
+        <div class="calc-row">
+          <label>Transportation & Excursions ($ USD):</label>
+          <input type="number" id="realLogistics" placeholder="0" min="0" oninput="runLiveCalculation()">
+        </div>
+
+        <div class="calc-row">
+          <label>Staff & Media Stipends ($ USD):</label>
+          <input type="number" id="realStaff" placeholder="0" min="0" oninput="runLiveCalculation()">
+        </div>
+
+        <div class="calc-summary">
+          <div class="calc-line">
+            <span>Gross Revenue:</span>
+            <span id="outGross" style="font-weight: 700; color: var(--sunset-orange);">$0.00</span>
+          </div>
+          <div class="calc-line">
+            <span>Yogis Give Back (1% Philanthropy):</span>
+            <span id="outPledge" style="color: var(--jungle-green); font-weight: 600;">$0.00</span>
+          </div>
+          <div class="calc-line">
+            <span>Total Operational Expenses:</span>
+            <span id="outExpenses" style="color: #DC2626; font-weight: 600;">$0.00</span>
+          </div>
+          <div class="calc-line total">
+            <span>Net Profit (EBITDA):</span>
+            <span id="outNet">$0.00</span>
+          </div>
+          <div class="calc-line" style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+            <span>Profit Margin:</span>
+            <span id="outMargin" style="color: var(--sunset-orange); font-weight: 700;">0.0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Real Move-In Action Checklist -->
+      <div class="tool-box">
+        <h4>Move-In Ready Setup Checklist</h4>
+        <p class="tool-subtitle">Action items for launching your corporate office. Click to mark complete.</p>
+
+        <div class="action-progress">
+          <div class="action-progress-fill" id="moveInProgress"></div>
+        </div>
+
+        <div class="action-items" id="actionItemsContainer"></div>
+      </div>
+    </div>
+
+    <!-- The ARRIVE Method Pillars Reference -->
+    <div class="section-header" style="margin-top: 40px;">
+      <div>
+        <h3>The ARRIVE Method™ Pillars</h3>
+        <p>Core trauma-aware somatic framework created by Carly Anne Kasinpila.</p>
+      </div>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <span class="pillar-letter">A</span>
+        <div class="pillar-name">Anchor</div>
+        <div class="pillar-cue">Ground the body, settle the breath, establish baseline safety</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-letter">R</span>
+        <div class="pillar-name">Reveal</div>
+        <div class="pillar-cue">Notice sensations & truth without judgment or critique</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-letter">R</span>
+        <div class="pillar-name">Rewrite</div>
+        <div class="pillar-cue">Shift old stories into empowered neuroplastic choices</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-letter">I</span>
+        <div class="pillar-name">Integrate</div>
+        <div class="pillar-cue">Take the tools off the mat so change becomes daily behavior</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-letter">V</span>
+        <div class="pillar-name">Voice</div>
+        <div class="pillar-cue">Use breath, sound, affirmations & clear truth to express</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-letter">E</span>
+        <div class="pillar-name">Embody</div>
+        <div class="pillar-cue">Live the work through posture, presence & relationships</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Live Calculation (Starts Clean with Zero Fake Data)
+    function runLiveCalculation() {
+      const guests = parseFloat(document.getElementById('realGuests').value) || 0;
+      const price = parseFloat(document.getElementById('realPrice').value) || 0;
+      const resort = parseFloat(document.getElementById('realResort').value) || 0;
+      const chef = parseFloat(document.getElementById('realChef').value) || 0;
+      const logistics = parseFloat(document.getElementById('realLogistics').value) || 0;
+      const staff = parseFloat(document.getElementById('realStaff').value) || 0;
+
+      const gross = guests * price;
+      const pledge = gross > 0 ? (gross * 0.01) : 0;
+      const totalExpenses = resort + chef + logistics + staff + pledge;
+      const net = gross - totalExpenses;
+      const margin = gross > 0 ? ((net / gross) * 100).toFixed(1) : 0;
+
+      document.getElementById('outGross').innerText = '$' + gross.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('outPledge').innerText = '-$' + pledge.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('outExpenses').innerText = '-$' + totalExpenses.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('outNet').innerText = (net >= 0 ? '$' : '-$') + Math.abs(net).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('outMargin').innerText = margin + '%';
+    }
+
+    // Move-In Ready Checklist (Unchecked Clean Slate with LocalStorage)
+    const moveInTasks = [
+      "Review Carly Anne Professional Bio in Folder 00",
+      "Upload final signed Amanti Resort contract into Folder 03",
+      "Enter real prospective attendees into Retreat Application Pipeline CSV",
+      "Send Guest Intake Digital Portal link to confirmed guests",
+      "Enter confirmed SJO flights into Guest Flight Manifest CSV",
+      "Review Chef Mateo kitchen protocol & verify guest dietary allergies",
+      "Confirm Sprinter / Bus shuttle bookings with Costa Rica transport partner",
+      "Verify Rainmaker Canopy & Mayan Temazcal excursion dates",
+      "Order guest welcome bags and branded Arrive Yoga journals",
+      "Export Printable Guest Welcome Guide to PDF for attendees",
+      "Verify local on-call physician & nearest emergency clinic routes",
+      "Send Post-Retreat Integration Prompts to alumni cohort"
+    ];
+
+    function renderMoveInChecklist() {
+      const container = document.getElementById('actionItemsContainer');
+      container.innerHTML = '';
+      const saved = JSON.parse(localStorage.getItem('arrive_move_in_state') || '{}');
+      let completedCount = 0;
+
+      moveInTasks.forEach((task, index) => {
+        const isChecked = !!saved[index];
+        if (isChecked) completedCount++;
+
+        const div = document.createElement('div');
+        div.className = 'action-item' + (isChecked ? ' completed' : '');
+        div.onclick = (e) => {
+          if (e.target.tagName !== 'INPUT') {
+            const cb = div.querySelector('input');
+            cb.checked = !cb.checked;
+            toggleMoveIn(index, cb.checked);
+          }
+        };
+
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = isChecked;
+        checkbox.onchange = (e) => toggleMoveIn(index, e.target.checked);
+
+        const span = document.createElement('span');
+        span.innerText = task;
+
+        div.appendChild(checkbox);
+        div.appendChild(span);
+        container.appendChild(div);
+      });
+
+      const pct = moveInTasks.length > 0 ? Math.round((completedCount / moveInTasks.length) * 100) : 0;
+      document.getElementById('moveInProgress').style.width = pct + '%';
+    }
+
+    function toggleMoveIn(index, state) {
+      const saved = JSON.parse(localStorage.getItem('arrive_move_in_state') || '{}');
+      saved[index] = state;
+      localStorage.setItem('arrive_move_in_state', JSON.stringify(saved));
+      renderMoveInChecklist();
+    }
+
+    
+    // Load Brand Governance Tokens from Carly's Portal (Governs Throughout)
+    const brandGov = localStorage.getItem('arrive_brand_governance');
+    if (brandGov) {
+      try {
+        const parsed = JSON.parse(brandGov);
+        if (parsed.colors) {
+          const root = document.documentElement;
+          if (parsed.colors.primary) root.style.setProperty('--sunset-orange', parsed.colors.primary);
+          if (parsed.colors.secondary) root.style.setProperty('--gold-yellow', parsed.colors.secondary);
+          if (parsed.colors.teak) root.style.setProperty('--teak-wood', parsed.colors.teak);
+          if (parsed.colors.canvas) root.style.setProperty('--canvas-bg', parsed.colors.canvas);
+          if (parsed.colors.fontDisplay) root.style.setProperty('--font-grandeur', parsed.colors.fontDisplay);
+        }
+      } catch(e) {}
+    }
+
+    // Initialize
+    runLiveCalculation();
+    renderMoveInChecklist();
+  </script>
+</body>
+</html>

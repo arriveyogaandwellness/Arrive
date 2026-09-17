@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art of Arrival — Guest Welcome & Travel Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas-bg: #FAF5EB;
+      --canvas-surface: #FFFFFF;
+      --canvas-subtle: #F3ECE0;
+      --sunset-orange: #EA580C;
+      --sunset-hover: #C2410C;
+      --sunset-amber: #D9531E;
+      --gold-yellow: #FBAF18;
+      --teak-wood: #78350F;
+      --text-main: #18181B;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: rgba(234, 88, 12, 0.2);
+      --font-grandeur: 'Cormorant Garamond', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --shadow-card: 0 10px 30px -10px rgba(120, 53, 15, 0.08);
+      --shadow-elevated: 0 20px 40px -15px rgba(234, 88, 12, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--canvas-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      padding: 30px 20px 70px;
+    }
+    .top-nav {
+      max-width: 880px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-nav {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      text-decoration: none;
+      background: var(--canvas-surface);
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover {
+      background: #FFF7ED;
+    }
+    .booklet {
+      max-width: 880px;
+      margin: 0 auto;
+      background: var(--canvas-surface);
+      padding: 45px 50px;
+      border-radius: 16px;
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+    }
+    .booklet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--gold-yellow), var(--sunset-orange));
+      border-radius: 16px 16px 0 0;
+    }
+    header {
+      text-align: center;
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 22px;
+      margin-bottom: 30px;
+    }
+    h1 {
+      font-family: var(--font-grandeur);
+      font-size: 42px;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      line-height: 1.15;
+      margin-bottom: 6px;
+    }
+    .sub {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teak-wood);
+      font-weight: 700;
+    }
+    .welcome-intro {
+      font-family: var(--font-grandeur);
+      font-size: 19px;
+      font-style: italic;
+      color: var(--teak-wood);
+      line-height: 1.5;
+      margin-bottom: 28px;
+      text-align: center;
+      background: #FFFBF5;
+      border-left: 3px solid var(--sunset-orange);
+      padding: 14px 20px;
+      border-radius: 0 8px 8px 0;
+    }
+    h3 {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--sunset-orange);
+      margin: 24px 0 12px;
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 6px;
+      font-weight: 800;
+    }
+    p, li {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--text-body);
+      margin-bottom: 10px;
+    }
+    ul { padding-left: 20px; margin-bottom: 16px; }
+    .highlight-card {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-left: 4px solid var(--sunset-orange);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+    .highlight-card strong {
+      color: var(--sunset-orange);
+      font-family: var(--font-heading);
+      font-size: 12.5px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 700px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .btn-print {
+      display: block;
+      margin: 35px auto 0;
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+      transition: all 0.2s;
+    }
+    .btn-print:hover {
+      background: linear-gradient(135deg, var(--sunset-hover), var(--sunset-orange));
+      transform: translateY(-2px);
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .top-nav { display: none; }
+      .booklet { box-shadow: none; border: none; border-radius: 0; padding: 0; width: 100%; max-width: 100%; }
+      .booklet::before { display: none; }
+      .btn-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-nav">
+    <a href="../../../Arrive_Yoga_Executive_Dashboard.html" class="btn-nav">← Executive Dashboard</a>
+    <a href="../../../START_HERE_OFFICE_OPERATIONS_MANUAL.html" class="btn-nav">📖 Operations Manual</a>
+  </div>
+
+  <div class="booklet">
+    <header>
+      <h1>Where Comfort Meets Grandeur</h1>
+      <div class="sub">The Art of Arrival • Costa Rica Guest Welcome & Travel Guide • Amanti Resort</div>
+    </header>
+
+    <p class="welcome-intro">
+      "You do not need to arrive healed, fixed, or ready. You only need to arrive willing to breathe."<br>
+      <span style="font-size: 13px; font-family: var(--font-body); font-style: normal; font-weight: 700; color: var(--sunset-orange); margin-top: 4px; display: block;">— Carly Anne Kasinpila, Founder & Lead Facilitator</span>
+    </p>
+
+    <div class="highlight-card">
+      <p style="margin-bottom: 6px;"><strong>YOUR DESTINATION:</strong> Amanti Resort & Spa, Playa Hermosa, Puntarenas Province, Costa Rica.</p>
+      <p style="margin-bottom: 6px;"><strong>AIRPORT:</strong> Juan Santamaría International Airport (SJO) in San José.</p>
+      <p style="margin-bottom: 0;"><strong>TRANSFERS:</strong> Coordinated executive private Sprinter & bus shuttles depart SJO for the scenic 90-minute coastal drive.</p>
+    </div>
+
+    <div class="grid-2">
+      <div>
+        <h3>Travel & Customs Guidelines</h3>
+        <ul>
+          <li><strong>Passport Validity:</strong> Costa Rican immigration requires your passport to be valid for at least 6 months past your travel dates.</li>
+          <li><strong>Customs Address:</strong> On your entry form, enter: <em>Amanti Resort & Spa, Playa Hermosa, Puntarenas</em>.</li>
+          <li><strong>Airport Exit:</strong> Collect your bags and walk out the main terminal exit. Look for our bilingual greeter holding the <strong>Arrive Yoga / Amanti</strong> sign.</li>
+          <li><strong>Hydration:</strong> Chilled water and fresh tropical elixirs will be provided inside your airport shuttle.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What to Pack</h3>
+        <ul>
+          <li>5–6 sets of lightweight, breathable yoga & movement attire</li>
+          <li>2 swimsuits (for waterfall pools, cold plunge, and black sand beach)</li>
+          <li>Trail running sneakers or strap adventure sandals for Rainmaker bridges</li>
+          <li>Reef-safe sunscreen & natural lemongrass insect repellent</li>
+          <li>Personal journal, pen, and a light wrap or kimono for morning meditation</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Resort Sanctuary Amenities</h3>
+    <p>Amanti Resort is reserved exclusively for our private cohort. You will enjoy 2 private waterfall swimming pools, a 12-person hydrotherapy jacuzzi, cold immersion plunge, and an open-air panoramic yoga shala deck nestled under Almendra trees frequented by wild Scarlet Macaws and Toucans.</p>
+
+    <h3>Cuisine & Dietary Care</h3>
+    <p>Our executive private chef, Chef Mateo Salazar, prepares 3 daily organic farm-to-table meals tailored to your dietary requirements (vegan, gluten-free, keto, vegetarian, or pescatarian). Fresh coconut water and adaptogenic herbal elixirs are served daily.</p>
+
+    <button class="btn-print" onclick="window.print()">🖨️ Print / Download as PDF</button>
+  </div>
+
+  <script>
+    // Load Brand Governance Tokens from Carly's Portal if set
+    const brandGov = localStorage.getItem('arrive_brand_governance');
+    if (brandGov) {
+      try {
+        const parsed = JSON.parse(brandGov);
+        if (parsed.colors) {
+          const root = document.documentElement;
+          if (parsed.colors.primary) root.style.setProperty('--sunset-orange', parsed.colors.primary);
+          if (parsed.colors.secondary) root.style.setProperty('--gold-yellow', parsed.colors.secondary);
+          if (parsed.colors.teak) root.style.setProperty('--teak-wood', parsed.colors.teak);
+          if (parsed.colors.canvas) root.style.setProperty('--canvas-bg', parsed.colors.canvas);
+          if (parsed.colors.fontDisplay) root.style.setProperty('--font-grandeur', parsed.colors.fontDisplay);
+        }
+      } catch(e) {}
+    }
+  </script>
+</body>
+</html>

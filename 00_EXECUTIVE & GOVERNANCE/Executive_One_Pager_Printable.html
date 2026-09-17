@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrive Yoga & Wellness — Executive One-Pager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas-bg: #FAF5EB;
+      --canvas-surface: #FFFFFF;
+      --canvas-subtle: #F3ECE0;
+      --sunset-orange: #EA580C;
+      --sunset-hover: #C2410C;
+      --sunset-amber: #D9531E;
+      --gold-yellow: #FBAF18;
+      --teak-wood: #78350F;
+      --text-main: #18181B;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --border-light: rgba(234, 88, 12, 0.2);
+      --font-grandeur: 'Cormorant Garamond', Georgia, serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--canvas-bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      padding: 30px 20px 60px;
+    }
+    .top-bar {
+      width: 210mm;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .btn-nav {
+      font-family: var(--font-heading);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      text-decoration: none;
+      background: var(--canvas-surface);
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-nav:hover {
+      background: #FFF7ED;
+    }
+    .sheet {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: var(--canvas-surface);
+      padding: 20mm;
+      box-shadow: 0 10px 40px rgba(120, 53, 15, 0.1);
+      border-radius: 8px;
+      border: 1px solid var(--border-light);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .sheet::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--gold-yellow), var(--sunset-orange));
+      border-radius: 8px 8px 0 0;
+    }
+    header {
+      border-bottom: 2px solid var(--border-light);
+      padding-bottom: 16px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .brand-title {
+      font-family: var(--font-grandeur);
+      font-size: 38px;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--sunset-orange);
+      line-height: 1.1;
+    }
+    .tagline {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teak-wood);
+      font-weight: 700;
+    }
+    .founder-meta {
+      text-align: right;
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+    .founder-meta strong {
+      display: block;
+      color: var(--text-main);
+      font-size: 16px;
+      font-family: var(--font-heading);
+    }
+    .lead-quote {
+      font-family: var(--font-grandeur);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--teak-wood);
+      background: #FFFBF5;
+      border-left: 3px solid var(--sunset-orange);
+      padding: 12px 18px;
+      margin-bottom: 22px;
+      border-radius: 0 6px 6px 0;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--sunset-orange);
+      border-bottom: 1px solid var(--canvas-subtle);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .pillar-box {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    .pillar-box strong {
+      color: var(--sunset-orange);
+      font-size: 12.5px;
+      display: block;
+      margin-bottom: 2px;
+      font-family: var(--font-heading);
+    }
+    .pillar-box p {
+      font-size: 11px;
+      color: var(--text-body);
+      line-height: 1.4;
+    }
+    .ecosystem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .ecosystem-card {
+      background: var(--canvas-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .ecosystem-card h4 {
+      font-family: var(--font-heading);
+      font-size: 13px;
+      color: var(--sunset-orange);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .ecosystem-card p {
+      font-size: 11.5px;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: linear-gradient(135deg, var(--sunset-orange), var(--sunset-amber));
+      color: white;
+      padding: 14px;
+      border-radius: 8px;
+      text-align: center;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.2);
+    }
+    .metric-val {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .metric-lbl {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid var(--canvas-subtle);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .top-bar { display: none; }
+      .sheet { box-shadow: none; border: none; margin: 0; width: 100%; min-height: 100%; padding: 15mm; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <a href="../Arrive_Yoga_Executive_Dashboard.html" class="btn-nav">← Executive Dashboard</a>
+    <button onclick="window.print()" class="btn-nav">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="sheet">
+    <div>
+      <header>
+        <div>
+          <h1 class="brand-title">Arrive Yoga & Wellness</h1>
+          <div class="tagline">The Art of Arrival • Somatic Methodology & Retreats</div>
+        </div>
+        <div class="founder-meta">
+          <strong>Carly Anne Kasinpila</strong>
+          Founder & CEO • 500 E-RYT
+        </div>
+      </header>
+
+      <div class="lead-quote">
+        "Where Comfort Meets Grandeur. This isn't performative yoga. No flexibility contest. No comparison. It is a guided, trauma-aware human return to yourself—where every body is a yoga body."
+      </div>
+
+      <!-- Core Method -->
+      <div>
+        <div class="section-title">The ARRIVE Method™ — 6 Somatic Pillars</div>
+        <div class="pillars-grid">
+          <div class="pillar-box">
+            <strong>A — Anchor (Earth)</strong>
+            <p>Grounding the body, stabilizing diaphragmatic breath, cultivating baseline nervous system safety.</p>
+          </div>
+          <div class="pillar-box">
+            <strong>R — Reveal (Water)</strong>
+            <p>Noticing sensations, emotional holdings, and truth without judgment or performative critique.</p>
+          </div>
+          <div class="pillar-box">
+            <strong>R — Rewrite (Fire)</strong>
+            <p>Transforming old narratives into self-respecting boundaries and empowered neuroplastic choices.</p>
+          </div>
+          <div class="pillar-box">
+            <strong>I — Integrate (Heart)</strong>
+            <p>Translating peak shifts off the mat into enduring daily behavior and somatic co-regulation.</p>
+          </div>
+          <div class="pillar-box">
+            <strong>V — Voice (Air)</strong>
+            <p>Vagal toning, vocal affirmations, authentic communication, and throat chakra resonance.</p>
+          </div>
+          <div class="pillar-box">
+            <strong>E — Embody (Avatar)</strong>
+            <p>Living the practice through fluid movement, posture, presence, relationships, and leadership.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ecosystem -->
+      <div>
+        <div class="section-title">The Arrive Business Ecosystem</div>
+        <div class="ecosystem-grid">
+          <div class="ecosystem-card">
+            <h4>1. Luxury Retreats (The Art of Arrival)</h4>
+            <p>Full buyout cohorts at Amanti Resort, Costa Rica. 22 private suites (>430 sq ft), 2 waterfall pools, panoramic shala, and farm-to-table dining.</p>
+          </div>
+          <div class="ecosystem-card">
+            <h4>2. Arrive Consulting & Corporate Immersion</h4>
+            <p>Somatic intelligence for high-performing founders, venture leaders, and executive teams seeking nervous system resilience and team co-regulation.</p>
+          </div>
+          <div class="ecosystem-card">
+            <h4>3. 200/500-Hr Somatic Teacher Training</h4>
+            <p>Hybrid curriculum certifying the next generation of trauma-aware teachers in functional biomechanics, 432Hz sound, and conscious business.</p>
+          </div>
+          <div class="ecosystem-card">
+            <h4>4. Yogis Give Back (Philanthropy)</h4>
+            <p>Audited 1% revenue pledge directly supporting local Costa Rican rainforest reforestation, marine preservation, and community wellness initiatives.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-bar">
+        <div>
+          <div class="metric-val">12 Yrs</div>
+          <div class="metric-lbl">Personal Practice</div>
+        </div>
+        <div>
+          <div class="metric-val">500 Hr</div>
+          <div class="metric-lbl">Formal YTT & Somatics</div>
+        </div>
+        <div>
+          <div class="metric-val">22 Suites</div>
+          <div class="metric-lbl">Amanti Resort Buyout</div>
+        </div>
+        <div>
+          <div class="metric-val">1%</div>
+          <div class="metric-lbl">Revenue Give-Back</div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span>Arrive Yoga & Wellness Center LLC • Global Retreat Operations</span>
+      <span>carly@arriveyoga.com • www.arriveyoga.com</span>
+      <span>Press Ctrl+P to Print / Save PDF</span>
+    </footer>
+  </div>
+
+  <script>
+    // Load Brand Governance Tokens from Carly's Portal if set
+    const brandGov = localStorage.getItem('arrive_brand_governance');
+    if (brandGov) {
+      try {
+        const parsed = JSON.parse(brandGov);
+        if (parsed.colors) {
+          const root = document.documentElement;
+          if (parsed.colors.primary) root.style.setProperty('--sunset-orange', parsed.colors.primary);
+          if (parsed.colors.secondary) root.style.setProperty('--gold-yellow', parsed.colors.secondary);
+          if (parsed.colors.teak) root.style.setProperty('--teak-wood', parsed.colors.teak);
+          if (parsed.colors.canvas) root.style.setProperty('--canvas-bg', parsed.colors.canvas);
+          if (parsed.colors.fontDisplay) root.style.setProperty('--font-grandeur', parsed.colors.fontDisplay);
+        }
+      } catch(e) {}
+    }
+  </script>
+</body>
+</html>
