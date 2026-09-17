@@ -1,10 +1,10 @@
 # Arrive Yoga & Wellness — Corporate Operations Hub & Ecosystem
 **Version 0.0.1** | *Release Candidate v0.0.1*
 
-[![Brand: Where Comfort Meets Grandeur](https://img.shields.io/badge/Brand-Where%20Comfort%20Meets%20Grandeur-EA580C.svg)](https://github.com/arriveyogaandwellness/Arrive-Corporate-Dashboard-)
-[![Palette: Sunset Grandeur](https://img.shields.io/badge/Palette-Sunset%20Grandeur%20%23FAF5EB-FBAF18.svg)](https://github.com/arriveyogaandwellness/Arrive-Corporate-Dashboard-)
-[![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-78350F.svg)](https://github.com/arriveyogaandwellness/Arrive-Corporate-Dashboard-)
-[![Status: Move--In%20Ready](https://img.shields.io/badge/Status-Move--In%20Ready%20(Zero%20Mock%20Data)-10B981.svg)](https://github.com/arriveyogaandwellness/Arrive-Corporate-Dashboard-)
+[![Brand: Where Comfort Meets Grandeur](https://img.shields.io/badge/Brand-Where%20Comfort%20Meets%20Grandeur-EA580C.svg)](https://github.com/arriveyogaandwellness/Arrive)
+[![Palette: Sunset Grandeur](https://img.shields.io/badge/Palette-Sunset%20Grandeur%20%23FAF5EB-FBAF18.svg)](https://github.com/arriveyogaandwellness/Arrive)
+[![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-78350F.svg)](https://github.com/arriveyogaandwellness/Arrive)
+[![Status: Move--In%20Ready](https://img.shields.io/badge/Status-Move--In%20Ready%20(Zero%20Mock%20Data)-10B981.svg)](https://github.com/arriveyogaandwellness/Arrive)
 
 Welcome to the central corporate back-office, governance framework, and interactive web operations suite for **Arrive Yoga & Wellness**, founded and led by **Carly Anne Kasinpila**.
 
@@ -133,8 +133,8 @@ All spreadsheet registers and tracking templates in this repository contain **ze
 ### Local Setup:
 1. Clone this repository:
    ```bash
-   git clone https://github.com/arriveyogaandwellness/Arrive-Corporate-Dashboard-.git
-   cd Arrive-Corporate-Dashboard-
+   git clone https://github.com/arriveyogaandwellness/Arrive.git
+   cd Arrive
    ```
 2. Launch the Corporate Office Hub:
    - On Windows: Double-click `Open_Arrive_Yoga_Office.bat`

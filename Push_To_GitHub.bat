@@ -2,7 +2,7 @@
 title Arrive Yoga & Wellness - GitHub Sync (v0.0.1)
 echo ==============================================================
 echo    ARRIVE YOGA & WELLNESS - GITHUB REPOSITORY SYNC
-echo    Target: https://github.com/arriveyogaandwellness/Arrive-Corporate-Dashboard-.git
+echo    Target: https://github.com/arriveyogaandwellness/Arrive.git
 echo    Version: 0.0.1 (v0.0.1)
 echo ==============================================================
 echo.
