@@ -148,8 +148,15 @@
       grid-template-columns: 1fr 1fr;
       gap: 24px;
     }
-    @media (max-width: 700px) {
-      .grid-2 { grid-template-columns: 1fr; }
+    @media (max-width: 768px) {
+      body { padding: 12px 10px 40px; }
+      .top-nav { flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+      .btn-nav { padding: 7px 12px; font-size: 11px; }
+      .booklet { padding: 24px 16px; border-radius: 12px; }
+      h1 { font-size: clamp(24px, 6.5vw, 34px); }
+      header { padding-bottom: 16px; margin-bottom: 20px; }
+      .grid-2 { grid-template-columns: 1fr; gap: 16px; }
+      .btn-print { width: 100%; text-align: center; padding: 14px; font-size: 14px; }
     }
     .btn-print {
       display: block;

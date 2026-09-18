@@ -214,8 +214,57 @@
       display: flex;
       justify-content: space-between;
       font-size: 11px;
-      color: var(--text-muted);
+    /* Mobile-First Responsive Styles (< 850px, < 480px) */
+    @media (max-width: 850px) {
+      body {
+        padding: 16px 12px 40px;
+      }
+      .top-bar {
+        width: 100%;
+        margin-bottom: 12px;
+      }
+      .sheet {
+        width: 100%;
+        min-height: auto;
+        padding: 24px 18px;
+        border-radius: 12px;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .brand-title {
+        font-size: clamp(24px, 6.5vw, 32px);
+      }
+      .pillars-summary {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+      }
+      .metrics-strip {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+      }
+      .unit-econ-card {
+        padding: 16px;
+      }
+      footer {
+        flex-direction: column;
+        gap: 8px;
+        align-items: flex-start;
+      }
     }
+
+    @media (max-width: 480px) {
+      .metrics-strip {
+        grid-template-columns: 1fr !important;
+      }
+      .btn-nav {
+        padding: 6px 12px;
+        font-size: 11px;
+      }
+    }
+
     @media print {
       body { background: white; padding: 0; }
       .top-bar { display: none; }
