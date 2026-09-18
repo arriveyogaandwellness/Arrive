@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Arrival | Modern Zen Minimalist • Costa Rica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zen: { 50: '#fbfbf9', 100: '#f5f4ef', 200: '#e8e5db', 300: '#d5d0c1', 600: '#5c645b', 800: '#2c352f', 900: '#1a221d', 950: '#0f1411' },
+                        sage: { 400: '#94a89a', 500: '#758d7d', 600: '#5a7262' }
+                    },
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Cinzel"', 'serif'],
+                        display: ['"Syne"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-zen-50 text-zen-800 font-sans antialiased selection:bg-sage-500 selection:text-white">
+
+    <!-- Minimalist Header -->
+    <header class="sticky top-0 z-50 bg-zen-50/90 backdrop-blur-md border-b border-zen-200">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-2">
+                <span class="font-display font-extrabold text-2xl tracking-tighter text-zen-900">ARRIVE</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-sage-500"></span>
+                <span class="text-xs uppercase tracking-widest text-zen-600 font-medium">Costa Rica</span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold text-zen-600">
+                <a href="#philosophy" class="hover:text-zen-900 transition-colors">Philosophy</a>
+                <a href="#host" class="hover:text-zen-900 transition-colors">Facilitator</a>
+                <a href="#quiz" class="hover:text-zen-900 transition-colors">Archetype</a>
+                <a href="#schedule" class="hover:text-zen-900 transition-colors">Schedule</a>
+                <a href="#villas" class="hover:text-zen-900 transition-colors">Sanctuary</a>
+                <a href="#pricing" class="hover:text-zen-900 transition-colors">Investment</a>
+            </nav>
+
+            <a href="#pricing" class="px-5 py-2.5 rounded-full bg-zen-900 text-white font-medium text-xs uppercase tracking-wider hover:bg-sage-600 transition-all">
+                Reserve Stay
+            </a>
+        </div>
+    </header>
+
+    <!-- Zen Hero Section -->
+    <section id="hero" class="relative py-28 md:py-36 overflow-hidden bg-zen-100 border-b border-zen-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sage-500/10 text-sage-600 text-xs font-semibold uppercase tracking-widest mb-6">
+                August 2026 • Amanti Boutique Sanctuary • Costa Rica
+            </div>
+
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-zen-950 tracking-tight leading-[1.1] mb-6">
+                A quiet return to <br class="hidden sm:inline">
+                <span class="font-serif italic font-normal text-sage-600">your true nature.</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-zen-600 text-base md:text-lg leading-relaxed mb-10">
+                An elemental awakening blending trauma-aware nervous system regulation, ocean breath, and mindful stillness at Amanti Resort, Playa Hermosa.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pricing" class="w-full sm:w-auto px-8 py-4 rounded-full bg-zen-900 text-white font-semibold text-xs uppercase tracking-widest hover:bg-sage-600 transition-all shadow-sm">
+                    View Package Options ($2,200+)
+                </a>
+                <a href="#quiz" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white border border-zen-300 text-zen-800 font-semibold text-xs uppercase tracking-widest hover:bg-zen-50 transition-all">
+                    Soul Archetype Assessment
+                </a>
+            </div>
+
+            <!-- Zen Photography Strip -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16">
+                <div class="rounded-2xl overflow-hidden h-64 border border-zen-200 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" alt="Yoga Shala" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 border border-zen-200 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Playa Hermosa Coast" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-2xl overflow-hidden h-64 border border-zen-200 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Mindful Stillness" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zen Philosophy & Somatic Pillars -->
+    <section id="philosophy" class="py-24 bg-zen-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-sage-600">The Method</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-zen-950 mt-2">Trauma-Aware Nervous System Support</h2>
+                </div>
+                <p class="text-zen-600 text-sm md:text-base leading-relaxed">
+                    This is not performative yoga. There is no flexibility contest and no comparison. We create intentional safety so your nervous system can downshift from chronic hypervigilance into true restorative ease.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm space-y-3">
+                    <div class="text-xs font-bold font-serif text-sage-600">01 / BODY</div>
+                    <h4 class="font-display font-bold text-zen-900 text-lg">Fascial Hydration</h4>
+                    <p class="text-xs text-zen-600 leading-relaxed">Release chronic desk-bound tension patterns and hydrate responsive tissues.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm space-y-3">
+                    <div class="text-xs font-bold font-serif text-sage-600">02 / MIND</div>
+                    <h4 class="font-display font-bold text-zen-900 text-lg">Neural Quieting</h4>
+                    <p class="text-xs text-zen-600 leading-relaxed">Meditation protocols that reduce cognitive noise and replenish mental focus.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm space-y-3">
+                    <div class="text-xs font-bold font-serif text-sage-600">03 / HEART</div>
+                    <h4 class="font-display font-bold text-zen-900 text-lg">Co-Regulation</h4>
+                    <p class="text-xs text-zen-600 leading-relaxed">Evidence-based communal safety that naturally lowers systemic inflammation.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm space-y-3">
+                    <div class="text-xs font-bold font-serif text-sage-600">04 / SPIRIT</div>
+                    <h4 class="font-display font-bold text-zen-900 text-lg">Elemental Purpose</h4>
+                    <p class="text-xs text-zen-600 leading-relaxed">Harmonize Earth, Water, Fire, and Air to reignite joyful authentic alignment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilitator Profile -->
+    <section id="host" class="py-24 bg-zen-100 border-y border-zen-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+                <div class="md:col-span-5">
+                    <div class="rounded-3xl overflow-hidden border border-zen-300 shadow-md">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=85" alt="Carly Anne" class="w-full h-[460px] object-cover">
+                    </div>
+                </div>
+                <div class="md:col-span-7 space-y-5">
+                    <span class="text-xs font-bold uppercase tracking-widest text-sage-600">Your Guide</span>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-zen-900">Carly Anne Kasinpila</h3>
+                    <p class="text-xs uppercase tracking-widest text-zen-600 font-semibold">Founder of Arrive Yoga & Yogis Give Back</p>
+                    <p class="text-sm text-zen-600 leading-relaxed">
+                        "For over ten years, I’ve guided students across Thailand, Los Angeles, and atop mountains in Israel. I believe deeply in welcoming people exactly where they are—without performative expectations."
+                    </p>
+                    <div class="p-4 rounded-2xl bg-white border border-zen-200 text-xs text-zen-700 leading-relaxed">
+                        <strong>Yogis Give Back Initiative:</strong> $1 from every class and $5 from every membership is donated to community healing and environmental protection.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Soul Archetype Quiz -->
+    <section id="quiz" class="py-24 bg-zen-50">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-600">Soul Alignment</span>
+                <h3 class="text-3xl font-display font-bold text-zen-950 mt-1">Discover Your Archetype</h3>
+            </div>
+            <div class="p-8 rounded-3xl bg-white border border-zen-300 shadow-lg text-zen-900" id="zen-quiz-box">
+                <div id="soul-quiz-container"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Accordion -->
+    <section id="schedule" class="py-24 bg-zen-100 border-t border-zen-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-600">The 6-Day Container</span>
+                <h3 class="text-3xl font-display font-bold text-zen-950 mt-1">Intentional Daily Flow</h3>
+            </div>
+
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="p-6 rounded-2xl bg-white border border-zen-200">
+                    <div class="flex justify-between items-center font-display font-bold text-lg text-zen-900">
+                        <span>Day 1: Ground & Arrive</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-zen-100 text-sage-600 font-sans">Earth</span>
+                    </div>
+                    <p class="text-xs text-zen-600 mt-2">SJO pickup, luxury suite check-in, sunset stretch deck session, beach bonfire & welcome feast.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200">
+                    <div class="flex justify-between items-center font-display font-bold text-lg text-zen-900">
+                        <span>Day 2: Flow & Feel</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-zen-100 text-sage-600 font-sans">Water</span>
+                    </div>
+                    <p class="text-xs text-zen-600 mt-2">Morning Vinyasa, Rainmaker hanging bridges & waterfall swim, Emotional Alchemy workshop.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200">
+                    <div class="flex justify-between items-center font-display font-bold text-lg text-zen-900">
+                        <span>Day 3: Ignite & Transform</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-zen-100 text-sage-600 font-sans">Fire</span>
+                    </div>
+                    <p class="text-xs text-zen-600 mt-2">Power Yoga, Jungle Horseback or Mayan Temazcal Sweat Lodge, Burn It Down breakthrough ceremony.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200">
+                    <div class="flex justify-between items-center font-display font-bold text-lg text-zen-900">
+                        <span>Day 4: Inner Realms</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-zen-100 text-sage-600 font-sans">Air</span>
+                    </div>
+                    <p class="text-xs text-zen-600 mt-2">Somatic breathwork, Canopy Ziplining or Spa Day, Stargazing crystal singing bowl sound bath.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200">
+                    <div class="flex justify-between items-center font-display font-bold text-lg text-zen-900">
+                        <span>Day 5: Avatar State</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-zen-100 text-sage-600 font-sans">Avatar</span>
+                    </div>
+                    <p class="text-xs text-zen-600 mt-2">Tortuga Island catamaran day sail & coral reef snorkeling, Gratitude Gala & DJ celebration.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white border border-zen-200">
+                    <div class="flex justify-between items-center font-display font-bold text-lg text-zen-900">
+                        <span>Day 6: Departure</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-zen-100 text-sage-600 font-sans">Integrate</span>
+                    </div>
+                    <p class="text-xs text-zen-600 mt-2">Gentle morning movement, fresh breakfast, group air-conditioned shuttles to SJO Airport.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations & Villas -->
+    <section id="villas" class="py-24 bg-zen-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-600">Amanti Resort</span>
+                <h3 class="text-3xl font-display font-bold text-zen-950 mt-1">Sanctuary Accommodations</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Honeymoon Suite" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-display font-bold text-zen-900 text-lg">Private Queen Suite</h4>
+                        <p class="text-xs text-zen-600 mt-2">Queen Bed, private kitchenette, spa bathroom, patio, pool view & AC.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zen-100 text-xs font-semibold text-sage-600">Double Occupancy</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Macaw Villa" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-display font-bold text-zen-900 text-lg">Macaw 2-Bedroom Villa</h4>
+                        <p class="text-xs text-zen-600 mt-2">Private 2-bedroom villa, kitchen, living room, patio lounge & minibar.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zen-100 text-xs font-semibold text-sage-600">Private Villa</div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-white border border-zen-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="h-48 rounded-xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Amapola Villa" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-display font-bold text-zen-900 text-lg">Amapola 5-Bedroom Estate</h4>
+                        <p class="text-xs text-zen-600 mt-2">Sleeps 10, private pool, gardens, 2 full kitchens & 3 bathrooms.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-zen-100 text-xs font-semibold text-sage-600">VIP Group Estate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-zen-100 border-t border-zen-200">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-sage-600">Investment</span>
+                <h3 class="text-3xl font-display font-bold text-zen-950 mt-1">Reserve Your Sanctuary Spot</h3>
+                <p class="text-xs text-zen-600 mt-2">August 2026 • Costa Rica • $500 lock-in deposit</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="p-8 rounded-3xl bg-white border border-zen-300 shadow-md space-y-6">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-sage-600">Standard Tier</span>
+                        <h4 class="text-2xl font-display font-bold text-zen-900 mt-1">Classic Experience</h4>
+                        <div class="text-3xl font-bold text-zen-950 mt-2">$2,200</div>
+                    </div>
+                    <p class="text-xs text-zen-600">Double occupancy suite, all meals, daily yoga, elemental ceremonies, SJO transport & $25 charity donation.</p>
+                    <button onclick="window.RetreatPricing.selectPackage('standard'); window.RetreatPricing.openCheckoutModal();" class="w-full py-3.5 rounded-full bg-zen-900 text-white font-semibold text-xs uppercase tracking-widest hover:bg-sage-600 transition-all">
+                        Reserve Classic ($500 Deposit)
+                    </button>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-zen-900 text-white border border-zen-800 shadow-xl space-y-6 relative overflow-hidden">
+                    <div class="absolute top-4 right-4 text-xs font-bold px-3 py-1 bg-sage-500 rounded-full text-white uppercase">Elevated</div>
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-sage-400">VIP Tier</span>
+                        <h4 class="text-2xl font-display font-bold text-white mt-1">VIP Sanctuary</h4>
+                        <div class="text-3xl font-bold text-white mt-2">$3,100</div>
+                    </div>
+                    <p class="text-xs text-zen-300">Priority villa upgrade, 1-on-1 private coaching with Carly Anne, luxury gift bag, priority spa access & $50 charity donation.</p>
+                    <button onclick="window.RetreatPricing.selectPackage('vip'); window.RetreatPricing.openCheckoutModal();" class="w-full py-3.5 rounded-full bg-sage-500 text-white font-semibold text-xs uppercase tracking-widest hover:bg-sage-400 transition-all">
+                        Reserve VIP ($500 Deposit)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zen-950 text-zen-300 py-12 text-xs">
+        <div class="max-w-5xl mx-auto px-6 text-center space-y-4">
+            <div class="font-display font-bold text-lg text-white">ARRIVE YOGA & WELLNESS</div>
+            <p>Amanti Resort & Spa, Playa Hermosa, Costa Rica • August 2026</p>
+            <p class="text-zen-400">Contact: carlyarrives@gmail.com | +1 (954) 336-7048</p>
+            <div class="pt-6 border-t border-zen-800 text-zen-500">© 2026 Arrive Yoga. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('style2');
+            window.SoulQuiz.init('soul-quiz-container');
+        });
+    </script>
+</body>
+</html>

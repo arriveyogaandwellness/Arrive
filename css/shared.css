@@ -1,0 +1,246 @@
+/* Arrive Yoga - Shared Core Styles & Animations */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;700;800&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(180, 150, 100, 0.4);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(180, 150, 100, 0.7);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-panel-dark {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Floating Animations */
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-12px) rotate(1.5deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes breatheCircle {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.4); opacity: 1; }
+}
+
+.animate-float {
+    animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+.breathe-animation {
+    animation: breatheCircle 8s ease-in-out infinite;
+}
+
+/* 3D Tilt Card Container */
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.tilt-child {
+    transform: translateZ(25px);
+}
+
+/* Custom Cursor Glow */
+.cursor-glow {
+    pointer-events: none;
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    transition: width 0.3s, height 0.3s, opacity 0.3s;
+}
+
+/* Floating Style Switcher Dock */
+#style-switcher-dock {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(15, 23, 42, 0.90);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s ease;
+}
+
+#style-switcher-dock:hover {
+    box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.4);
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.dock-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #e2e8f0;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dock-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+}
+
+.dock-btn.active {
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    color: #0f172a;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+.dock-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Ambient Audio Pill */
+.audio-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffd700;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.2s ease;
+}
+
+.audio-toggle-btn:hover {
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.audio-toggle-btn.playing {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: #22c55e;
+    color: #4ade80;
+}
+
+/* Sound Wave Bars */
+.sound-bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+}
+.sound-bar {
+    width: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
+    height: 4px;
+    transition: height 0.2s ease;
+}
+.playing .sound-bar:nth-child(1) { animation: soundWave 0.8s infinite ease-in-out; }
+.playing .sound-bar:nth-child(2) { animation: soundWave 0.6s infinite ease-in-out 0.2s; }
+.playing .sound-bar:nth-child(3) { animation: soundWave 0.9s infinite ease-in-out 0.4s; }
+
+@keyframes soundWave {
+    0%, 100% { height: 3px; }
+    50% { height: 12px; }
+}
+
+@media (max-width: 900px) {
+    #style-switcher-dock {
+        padding: 6px 10px;
+        bottom: 12px;
+        overflow-x: auto;
+        max-width: 94vw;
+        gap: 6px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    #style-switcher-dock::-webkit-scrollbar {
+        display: none;
+    }
+    .dock-btn {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+    .dock-btn span.label {
+        display: none;
+    }
+    #audio-label {
+        display: none;
+    }
+}
+
+/* Mobile-First Utility Helpers */
+@media (max-width: 640px) {
+    body {
+        -webkit-tap-highlight-color: transparent;
+    }
+    .mobile-snap-x {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    .mobile-snap-item {
+        scroll-snap-align: start;
+    }
+}

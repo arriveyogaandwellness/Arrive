@@ -1,0 +1,10 @@
+.git
+node_modules
+npm-debug.log
+.tmp.driveupload
+*.tmp.driveupload
+*.mp4
+*.mov
+*.avi
+*.mkv
+scratch

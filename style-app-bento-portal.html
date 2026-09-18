@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrive Bento Portal | Modern Wellness Command Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bento: { 950: '#FAF5EB', 900: '#FFFFFF', 800: '#F5EFE0' },
+                        glow: { teal: '#EA580C', gold: '#FBAF18' }
+                    },
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="h-full w-full bg-[#FAF5EB] text-[#18181B] font-sans antialiased overflow-hidden p-6 flex flex-col justify-between">
+
+    <!-- Top Bento Navigation -->
+    <header class="flex items-center justify-between mb-4 shrink-0">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-glow-teal to-blue-500 flex items-center justify-center text-black font-display font-black text-sm">
+                A
+            </div>
+            <span class="font-display font-bold text-base tracking-wide text-[#18181B]">ARRIVE BENTO HUB</span>
+        </a>
+
+        <div class="flex items-center gap-4 text-xs">
+            <span class="hidden sm:inline text-slate-500">Costa Rica August 2026 • Amanti Resort</span>
+            <button onclick="window.ZenAudio.toggle()" class="px-3 py-1.5 rounded-xl bg-[#FAF5EB] border border-[#EA580C]/15 text-glow-teal font-bold flex items-center gap-2">
+                <span>🔊</span> Audio Synth
+            </button>
+            <button onclick="window.RetreatPricing.openCheckoutModal()" class="px-5 py-2 rounded-xl bg-[#EA580C] text-white font-bold text-xs uppercase tracking-wider">
+                Reserve ($500)
+            </button>
+        </div>
+    </header>
+
+    <!-- Bento Grid Grid Canvas (Fits perfectly on screen) -->
+    <div class="flex-1 grid grid-cols-1 md:grid-cols-12 gap-4 max-h-full overflow-hidden">
+        
+        <!-- Bento 1: Hero Banner (6 cols) -->
+        <div class="md:col-span-6 rounded-3xl bg-white shadow-md border border-[#EA580C]/15 p-6 flex flex-col justify-between relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-10 -right-10 w-48 h-48 bg-glow-teal/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="space-y-2">
+                <span class="text-[10px] uppercase tracking-widest text-glow-teal font-bold px-2.5 py-0.5 rounded-full bg-glow-teal/10 border border-glow-teal/30">
+                    Trauma-Aware Somatic Retreat
+                </span>
+                <h2 class="text-3xl md:text-4xl font-display font-extrabold text-[#18181B] leading-tight">The Art of Arrival</h2>
+                <p class="text-xs text-slate-600 leading-relaxed max-w-md">
+                    Regulate your nervous system through trauma-aware movement, nature immersion, and elemental rituals at Amanti Resort, Costa Rica.
+                </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4">
+                <button onclick="window.RetreatPricing.openCheckoutModal()" class="px-5 py-2.5 rounded-xl bg-[#EA580C] text-white font-bold text-xs uppercase tracking-wider">
+                    Lock In Spot ($500 Deposit)
+                </button>
+            </div>
+        </div>
+
+        <!-- Bento 2: Weather & Telemetry (3 cols) -->
+        <div class="md:col-span-3 rounded-3xl bg-white shadow-sm border border-[#EA580C]/15 p-6 flex flex-col justify-between shadow-xl">
+            <div class="flex justify-between items-center">
+                <span class="text-xs text-slate-500 font-bold uppercase">Playa Hermosa</span>
+                <span class="text-xl">🌴</span>
+            </div>
+            <div>
+                <div class="text-4xl font-display font-bold text-[#18181B]">84°F</div>
+                <div class="text-xs text-glow-teal font-semibold mt-1">Tropical Ocean 82°F</div>
+            </div>
+            <div class="text-[11px] text-slate-500">2 min to black sand beach</div>
+        </div>
+
+        <!-- Bento 3: Box Breathing Pulse (3 cols) -->
+        <div class="md:col-span-3 rounded-3xl bg-white shadow-sm border border-[#EA580C]/15 p-6 flex flex-col justify-between items-center text-center shadow-xl">
+            <span class="text-[10px] uppercase tracking-widest text-glow-gold font-bold">Box Breathing Regulator</span>
+            <div class="w-20 h-20 rounded-full bg-glow-teal/20 border border-glow-teal/50 breathe-animation flex items-center justify-center text-[9px] font-bold uppercase text-glow-teal">
+                Breathe
+            </div>
+            <span class="text-[11px] text-slate-500">4s Inhale • 4s Hold • 4s Exhale</span>
+        </div>
+
+        <!-- Bento 4: Facilitator Card (4 cols) -->
+        <div class="md:col-span-4 rounded-3xl bg-white shadow-sm border border-[#EA580C]/15 p-6 flex items-center gap-4 shadow-xl">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" class="w-20 h-20 rounded-2xl object-cover border border-white/15">
+            <div class="space-y-1 text-xs">
+                <strong class="text-[#18181B] block text-sm font-bold">Carly Anne Kasinpila</strong>
+                <p class="text-slate-500 text-[11px]">Founder of Arrive Yoga & Yogis Give Back. 10+ yrs guiding global somatic containers.</p>
+            </div>
+        </div>
+
+        <!-- Bento 5: 6-Day Container Flow (4 cols) -->
+        <div class="md:col-span-4 rounded-3xl bg-white shadow-sm border border-[#EA580C]/15 p-6 flex flex-col justify-between shadow-xl text-xs space-y-2">
+            <span class="text-[10px] uppercase tracking-widest text-slate-500 font-bold">6-Day Elemental Journey</span>
+            <div class="grid grid-cols-3 gap-2 text-[10px] text-center">
+                <div class="p-2 rounded-xl bg-[#FAF5EB]"><span class="block text-glow-teal font-bold">Day 1-2</span> Earth & Water</div>
+                <div class="p-2 rounded-xl bg-[#FAF5EB]"><span class="block text-glow-gold font-bold">Day 3-4</span> Fire & Air</div>
+                <div class="p-2 rounded-xl bg-[#FAF5EB]"><span class="block text-purple-400 font-bold">Day 5-6</span> Avatar State</div>
+            </div>
+            <p class="text-[11px] text-slate-500">Rainmaker Waterfalls • Sacred Temazcal • Catamaran</p>
+        </div>
+
+        <!-- Bento 6: Philanthropy ESG (4 cols) -->
+        <div class="md:col-span-4 rounded-3xl bg-gradient-to-br from-bento-900 to-emerald-950 border border-emerald-500/30 p-6 flex flex-col justify-between shadow-xl">
+            <div class="flex justify-between items-center">
+                <span class="text-[10px] uppercase tracking-widest text-emerald-400 font-bold">Yogis Give Back</span>
+                <span class="text-xl">🌎</span>
+            </div>
+            <div>
+                <div class="text-xl font-display font-bold text-[#18181B]">$50 / VIP Ticket</div>
+                <div class="text-xs text-slate-600 mt-1">Costa Rica Rainforest Conservation</div>
+            </div>
+            <div class="text-[11px] text-emerald-400">100% Carbon Neutral Logistics</div>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <footer class="text-center text-[10px] text-slate-500 shrink-0 mt-3">
+        © 2026 Arrive Yoga & Wellness • The Art of Arrival Bento Portal
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('bento');
+        });
+    </script>
+</body>
+</html>

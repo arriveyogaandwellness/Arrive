@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrive Yoga & Wellness | Investor Dashboard & Growth Roadmap 2026-2028</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        invest: { 950: '#FAF5EB', 900: '#FFFFFF', 800: '#F5EFE0', 700: '#E7DEC8' },
+                        emerald: { 400: '#EA580C', 500: '#EA580C', 600: '#C2410C' },
+                        sunset: { 500: '#EA580C', 600: '#C2410C' },
+                        gold: { 400: '#FBAF18', 500: '#D97706' }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#FAF5EB] text-[#18181B] font-sans antialiased selection:bg-[#EA580C] selection:text-[#18181B]">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-xl border-b border-[#EA580C]/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#EA580C] to-[#FBAF18] flex items-center justify-center text-white font-display font-black text-lg shadow-lg shadow-emerald-500/20">
+                    A
+                </div>
+                <div>
+                    <span class="font-display font-bold text-lg tracking-wide text-[#18181B]">ARRIVE VENTURES</span>
+                    <span class="block text-[9px] tracking-[0.25em] text-[#EA580C] uppercase font-semibold">Investor Relations • 2026-2028</span>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold text-slate-600">
+                <a href="#summary" class="hover:text-emerald-400 transition-colors">Executive Summary</a>
+                <a href="#unit-economics" class="hover:text-emerald-400 transition-colors">Unit Economics</a>
+                <a href="#simulator" class="hover:text-emerald-400 transition-colors">ROI Simulator</a>
+                <a href="#roadmap" class="hover:text-emerald-400 transition-colors">Expansion Plan</a>
+                <a href="#esg" class="hover:text-emerald-400 transition-colors">Yogis Give Back ESG</a>
+                <a href="#tiers" class="hover:text-emerald-400 transition-colors">Investment Tiers</a>
+            </nav>
+
+            <a href="#tiers" class="px-5 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs uppercase tracking-wider transition-all">
+                Request Term Sheet
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero / Executive Overview -->
+    <section id="summary" class="py-20 bg-gradient-to-b from-[#FAF5EB] via-[#FFFFFF] to-[#FAF5EB] border-b border-[#EA580C]/15 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
+                <span>📈</span> Investment Prospectus • Transformational Wellness Hospitality
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <h1 class="text-4xl sm:text-6xl font-display font-extrabold text-[#18181B] tracking-tight leading-tight">
+                        Scaling Trauma-Aware <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-gold-400">Luxury Wellness Retreats.</span>
+                    </h1>
+
+                    <p class="text-slate-600 text-base md:text-lg leading-relaxed">
+                        Arrive Yoga & Wellness Center combines 10+ years of proven community brand equity, high-margin boutique eco-retreat operations, and an audited ESG philanthropic model (Yogis Give Back).
+                    </p>
+
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+                        <div class="p-4 rounded-2xl bg-[#FAF5EB] border border-black/5">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider block">Market CAGR</span>
+                            <span class="text-2xl font-display font-bold text-emerald-400 mt-1">16.6%</span>
+                            <span class="text-[11px] text-slate-500 block">$850B Wellness Tourism</span>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#FAF5EB] border border-black/5">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider block">Gross Margin</span>
+                            <span class="text-2xl font-display font-bold text-emerald-400 mt-1">68.4%</span>
+                            <span class="text-[11px] text-slate-500 block">High Unit Profitability</span>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#FAF5EB] border border-black/5">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider block">Net / Cohort</span>
+                            <span class="text-2xl font-display font-bold text-gold-400 mt-1">$41.5K</span>
+                            <span class="text-[11px] text-slate-500 block">Per 6-Day 22-Guest Run</span>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-[#FAF5EB] border border-black/5">
+                            <span class="text-xs text-slate-500 uppercase tracking-wider block">Founder Tenure</span>
+                            <span class="text-2xl font-display font-bold text-[#18181B] mt-1">10+ Yrs</span>
+                            <span class="text-[11px] text-slate-500 block">Carly Anne Kasinpila</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="p-6 rounded-3xl bg-invest-900 border border-emerald-500/30 shadow-2xl space-y-4">
+                        <div class="flex items-center justify-between border-b border-[#EA580C]/15 pb-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Target Opportunity</span>
+                            <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold">2026-2028</span>
+                        </div>
+                        <div class="space-y-3 text-xs text-slate-600">
+                            <div class="flex justify-between py-1 border-b border-black/5">
+                                <span>Global Flagship Sanctuary:</span>
+                                <strong class="text-[#18181B]">Amanti Resort, Costa Rica</strong>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-black/5">
+                                <span>Target Capacity Per Cohort:</span>
+                                <strong class="text-[#18181B]">22 Guests (Buyout)</strong>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-black/5">
+                                <span>VIP Upgrade Penetration:</span>
+                                <strong class="text-emerald-400">42% Historical</strong>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-black/5">
+                                <span>Ancillary Spend (Spa + Excursions):</span>
+                                <strong class="text-[#18181B]">$420 / attendee</strong>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span>Digital Community MRR:</span>
+                                <strong class="text-gold-400">$14,500 / month</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UNIT ECONOMICS BREAKDOWN -->
+    <section id="unit-economics" class="py-20 bg-invest-950 border-b border-[#EA580C]/15">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-emerald-400">Financial Rigor</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-[#18181B] mt-1">Cohort Unit Economics</h2>
+                <p class="text-slate-500 text-sm mt-3">
+                    Detailed revenue and direct cost modeling for a single 22-guest 6-day retreat run at Amanti Resort.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Revenue Streams -->
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">💰</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#18181B]">Gross Revenue</h3>
+                            <span class="text-xs text-slate-500">Total Inflows / Cohort</span>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-display font-bold text-emerald-400 pt-2">$64,240</div>
+                    <div class="space-y-2 text-xs text-slate-600 border-t border-[#EA580C]/15 pt-4">
+                        <div class="flex justify-between">
+                            <span>14 Standard Passes ($2,200):</span>
+                            <strong>$30,800</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>8 VIP Passes ($3,100):</span>
+                            <strong>$24,800</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Elective Spa Add-Ons:</span>
+                            <strong>$4,640</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Eco-Excursions Add-Ons:</span>
+                            <strong>$4,000</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Direct COGS -->
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold">📉</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#18181B]">Direct Operating COGS</h3>
+                            <span class="text-xs text-slate-500">Venue & Facilitation</span>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-display font-bold text-rose-400 pt-2">$22,700</div>
+                    <div class="space-y-2 text-xs text-slate-600 border-t border-[#EA580C]/15 pt-4">
+                        <div class="flex justify-between">
+                            <span>Amanti Resort 22-Bed Buyout:</span>
+                            <strong>$13,500</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Private Chef & Farm-to-Table F&B:</span>
+                            <strong>$4,800</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>SJO Airport Shuttle Fleet:</span>
+                            <strong>$1,600</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Excursion Operator & Insurance:</span>
+                            <strong>$2,800</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Net Cohort EBITDA -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-invest-800 to-invest-900 border-2 border-emerald-500/50 space-y-4 shadow-xl">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center font-bold">✨</div>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#18181B]">Net Cohort EBITDA</h3>
+                            <span class="text-xs text-emerald-400 font-semibold">64.6% Margin</span>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-display font-bold text-gold-400 pt-2">$41,540</div>
+                    <div class="space-y-2 text-xs text-slate-600 border-t border-[#EA580C]/15 pt-4">
+                        <div class="flex justify-between">
+                            <span>Philanthropic Yogis Give Back (ESG):</span>
+                            <strong class="text-emerald-400">-$1,250</strong>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Facilitation Team Stipends:</span>
+                            <strong>-$4,500</strong>
+                        </div>
+                        <div class="flex justify-between pt-2 border-t border-[#EA580C]/15 font-bold text-sm text-[#18181B]">
+                            <span>Net Retained Profit / Run:</span>
+                            <span class="text-emerald-400">$35,790</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ROI SIMULATOR -->
+    <section id="simulator" class="py-20 bg-invest-900 border-b border-[#EA580C]/15">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold tracking-widest uppercase text-emerald-400">Interactive Modeling</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-[#18181B] mt-1">Annual Financial Simulator</h2>
+                <p class="text-slate-500 text-sm mt-2">Adjust operational parameters below to model annual scaling revenue and investor return.</p>
+            </div>
+
+            <div class="p-8 md:p-12 rounded-3xl bg-invest-950 border border-[#EA580C]/20 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Controls (6 cols) -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                            <span>Annual Retreat Cohorts:</span>
+                            <span id="sim-cohorts-val" class="text-emerald-400 font-bold text-sm">4 Cohorts</span>
+                        </div>
+                        <input type="range" id="sim-cohorts" min="1" max="10" value="4" step="1" oninput="updateSim()" class="w-full accent-emerald-500 cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                            <span>1 Cohort</span>
+                            <span>5 Cohorts</span>
+                            <span>10 Cohorts</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                            <span>Avg. Ticket Price:</span>
+                            <span id="sim-price-val" class="text-emerald-400 font-bold text-sm">$2,650</span>
+                        </div>
+                        <input type="range" id="sim-price" min="2000" max="3800" value="2650" step="50" oninput="updateSim()" class="w-full accent-emerald-500 cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                            <span>$2,000</span>
+                            <span>$2,900</span>
+                            <span>$3,800</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-xs font-bold uppercase tracking-wider mb-2">
+                            <span>VIP Upgrade Adoption Rate:</span>
+                            <span id="sim-vip-val" class="text-emerald-400 font-bold text-sm">40%</span>
+                        </div>
+                        <input type="range" id="sim-vip" min="10" max="80" value="40" step="5" oninput="updateSim()" class="w-full accent-emerald-500 cursor-pointer">
+                        <div class="flex justify-between text-[10px] text-slate-500 mt-1">
+                            <span>10% VIP</span>
+                            <span>45% VIP</span>
+                            <span>80% VIP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Simulation Output (6 cols) -->
+                <div class="lg:col-span-6 p-6 rounded-2xl bg-invest-900 border border-emerald-500/30 flex flex-col justify-between space-y-4">
+                    <div class="space-y-3">
+                        <span class="text-xs uppercase tracking-wider font-bold text-emerald-400">Projected Performance</span>
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div>
+                                <span class="text-xs text-slate-500 block">Annual Gross Revenue</span>
+                                <span id="out-annual-rev" class="text-2xl md:text-3xl font-display font-bold text-[#18181B]">$278,960</span>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-500 block">Annual Net EBITDA</span>
+                                <span id="out-annual-ebitda" class="text-2xl md:text-3xl font-display font-bold text-emerald-400">$172,160</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-[#EA580C]/15 space-y-2 text-xs text-slate-600">
+                            <div class="flex justify-between">
+                                <span>Total Annual Attendees:</span>
+                                <strong id="out-attendees" class="text-[#18181B]">88 Guests</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Est. Investor Dividend Pool (25%):</span>
+                                <strong id="out-dividend" class="text-gold-400">$43,040 / yr</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Projected 3-Year Cash-on-Cash ROI:</span>
+                                <strong id="out-roi" class="text-emerald-400">129.1%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#tiers" class="w-full py-3 rounded-xl bg-emerald-500 text-white font-display font-bold text-xs uppercase tracking-wider text-center hover:bg-emerald-400 transition-all">
+                        Inquire For Investment Allocation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-YEAR EXPANSION ROADMAP -->
+    <section id="roadmap" class="py-20 bg-invest-950 border-b border-[#EA580C]/15">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-emerald-400">Scaling Horizon</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-[#18181B] mt-1">2026 - 2028 Strategic Roadmap</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase">Phase 1 • 2026</span>
+                    <h3 class="text-xl font-bold font-display text-[#18181B]">Costa Rica Amanti Flagship</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Scale to 4 annual cohorts at Amanti Resort. Launch global digital membership app (MRR) and establish audited Yogis Give Back philanthropy benchmark.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold uppercase">Phase 2 • 2027</span>
+                    <h3 class="text-xl font-bold font-display text-[#18181B]">Bali & Mediterranean Expansion</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Replicate high-margin retreat playbook in Ubud (Bali) and Mallorca (Spain). Scale annual cohort volume to 10 international dates with localized facilitators.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-4">
+                    <span class="px-3 py-1 rounded-full bg-gold-500/20 text-gold-400 text-xs font-bold uppercase">Phase 3 • 2028</span>
+                    <h3 class="text-xl font-bold font-display text-[#18181B]">Arrive Eco-Sanctuary Property</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Syndicated real-estate land acquisition for permanent Arrive Sanctuary biophilic wellness estate in Costa Rica, generating year-round hospitality yield.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESG & PHILANTHROPY -->
+    <section id="esg" class="py-20 bg-invest-900 border-b border-[#EA580C]/15">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold tracking-widest uppercase text-emerald-400">Audited ESG Framework</span>
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-[#18181B]">Yogis Give Back Initiative</h2>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Unlike traditional hospitality models, Arrive integrates authentic ESG philanthropy directly into unit economics: $1 from every digital class, $5 from studio memberships, and $25-$50 per retreat guest directly funds local reforestation and community nervous system healing programs.
+                    </p>
+                    <div class="p-4 rounded-2xl bg-invest-950 border border-emerald-500/30 text-xs space-y-2">
+                        <div class="text-emerald-400 font-bold">Verified Community Impact Metrics:</div>
+                        <ul class="list-disc list-inside text-slate-600 space-y-1">
+                            <li>100% Carbon-Neutral Retreat Logistics</li>
+                            <li>Direct partnership with Costa Rica Rainforest Conservation</li>
+                            <li>Transparent voting roster: 12 rotating verified charities</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-invest-950 border border-[#EA580C]/15 text-center space-y-6">
+                    <div class="text-5xl">🌿🤝🌎</div>
+                    <h3 class="text-2xl font-display font-bold text-[#18181B]">Transformation Beyond The Self</h3>
+                    <p class="text-xs text-slate-500 max-w-md mx-auto">
+                        Wellness travelers in the post-pandemic era demand authentic sustainability. Arrive's verified giving model drives industry-leading retention and VIP conversion rates.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVESTMENT TIERS -->
+    <section id="tiers" class="py-20 bg-invest-950">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-bold tracking-widest uppercase text-emerald-400">Capital Allocations</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-[#18181B] mt-1">Investment Offerings</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-slate-500">Retreat Partner</span>
+                        <h4 class="text-2xl font-display font-bold text-[#18181B] mt-1">Cohort Sponsor</h4>
+                        <div class="text-3xl font-display font-bold text-emerald-400 mt-2">$25,000</div>
+                        <p class="text-xs text-slate-600 mt-4 leading-relaxed">
+                            Fixed quarterly revenue share on 2 retreat cohorts + 1 complimentary VIP retreat seat per annum.
+                        </p>
+                    </div>
+                    <button onclick="alert('Inquiry received. The Arrive Ventures investment team will send the prospectus.');" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 text-[#18181B] font-bold text-xs uppercase tracking-wider">
+                        Request Packet
+                    </button>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-invest-800 to-invest-900 border-2 border-emerald-500 space-y-6 flex flex-col justify-between shadow-2xl">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Angel Growth</span>
+                        <h4 class="text-2xl font-display font-bold text-[#18181B] mt-1">Seed Equity Partner</h4>
+                        <div class="text-3xl font-display font-bold text-emerald-400 mt-2">$100,000</div>
+                        <p class="text-xs text-slate-600 mt-4 leading-relaxed">
+                            Direct equity participation in Arrive Global Brand entity, digital app MRR dividends, and preferred board observer rights.
+                        </p>
+                    </div>
+                    <button onclick="alert('Inquiry received. The Arrive Ventures investment team will send the prospectus.');" class="w-full py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-xs uppercase tracking-wider shadow-lg">
+                        Request Term Sheet
+                    </button>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="p-8 rounded-3xl bg-invest-900 border border-[#EA580C]/15 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-gold-400">Real Estate Syndicate</span>
+                        <h4 class="text-2xl font-display font-bold text-[#18181B] mt-1">Eco-Sanctuary Syndicate</h4>
+                        <div class="text-3xl font-display font-bold text-gold-400 mt-2">$250,000+</div>
+                        <p class="text-xs text-slate-600 mt-4 leading-relaxed">
+                            Direct real-estate equity in Costa Rica property acquisition for permanent Arrive Sanctuary flagship facility.
+                        </p>
+                    </div>
+                    <button onclick="alert('Inquiry received. The Arrive Ventures investment team will send the prospectus.');" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 text-[#18181B] font-bold text-xs uppercase tracking-wider">
+                        Request Real Estate Deck
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-invest-950 border-t border-[#EA580C]/15 py-12 text-center text-xs text-slate-500 font-sans">
+        <p>© 2026 Arrive Yoga Ventures Inc. • Strictly Confidential Investor Memorandum</p>
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('investors');
+            updateSim();
+        });
+
+        function updateSim() {
+            const cohorts = parseInt(document.getElementById('sim-cohorts').value);
+            const price = parseInt(document.getElementById('sim-price').value);
+            const vipPct = parseInt(document.getElementById('sim-vip').value) / 100;
+
+            document.getElementById('sim-cohorts-val').textContent = `${cohorts} Cohort${cohorts > 1 ? 's' : ''}`;
+            document.getElementById('sim-price-val').textContent = `$${price.toLocaleString()}`;
+            document.getElementById('sim-vip-val').textContent = `${Math.round(vipPct * 100)}%`;
+
+            const attendeesPerCohort = 22;
+            const totalAttendees = cohorts * attendeesPerCohort;
+
+            // Calculations
+            const baseRev = totalAttendees * price;
+            const vipAddonRev = totalAttendees * vipPct * 900; // $900 VIP premium
+            const ancillaryRev = totalAttendees * 400; // $400 avg spa/excursion
+            const totalAnnualRev = baseRev + vipAddonRev + ancillaryRev;
+
+            const cogs = cohorts * 22700;
+            const netEbitda = totalAnnualRev - cogs;
+            const dividendPool = Math.round(netEbitda * 0.25);
+            const roi3Yr = ((netEbitda * 3) / 400000 * 100).toFixed(1);
+
+            document.getElementById('out-annual-rev').textContent = `$${Math.round(totalAnnualRev).toLocaleString()}`;
+            document.getElementById('out-annual-ebitda').textContent = `$${Math.round(netEbitda).toLocaleString()}`;
+            document.getElementById('out-attendees').textContent = `${totalAttendees} Guests`;
+            document.getElementById('out-dividend').textContent = `$${dividendPool.toLocaleString()} / yr`;
+            document.getElementById('out-roi').textContent = `${roi3Yr}%`;
+        }
+    </script>
+
+    <script>
+        // Load Brand Governance Tokens from Carly's Portal if set
+        const brandGov = localStorage.getItem('arrive_brand_governance');
+        if (brandGov) {
+            try {
+                const parsed = JSON.parse(brandGov);
+                if (parsed.colors) {
+                    const root = document.documentElement;
+                    if (parsed.colors.primary) root.style.setProperty('--sunset-orange', parsed.colors.primary);
+                    if (parsed.colors.canvas) root.style.setProperty('--canvas-bg', parsed.colors.canvas);
+                }
+            } catch(e) {}
+        }
+    </script>
+</body>
+</html>

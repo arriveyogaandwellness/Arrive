@@ -146,6 +146,36 @@ All spreadsheet registers and tracking templates in this repository contain **ze
 
 ---
 
+## ☁️ Railway Cloud Deployment
+
+This repository is 100% pre-configured for instant zero-configuration deployment on [Railway](https://railway.app):
+
+1. Open your [Railway Dashboard](https://railway.app/dashboard).
+2. Click **+ New Project** &rarr; **Deploy from GitHub repo**.
+3. Select **`arriveyogaandwellness/Arrive`**.
+4. Railway automatically detects `railway.json`, `package.json`, and `server.js` (via Nixpacks or Dockerfile).
+5. Under your service's **Settings &rarr; Networking**, click **Generate Domain** (e.g. `https://arrive-production.up.railway.app`).
+
+### Clean Hosted Web Routes:
+| Route | Destination Portal | Purpose |
+| :--- | :--- | :--- |
+| **`/`** or **`/dashboard`** | `Arrive_Yoga_Executive_Dashboard.html` | Corporate Office Operations Hub (Real metrics, Amanti specs, checklist) |
+| **`/website`** | `index.html` | Public Sanctuary Hub Experience with ambient soundscape & style switchers |
+| **`/manual`** | `START_HERE_OFFICE_OPERATIONS_MANUAL.html` | Master SOP Operations Manual with sticky navigation & 6-month roadmap |
+| **`/brand`** | `Brand_Style_Governance_Intake_Portal.html` | Brand & Style Governance intake with live theme token sync |
+| **`/guest-intake`** | `Guest_Intake_Digital_Portal.html` | Digital guest intake with automatic CSV export |
+| **`/one-pager`** | `Executive_One_Pager_Printable.html` | High-impact executive pitch deck |
+| **`/welcome-packet`** | `Costa_Rica_Guest_Welcome_Packet_Printable.html` | Branded guest travel guide |
+| **`/investors`** | `investors.html` | Investor Deck & growth model |
+| **`/review`** | `review_report.html` | Ecosystem audit and codebase review report |
+| **`/bento`** | `style-app-bento-portal.html` | Bento grid mobile app experience |
+| **`/spatial-map`** | `style-app-spatial-map.html` | 3D Interactive Spatial Sanctuary map |
+| **`/split-studio`** | `style-app-split-studio.html` | Dual-view split studio interface |
+| **`/cinematic-deck`** | `style-app-cinematic-deck.html` | Cinematic visual slide deck |
+| **`/health`** | JSON Status | Automated healthcheck endpoint for Railway monitoring |
+
+---
+
 ## 📄 License & Confidentiality
 
 Copyright © 2026 Arrive Yoga & Wellness. All rights reserved.  

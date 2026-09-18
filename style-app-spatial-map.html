@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrive Spatial Map | Amanti Resort Costa Rica Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        costa: { 950: '#FAF5EB', 900: '#FFFFFF', 800: '#F5EFE0' }, sunset: { 500: '#EA580C' },
+                        gold: { 400: '#fbbf24', 500: '#d4af37' }
+                    },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="h-full w-full bg-[#FAF5EB] text-[#18181B] font-sans overflow-hidden relative">
+
+    <!-- Top Bar -->
+    <header class="absolute top-0 left-0 right-0 z-50 p-6 flex items-center justify-between pointer-events-none">
+        <a href="index.html" class="pointer-events-auto flex items-center gap-3 bg-white/95 backdrop-blur-xl border border-[#EA580C]/20 text-[#18181B] shadow-md px-5 py-2.5 rounded-2xl border border-white/15 shadow-2xl">
+            <span class="text-xl">🗺️</span>
+            <div>
+                <span class="font-bold text-sm tracking-wide text-[#18181B] block leading-none">AMANTI SPATIAL MAP</span>
+                <span class="text-[9px] uppercase tracking-widest text-[#EA580C] font-semibold">Costa Rica Sanctuary Topography</span>
+            </div>
+        </a>
+
+        <div class="pointer-events-auto flex items-center gap-3 bg-white/95 backdrop-blur-xl border border-[#EA580C]/20 text-[#18181B] shadow-md px-4 py-2 rounded-2xl border border-white/15 text-xs text-slate-600">
+            <span>📍 Playa Hermosa, Costa Rica</span>
+            <span>•</span>
+            <span>90 Min to SJO</span>
+            <button onclick="window.RetreatPricing.openCheckoutModal()" class="ml-2 px-4 py-1.5 rounded-xl bg-emerald-500 text-black font-bold text-xs uppercase tracking-wider">
+                Reserve ($500)
+            </button>
+        </div>
+    </header>
+
+    <!-- Interactive Topographic Canvas Background -->
+    <div class="h-full w-full relative flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2200&q=85" class="absolute inset-0 w-full h-full object-cover filter brightness-50 contrast-125 scale-105">
+        <div class="absolute inset-0 bg-gradient-to-t from-costa-950 via-transparent to-costa-950/80"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(4,17,11,0.85)_100%)]"></div>
+
+        <!-- Hotspot Pin 1: Amanti Resort Main Pools -->
+        <button onclick="openPin('pools')" class="absolute top-[45%] left-[48%] group z-20 focus:outline-none">
+            <div class="w-12 h-12 rounded-full bg-emerald-500/30 border-2 border-emerald-400 flex items-center justify-center text-xl animate-pulse group-hover:scale-125 transition-transform shadow-lg shadow-emerald-500/50">
+                🏊‍♀️
+            </div>
+            <div class="absolute top-14 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap text-emerald-300 opacity-90 group-hover:opacity-100">
+                Amanti Waterfall Pools
+            </div>
+        </button>
+
+        <!-- Hotspot Pin 2: Open-Air Yoga Shala Deck -->
+        <button onclick="openPin('shala')" class="absolute top-[35%] left-[55%] group z-20 focus:outline-none">
+            <div class="w-12 h-12 rounded-full bg-amber-500/30 border-2 border-amber-400 flex items-center justify-center text-xl animate-pulse group-hover:scale-125 transition-transform shadow-lg shadow-amber-500/50">
+                🧘‍♀️
+            </div>
+            <div class="absolute top-14 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap text-amber-300 opacity-90 group-hover:opacity-100">
+                Yoga Shala & Macaws
+            </div>
+        </button>
+
+        <!-- Hotspot Pin 3: Playa Hermosa Black Sand Beach -->
+        <button onclick="openPin('beach')" class="absolute top-[65%] left-[30%] group z-20 focus:outline-none">
+            <div class="w-12 h-12 rounded-full bg-cyan-500/30 border-2 border-cyan-400 flex items-center justify-center text-xl animate-pulse group-hover:scale-125 transition-transform shadow-lg shadow-cyan-500/50">
+                🌊
+            </div>
+            <div class="absolute top-14 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap text-cyan-300 opacity-90 group-hover:opacity-100">
+                Black Sand Beach (2 Min)
+            </div>
+        </button>
+
+        <!-- Hotspot Pin 4: Rainmaker Waterfalls -->
+        <button onclick="openPin('rainmaker')" class="absolute top-[25%] left-[68%] group z-20 focus:outline-none">
+            <div class="w-12 h-12 rounded-full bg-teal-500/30 border-2 border-teal-400 flex items-center justify-center text-xl animate-pulse group-hover:scale-125 transition-transform shadow-lg shadow-teal-500/50">
+                🌁
+            </div>
+            <div class="absolute top-14 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap text-teal-300 opacity-90 group-hover:opacity-100">
+                Rainmaker Bridges (9 Min)
+            </div>
+        </button>
+
+        <!-- Hotspot Pin 5: Sacred Mayan Temazcal -->
+        <button onclick="openPin('temazcal')" class="absolute top-[58%] left-[72%] group z-20 focus:outline-none">
+            <div class="w-12 h-12 rounded-full bg-rose-500/30 border-2 border-rose-400 flex items-center justify-center text-xl animate-pulse group-hover:scale-125 transition-transform shadow-lg shadow-rose-500/50">
+                🔥
+            </div>
+            <div class="absolute top-14 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-md px-3 py-1 rounded-lg border border-white/10 text-[10px] font-bold uppercase tracking-wider whitespace-nowrap text-rose-300 opacity-90 group-hover:opacity-100">
+                Sacred Temazcal Dome
+            </div>
+        </button>
+    </div>
+
+    <!-- Floating Detail Sheet Modal -->
+    <div id="spatial-modal" class="hidden absolute bottom-10 left-1/2 -translate-x-1/2 z-40 w-full max-w-xl bg-costa-950/95 backdrop-blur-2xl border border-emerald-500/40 rounded-3xl p-6 shadow-2xl space-y-4">
+        <div class="flex items-center justify-between border-b border-white/10 pb-3">
+            <div class="flex items-center gap-3">
+                <span id="modal-icon" class="text-3xl">🏊‍♀️</span>
+                <div>
+                    <h3 id="modal-title" class="font-serif font-bold text-2xl text-white">Amanti Waterfall Pools</h3>
+                    <span id="modal-subtitle" class="text-[10px] uppercase tracking-widest text-[#EA580C]">Sanctuary Hydrotherapy</span>
+                </div>
+            </div>
+            <button onclick="document.getElementById('spatial-modal').classList.add('hidden')" class="text-slate-400 hover:text-white p-2">✕</button>
+        </div>
+        <p id="modal-desc" class="text-xs text-slate-600 leading-relaxed">
+            Two waterfall pools, 12+ person jacuzzi, and cold immersion ice bath for nervous system reset.
+        </p>
+        <div class="flex gap-3 pt-2">
+            <button onclick="window.RetreatPricing.openCheckoutModal()" class="flex-1 py-2.5 rounded-xl bg-emerald-500 text-black font-bold text-xs uppercase tracking-wider">
+                Book This Retreat ($500)
+            </button>
+        </div>
+    </div>
+
+    <script src="js/shared.js"></script>
+    <script>
+        const pinData = {
+            pools: { icon: '🏊‍♀️', title: 'Amanti Waterfall Pools', sub: 'Hydrotherapy Sanctuary', desc: 'Featuring two waterfall pools, a 12+ person hydrotherapy jacuzzi, and cold plunge ice bath directly adjacent to luxury suites.' },
+            shala: { icon: '🧘‍♀️', title: 'Open-Air Yoga Shala', sub: 'Canopy Deck Sanctuary', desc: 'Framed by Almendra nut trees that attract wild Scarlet Macaws and Toucans daily for morning vinyasa and evening sound baths.' },
+            beach: { icon: '🌊', title: 'Playa Hermosa Coast', sub: '2 Minutes Away', desc: 'Secluded volcanic black sand beach with warm Pacific surf, sunset horseback riding trails, and grounding evening bonfires.' },
+            rainmaker: { icon: '🌁', title: 'Rainmaker Waterfalls', sub: '9 Minutes Away', desc: 'Suspended canopy bridges over river canyons, monkey mangrove trails, and crystal-clear freshwater swimming pools.' },
+            temazcal: { icon: '🔥', title: 'Sacred Temazcal Dome', sub: 'Mayan Rebirth Ritual', desc: 'Traditional thermal sweat dome ceremony guided by native facilitators for deep energetic cleansing and emotional renewal.' }
+        };
+
+        function openPin(key) {
+            const data = pinData[key];
+            if (!data) return;
+            document.getElementById('modal-icon').textContent = data.icon;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-subtitle').textContent = data.sub;
+            document.getElementById('modal-desc').textContent = data.desc;
+            document.getElementById('spatial-modal').classList.remove('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('spatial');
+        });
+    </script>
+</body>
+</html>

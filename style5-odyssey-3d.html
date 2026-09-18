@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Arrival | 3D Parallax & Sound Odyssey • Costa Rica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyber: { 950: '#020617', 900: '#041624', 800: '#082b45', 500: '#0284c7', 400: '#38bdf8' },
+                        glow: { green: '#10b981', gold: '#fbbf24' }
+                    },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        serif: ['"Cinzel"', 'serif'],
+                        body: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-cyber-950 text-slate-100 font-body antialiased selection:bg-cyber-500 selection:text-white">
+
+    <!-- Glowing Top Odyssey Header -->
+    <header class="sticky top-0 z-50 bg-cyber-950/80 backdrop-blur-2xl border-b border-cyber-500/20">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyber-500 to-glow-green flex items-center justify-center text-cyber-950 font-bold font-sans text-xl shadow-lg shadow-cyber-500/30 animate-pulse">
+                    Ω
+                </div>
+                <div>
+                    <span class="font-sans font-black text-xl tracking-wider text-white">ARRIVE <span class="text-cyber-400">3D</span></span>
+                    <span class="block text-[9px] tracking-[0.3em] text-glow-green uppercase font-bold">Sound Odyssey 2026</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-sans font-bold text-slate-300">
+                <a href="#multiverse" class="hover:text-cyber-400 transition-colors">3D Parallax</a>
+                <a href="#sound-engine" class="hover:text-cyber-400 transition-colors">Sound Engine</a>
+                <a href="#quiz" class="hover:text-cyber-400 transition-colors">Elemental Wheel</a>
+                <a href="#villas" class="hover:text-cyber-400 transition-colors">3D Villas</a>
+                <a href="#pricing" class="hover:text-cyber-400 transition-colors">Reserve Spot</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button onclick="window.ZenAudio.toggle()" class="px-4 py-2 rounded-xl bg-cyber-900 border border-cyber-500/40 text-cyber-400 text-xs font-sans font-bold flex items-center gap-2 hover:bg-cyber-800 transition-all">
+                    <span>🔊</span> Audio Synth
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Multi-Plane 3D Parallax Hero -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center py-24 overflow-hidden">
+        <!-- Parallax Background Layer 1 -->
+        <div class="absolute inset-0 z-0 scale-110" data-parallax-speed="0.1">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=2000&q=85" 
+                 alt="Rainforest Canopy" 
+                 class="w-full h-full object-cover filter brightness-[0.25] contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-t from-cyber-950 via-cyber-950/70 to-transparent"></div>
+        </div>
+
+        <!-- 3D Floating Orbs Layer -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-cyber-500/20 rounded-full blur-3xl pointer-events-none animate-float"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-glow-green/15 rounded-full blur-3xl pointer-events-none animate-float" style="animation-delay: -3s;"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center space-y-8">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-900/80 border border-cyber-400/40 text-cyber-400 text-xs font-sans font-bold uppercase tracking-widest backdrop-blur-xl">
+                <span>✦</span> Multi-Sensory Somatic Immersion • Costa Rica <span>✦</span>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl lg:text-9xl font-sans font-black tracking-tight leading-none text-white">
+                THE ART OF <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-400 via-glow-green to-glow-gold">ARRIVAL 3D</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-slate-300 text-base md:text-xl font-body font-light leading-relaxed">
+                Interact with the space. Move your mouse to explore the 3D parallax depth, synthesize live rainforest acoustics, and discover your elemental resonance.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                <a href="#pricing" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyber-500 to-glow-green text-cyber-950 font-sans font-black text-xs uppercase tracking-widest hover:scale-105 shadow-xl shadow-cyber-500/30 transition-all">
+                    Initiate Booking ($500 Deposit)
+                </a>
+                <button onclick="window.ZenAudio.toggle()" class="px-8 py-4 rounded-2xl bg-cyber-900/90 border border-cyber-400/30 text-white font-sans font-bold text-xs uppercase tracking-widest hover:bg-cyber-800 transition-all flex items-center gap-2">
+                    <span>⚡</span> Toggle Live Ambient Synth
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Ambient Soundboard Generator -->
+    <section id="sound-engine" class="py-24 bg-cyber-900/50 border-y border-cyber-500/20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="text-xs font-sans font-bold uppercase tracking-widest text-glow-green">Web Audio API Synthesis</span>
+            <h2 class="text-3xl md:text-5xl font-sans font-black text-white mt-2 mb-6">Costa Rica 432Hz Sound Engine</h2>
+            <p class="text-slate-400 text-sm max-w-xl mx-auto mb-10">
+                Experience real-time harmonic frequencies generated through your browser's audio processor to reset your autonomic nervous system.
+            </p>
+
+            <div class="p-8 rounded-3xl bg-cyber-950 border border-cyber-500/30 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4 text-left">
+                    <div class="w-16 h-16 rounded-2xl bg-cyber-500/20 border border-cyber-400/40 flex items-center justify-center text-3xl">
+                        🌊
+                    </div>
+                    <div>
+                        <h4 class="text-white font-sans font-bold text-lg">Rainforest & Heart Frequency (432Hz)</h4>
+                        <p class="text-xs text-slate-400">Harmonic sine drones, pink noise ocean filter, and low-frequency calming waves.</p>
+                    </div>
+                </div>
+                <button onclick="window.ZenAudio.toggle()" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyber-500 to-glow-green text-cyber-950 font-sans font-black text-xs uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap">
+                    Play / Stop Soundscape
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Interactive Tilt Cards for Accommodations -->
+    <section id="villas" class="py-24 bg-cyber-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-sans font-bold uppercase tracking-widest text-cyber-400">3D Perspective Explorer</span>
+                <h3 class="text-3xl md:text-5xl font-sans font-black text-white mt-1">Amanti Sanctuary Villas</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="tilt-card p-6 rounded-3xl bg-cyber-900 border border-cyber-500/30 hover:border-cyber-400 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="Suite" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-sans font-bold text-xl text-white">Honeymoon Suite</h4>
+                        <p class="text-xs text-slate-400 mt-2">Queen Bed, private kitchenette, attached spa bathroom, patio, pool view & AC.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-800 text-xs text-cyber-400 font-bold">Interactive 3D Layer</div>
+                </div>
+
+                <div class="tilt-card p-6 rounded-3xl bg-cyber-900 border border-cyber-500/30 hover:border-cyber-400 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Macaw Villa" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-sans font-bold text-xl text-white">Macaw 2-Bedroom Villa</h4>
+                        <p class="text-xs text-slate-400 mt-2">2 bedrooms, full kitchenette, patio lounge, pool view & air conditioning.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-800 text-xs text-cyber-400 font-bold">Interactive 3D Layer</div>
+                </div>
+
+                <div class="tilt-card p-6 rounded-3xl bg-cyber-900 border border-cyber-500/30 hover:border-cyber-400 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="h-52 rounded-2xl overflow-hidden mb-4">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Amapola Villa" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-sans font-bold text-xl text-white">Amapola 5-Bedroom Estate</h4>
+                        <p class="text-xs text-slate-400 mt-2">Sleeps 10, private pool, gardens, 2 kitchens, 3 baths, luxury estate.</p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-cyber-800 text-xs text-cyber-400 font-bold">Interactive 3D Layer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-cyber-900/40">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="text-xs font-sans font-bold uppercase tracking-widest text-glow-green">Initiate Sanctuary Access</span>
+            <h3 class="text-3xl md:text-5xl font-sans font-black text-white mt-1 mb-8">Reservation Portals</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-3xl bg-cyber-950 border border-cyber-500/30 text-left space-y-4">
+                    <span class="text-xs uppercase tracking-widest text-cyber-400 font-bold">Standard Tier</span>
+                    <h4 class="text-2xl font-bold font-sans text-white">Standard Sanctuary</h4>
+                    <div class="text-3xl font-black text-white">$2,200</div>
+                    <p class="text-xs text-slate-400">All meals, daily yoga, elemental ceremonies, group events & airport transit.</p>
+                    <button onclick="window.RetreatPricing.selectPackage('standard'); window.RetreatPricing.openCheckoutModal();" class="w-full py-3.5 rounded-xl bg-cyber-900 hover:bg-cyber-800 border border-cyber-500/40 text-white font-sans font-bold text-xs uppercase tracking-widest">
+                        Lock In Standard ($500)
+                    </button>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-gradient-to-b from-cyber-900 to-cyber-950 border-2 border-glow-green text-left space-y-4 shadow-2xl">
+                    <span class="text-xs uppercase tracking-widest text-glow-green font-bold">VIP Tier</span>
+                    <h4 class="text-2xl font-bold font-sans text-white">VIP All-Access</h4>
+                    <div class="text-3xl font-black text-glow-green">$3,100</div>
+                    <p class="text-xs text-slate-300">Priority suite upgrade, 1-on-1 coaching with Carly Anne, luxury amenity kit & priority spa.</p>
+                    <button onclick="window.RetreatPricing.selectPackage('vip'); window.RetreatPricing.openCheckoutModal();" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-cyber-500 to-glow-green text-cyber-950 font-sans font-black text-xs uppercase tracking-widest">
+                        Lock In VIP ($500)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cyber-950 border-t border-cyber-500/20 py-12 text-center text-xs text-slate-500 font-sans">
+        <p>© 2026 Arrive Yoga & Wellness • The Art of Arrival 3D Odyssey • Costa Rica</p>
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('style5');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full overflow-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Arrival | Split Studio Console</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        studio: { 950: '#FAF5EB', 900: '#FFFFFF', 800: '#F5EFE0' }, sunset: { 500: '#EA580C' },
+                        amber: { 400: '#fbbf24', 500: '#f59e0b' }
+                    },
+                    fontFamily: {
+                        display: ['"Space Grotesk"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="h-full w-full bg-[#FAF5EB] text-[#18181B] font-sans overflow-hidden flex flex-col md:flex-row">
+
+    <!-- Left Half: Dynamic Visual Canvas -->
+    <div class="h-1/2 md:h-full md:w-1/2 relative overflow-hidden flex items-end p-8 md:p-12">
+        <img id="studio-bg" src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=85" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.4] transition-all duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-[#FAF5EB] via-studio-950/40 to-transparent"></div>
+
+        <div class="relative z-10 space-y-4">
+            <a href="index.html" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md border border-[#EA580C]/20 text-[10px] text-amber-400 uppercase tracking-widest font-bold">
+                ← Hub • Split Studio Suite
+            </a>
+            <h1 class="text-4xl md:text-6xl font-serif font-light text-[#18181B] leading-tight">
+                The Art of <br>
+                <span class="italic text-amber-400 font-normal">Arrival Sanctuary.</span>
+            </h1>
+            <p class="text-xs md:text-sm text-slate-600 max-w-md font-light">
+                Costa Rica August 2026 • Amanti Resort. 2 minutes from black sand ocean waters.
+            </p>
+            <div class="flex items-center gap-4 text-xs text-slate-500">
+                <span>🌴 Playa Hermosa</span>
+                <span>•</span>
+                <span>22 Bedrooms Buyout</span>
+                <span>•</span>
+                <span>$2,200+</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Half: Interactive Console Panel -->
+    <div class="h-1/2 md:h-full md:w-1/2 bg-white border-t md:border-t-0 md:border-l border-[#EA580C]/15 flex flex-col justify-between p-6 md:p-10 overflow-y-auto">
+        <!-- Console Tabs Header -->
+        <div class="space-y-6">
+            <div class="flex items-center justify-between border-b border-[#EA580C]/15 pb-4">
+                <div class="flex gap-2">
+                    <button onclick="setStudioTab('quiz')" class="studio-tab active px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-400 text-black">Archetype</button>
+                    <button onclick="setStudioTab('itinerary')" class="studio-tab px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-[#18181B]">6-Day Flow</button>
+                    <button onclick="setStudioTab('pricing')" class="studio-tab px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-[#18181B]">Pricing</button>
+                </div>
+                <button onclick="window.ZenAudio.toggle()" class="text-xs text-amber-400 font-bold flex items-center gap-1.5">
+                    <span>🔊</span> Audio Synth
+                </button>
+            </div>
+
+            <!-- TAB CONTENT 1: QUIZ -->
+            <div id="studio-tab-quiz" class="studio-content space-y-4">
+                <h3 class="font-serif text-2xl text-[#18181B]">Soul Archetype Diagnostic</h3>
+                <div id="soul-quiz-container"></div>
+            </div>
+
+            <!-- TAB CONTENT 2: ITINERARY -->
+            <div id="studio-tab-itinerary" class="studio-content hidden space-y-3 text-xs">
+                <h3 class="font-serif text-2xl text-[#18181B] mb-2">6-Day Journey Flow</h3>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                    <strong class="text-amber-400 block">Day 1: Ground & Arrive (Earth)</strong>
+                    <p class="text-slate-600">SJO transport, check-in, sunset stretch deck session, beach bonfire.</p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                    <strong class="text-cyan-400 block">Day 2: Flow & Feel (Water)</strong>
+                    <p class="text-slate-600">Rainmaker hanging bridges & waterfall swim, Emotional Alchemy workshop.</p>
+                </div>
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 space-y-1">
+                    <strong class="text-rose-400 block">Day 3: Ignite & Transform (Fire)</strong>
+                    <p class="text-slate-600">Power Yoga, Jungle Horseback or Mayan Temazcal Sweat Lodge.</p>
+                </div>
+            </div>
+
+            <!-- TAB CONTENT 3: PRICING -->
+            <div id="studio-tab-pricing" class="studio-content hidden space-y-4 text-xs">
+                <h3 class="font-serif text-2xl text-[#18181B]">Select Sanctuary Package</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="p-4 rounded-xl bg-white/5 border border-[#EA580C]/15 space-y-2">
+                        <strong class="text-[#18181B] block text-sm">Standard ($2,200)</strong>
+                        <p class="text-slate-500 text-[11px]">All meals, daily yoga, elemental ceremonies & transport.</p>
+                        <button onclick="window.RetreatPricing.selectPackage('standard'); window.RetreatPricing.openCheckoutModal();" class="w-full py-2 bg-white/10 text-[#18181B] font-bold rounded-lg">Reserve ($500)</button>
+                    </div>
+                    <div class="p-4 rounded-xl bg-amber-400/10 border border-amber-400/40 space-y-2">
+                        <strong class="text-amber-300 block text-sm">VIP Pass ($3,100)</strong>
+                        <p class="text-slate-600 text-[11px]">Priority suite, 1-on-1 coaching with Carly Anne & gift kit.</p>
+                        <button onclick="window.RetreatPricing.selectPackage('vip'); window.RetreatPricing.openCheckoutModal();" class="w-full py-2 bg-amber-400 text-black font-bold rounded-lg">Reserve VIP ($500)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-6 border-t border-[#EA580C]/15 flex justify-between items-center text-xs text-slate-500">
+            <span>© 2026 Arrive Yoga & Wellness</span>
+            <button onclick="window.RetreatPricing.openCheckoutModal()" class="px-5 py-2.5 bg-amber-400 text-black font-bold rounded-xl text-xs uppercase tracking-wider">
+                Instant Reserve ($500)
+            </button>
+        </div>
+    </div>
+
+    <script src="js/shared.js"></script>
+    <script>
+        function setStudioTab(tab) {
+            document.querySelectorAll('.studio-content').forEach(c => c.classList.add('hidden'));
+            document.getElementById(`studio-tab-${tab}`).classList.remove('hidden');
+
+            document.querySelectorAll('.studio-tab').forEach(b => {
+                b.className = 'studio-tab px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-500 hover:text-[#18181B]';
+            });
+            event.target.className = 'studio-tab active px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-400 text-black';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('studio');
+            window.SoulQuiz.init('soul-quiz-container');
+        });
+    </script>
+</body>
+</html>

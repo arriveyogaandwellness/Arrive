@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Arrive Sanctuary Hub | Festive Sunset Experience Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/shared.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sunset: {
+                            950: '#FAF5EB',
+                            900: '#FFFFFF',
+                            850: '#F3ECE0',
+                            800: '#EFE6D5',
+                            700: '#78350F'
+                        },
+                        amber: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706' },
+                        fire: { 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c' },
+                        rose: { 400: '#fb7185', 500: '#f43f5e', 600: '#e11d48', 700: '#be123c' },
+                        gold: { 300: '#fde047', 400: '#facc15', 500: '#eab308' }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        display: ['"Space Grotesk"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Chic Cheetah / Leopard Pattern Texture */
+        .cheetah-badge {
+            background: linear-gradient(135deg, rgba(249,115,22,0.9), rgba(225,29,72,0.9)), 
+                        radial-gradient(circle at 50% 50%, #facc15 20%, transparent 25%);
+            background-size: 100% 100%, 12px 12px;
+        }
+
+        .sunset-glow-card {
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            background: #FFFFFF;
+            border: 1px solid rgba(234, 88, 12, 0.18);
+            box-shadow: 0 4px 20px -5px rgba(120, 53, 15, 0.06);
+        }
+        .sunset-glow-card h3, .sunset-glow-card h4 {
+            color: #18181B !important;
+        }
+        .sunset-glow-card p {
+            color: #4B5563 !important;
+        }
+        @media (hover: hover) {
+            .sunset-glow-card:hover {
+                transform: translateY(-4px) scale(1.02);
+                box-shadow: 0 15px 30px -10px rgba(234, 88, 12, 0.15), 0 0 15px rgba(251, 175, 24, 0.2);
+                border-color: rgba(245, 158, 11, 0.6);
+            }
+        }
+
+        /* Festive Sunset Gradient Animation */
+        @keyframes sunsetShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animate-sunset {
+            background: linear-gradient(270deg, #ea580c, #e11d48, #f59e0b, #c026d3);
+            background-size: 300% 300%;
+            animation: sunsetShift 8s ease infinite;
+        }
+    </style>
+</head>
+<body class="h-full w-full bg-[#FAF5EB] text-[#18181B] font-sans antialiased flex flex-col selection:bg-[#EA580C] selection:text-white overflow-hidden">
+
+    <!-- Festive Top OS Bar -->
+    <header class="h-16 sm:h-20 bg-white/95 backdrop-blur-xl border-b border-[#EA580C]/20 shadow-sm px-4 sm:px-6 flex items-center justify-between shrink-0 z-40 relative">
+        <div class="absolute bottom-0 left-0 right-0 h-[2px] animate-sunset"></div>
+
+        <div class="flex items-center gap-3 sm:gap-6">
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl cheetah-badge flex items-center justify-center text-white font-serif font-black text-lg sm:text-xl shadow-lg shadow-fire-500/30 border border-amber-400/40 shrink-0">
+                    🐆
+                </div>
+                <div>
+                    <span class="font-serif font-bold text-base sm:text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-fire-400 to-rose-400 block leading-none">ARRIVE</span>
+                    <span class="text-[8px] sm:text-[9px] tracking-[0.2em] sm:tracking-[0.25em] text-amber-400 uppercase font-sans font-extrabold">Sunset Hub • 2026</span>
+                </div>
+            </a>
+            
+            <div class="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-sunset-850 border border-fire-500/30 text-xs text-amber-200">
+                <span>🌴 Amanti Sanctuary, Playa Hermosa</span>
+                <span class="text-fire-400">•</span>
+                <span>August 2026</span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-4 text-xs">
+            <!-- Quick Link to Corporate Office Hub -->
+            <a href="Arrive_Yoga_Executive_Dashboard.html" class="px-3 py-1.5 rounded-full bg-[#FAF5EB] border border-[#EA580C]/30 text-[#EA580C] font-bold text-xs flex items-center gap-1.5 hover:bg-[#FFF7ED] transition-all">
+                <span>🏢</span> <span class="hidden sm:inline">Executive Hub</span>
+            </a>
+            <!-- Weather Telemetry (Hidden on small mobile) -->
+            <div class="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-sunset-850 to-sunset-800 border border-amber-500/30 text-amber-300">
+                <span>🌅 Golden Hour 84°F</span>
+                <span class="text-rose-400">•</span>
+                <span>Ocean 82°F</span>
+            </div>
+
+            <!-- Studio Audio Toggle Button -->
+            <button onclick="window.ZenAudio.toggle()" class="px-3 sm:px-4 py-1.5 rounded-full bg-gradient-to-r from-fire-600 to-rose-600 hover:brightness-125 text-white font-bold flex items-center gap-1.5 sm:gap-2 transition-all shadow-md shadow-fire-500/20 border border-amber-300/30 text-xs">
+                <span>🔊</span> <span id="hub-audio-label" class="hidden xs:inline">Costa Rica Audio</span>
+            </button>
+
+            <!-- User Avatar with Cheetah Ring -->
+            <div class="flex items-center gap-2 pl-2 border-l border-white/15">
+                <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full cheetah-badge p-[2px] shadow-lg shrink-0">
+                    <div class="w-full h-full rounded-full bg-sunset-950 flex items-center justify-center text-amber-300 font-bold text-xs">
+                        CA
+                    </div>
+                </div>
+                <div class="hidden lg:block text-left text-xs leading-tight">
+                    <span class="text-white font-bold block">Carly Anne</span>
+                    <span class="text-amber-400 text-[10px] font-semibold">Sanctuary Host</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MOBILE-ONLY TOP CATEGORY PILL BAR (< md) -->
+    <div class="md:hidden flex items-center gap-2 overflow-x-auto no-scrollbar px-4 py-2.5 bg-sunset-900 border-b border-fire-500/20 shrink-0">
+        <button onclick="switchHubTab('featured', this)" class="mobile-tab-btn active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-gradient-to-r from-fire-600 to-rose-600 text-white shadow-sm border border-amber-400/40">
+            🌟 Billboard
+        </button>
+        <button onclick="switchHubTab('web-styles', this)" class="mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10">
+            🌿 Web (6)
+        </button>
+        <button onclick="switchHubTab('app-styles', this)" class="mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10">
+            📱 Apps (5)
+        </button>
+        <button onclick="switchHubTab('spatial-map', this)" class="mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10">
+            🗺️ 3D Map
+        </button>
+        <button onclick="switchHubTab('previewer', this)" class="mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10">
+            💻 Preview
+        </button>
+        <button onclick="switchHubTab('investor', this)" class="mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10">
+            📈 Investors
+        </button>
+        <button onclick="switchHubTab('somatics', this)" class="mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10">
+            🧘‍♀️ Breath
+        </button>
+    </div>
+
+    <!-- Main Layout (Desktop Sidebar + Fixed Height Content Canvas) -->
+    <div class="flex-1 flex overflow-hidden">
+        
+        <!-- Desktop Left Sidebar Navigation (Hidden on Mobile) -->
+        <aside class="hidden md:flex w-64 bg-white/95 border-r border-[#EA580C]/15 shadow-sm flex-col justify-between shrink-0 p-4 z-30 relative overflow-hidden">
+            <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-fire-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="space-y-1 relative z-10">
+                <div class="flex items-center justify-between text-[10px] uppercase tracking-widest text-amber-400 font-bold px-3 py-2">
+                    <span>Retreat Portals</span>
+                    <span>🐆</span>
+                </div>
+                
+                <button onclick="switchHubTab('featured', this)" class="hub-tab-btn active w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-fire-600 via-rose-600 to-amber-500 text-left transition-all shadow-lg shadow-fire-500/20 border border-amber-400/40">
+                    <span>🌟</span> Festive Billboard
+                </button>
+                <button onclick="switchHubTab('web-styles', this)" class="hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all">
+                    <span>🌿</span> Web Sanctuary Styles (6)
+                </button>
+                <button onclick="switchHubTab('app-styles', this)" class="hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all">
+                    <span>📱</span> App & OS Dashboards (5)
+                </button>
+                <button onclick="switchHubTab('spatial-map', this)" class="hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all">
+                    <span>🗺️</span> Amanti Resort 3D Tour
+                </button>
+                <button onclick="switchHubTab('previewer', this)" class="hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all">
+                    <span>💻</span> Live Device Simulator
+                </button>
+                <button onclick="switchHubTab('investor', this)" class="hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all">
+                    <span>📈</span> Investor & Growth Deck
+                </button>
+                <button onclick="switchHubTab('somatics', this)" class="hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all">
+                    <span>🧘‍♀️</span> Somatic Breath Lab
+                </button>
+            </div>
+
+            <!-- Sidebar Bottom Info with Cheetah Banner -->
+            <div class="p-4 rounded-2xl bg-sunset-950 border border-fire-500/30 space-y-3 text-xs relative overflow-hidden shadow-xl">
+                <div class="flex items-center justify-between text-[10px] text-amber-200 uppercase font-bold">
+                    <span>Costa Rica Cohort</span>
+                    <span class="text-amber-400">14 / 22 Booked</span>
+                </div>
+                <div class="w-full bg-sunset-850 h-2 rounded-full overflow-hidden border border-white/5">
+                    <div class="bg-gradient-to-r from-amber-400 via-fire-500 to-rose-500 h-full rounded-full" style="width: 65%;"></div>
+                </div>
+                <button onclick="window.RetreatPricing.openCheckoutModal()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-fire-500 to-rose-600 hover:brightness-125 text-black font-extrabold text-xs uppercase tracking-wider transition-all shadow-lg shadow-fire-500/30">
+                    Reserve Spot ($500)
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Canvas Content Area (Mobile & Desktop Responsive) -->
+        <main class="flex-1 bg-sunset-950 p-4 sm:p-6 overflow-y-auto relative pb-24 md:pb-6">
+            
+            <!-- TAB 1: FEATURED BILLBOARD & FESTIVE CAROUSEL -->
+            <div id="tab-featured" class="hub-panel space-y-6 max-w-6xl mx-auto">
+                
+                <!-- Festive Sunset Billboard Banner -->
+                <div class="relative rounded-3xl overflow-hidden bg-sunset-900 border border-amber-400/40 p-6 sm:p-8 md:p-12 shadow-2xl flex flex-col justify-between min-h-[340px] sm:min-h-[390px]">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1600&q=85" class="absolute inset-0 w-full h-full object-cover filter brightness-[0.38] contrast-115">
+                    <div class="absolute inset-0 bg-gradient-to-r from-sunset-950 via-sunset-950/70 to-transparent"></div>
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(249,115,22,0.25)_0,transparent_70%)]"></div>
+
+                    <div class="relative z-10 space-y-3 max-w-xl">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full cheetah-badge text-white text-[11px] sm:text-xs font-extrabold uppercase tracking-widest shadow-md border border-amber-300/40">
+                            <span>🐆</span> The Art of Arrival • August 2026
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-light text-white leading-tight">
+                            Ignite Your <br>
+                            <span class="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-fire-400 to-rose-400">Authentic Flow.</span>
+                        </h1>
+                        <p class="text-xs sm:text-sm text-amber-100 font-light leading-relaxed">
+                            Trauma-aware somatic yoga, aerial flow, fire ceremonies, ocean immersion, and sunset DJ celebrations at Amanti Resort, Playa Hermosa, Costa Rica.
+                        </p>
+                    </div>
+
+                    <div class="relative z-10 flex flex-wrap items-center gap-3 pt-4 sm:pt-6">
+                        <a href="style1-luxe-biophilic.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-fire-500 to-rose-500 text-black font-extrabold text-xs uppercase tracking-widest hover:brightness-125 shadow-xl shadow-fire-500/30 transition-all flex items-center justify-center gap-2">
+                            <span>▶</span> Launch Warm Biophilic
+                        </a>
+                        <a href="style-app-dashboard.html" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-sunset-850 hover:bg-sunset-800 border border-amber-400/30 text-white font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2">
+                            <span>🎛️</span> Open Sanctuary OS
+                        </a>
+                        <a href="investors.html" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-amber-300 font-semibold text-xs transition-all text-center">
+                            <span>📈</span> Investor Deck
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Festive Horizontal Highlights Carousel -->
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs uppercase tracking-widest text-amber-400 font-extrabold flex items-center gap-1.5 sm:gap-2">
+                            <span>🐆</span> Featured Experiences <span>• Swipe Flow</span>
+                        </span>
+                        <span class="text-[10px] sm:text-[11px] text-amber-300/80">← Swipe →</span>
+                    </div>
+
+                    <div class="flex gap-4 overflow-x-auto mobile-snap-x no-scrollbar pb-2">
+                        <!-- Card 1 -->
+                        <a href="style1-luxe-biophilic.html" class="sunset-glow-card shrink-0 w-[78vw] sm:w-72 p-4 rounded-2xl border border-amber-500/30 space-y-3 block mobile-snap-item">
+                            <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl">
+                            <div class="space-y-1">
+                                <span class="text-[10px] text-amber-400 font-bold uppercase">Style 01</span>
+                                <h4 class="font-serif font-bold text-base text-white">Luxe Warm Biophilic</h4>
+                                <p class="text-[11px] text-slate-300">Warm terracotta, teakwood, box breathing regulator & retreat builder.</p>
+                            </div>
+                        </a>
+
+                        <!-- Card 2 -->
+                        <a href="style3-sunset-somatic.html" class="sunset-glow-card shrink-0 w-[78vw] sm:w-72 p-4 rounded-2xl border border-fire-500/40 space-y-3 block mobile-snap-item">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl">
+                            <div class="space-y-1">
+                                <span class="text-[10px] text-rose-400 font-bold uppercase">Style 03</span>
+                                <h4 class="font-serif font-bold text-base text-white">Somatic Sunset Bohemian</h4>
+                                <p class="text-[11px] text-slate-300">Fire arts, power yoga, DJ sunset celebration & breakthrough flow.</p>
+                            </div>
+                        </a>
+
+                        <!-- Card 3 -->
+                        <a href="style-app-dashboard.html" class="sunset-glow-card shrink-0 w-[78vw] sm:w-72 p-4 rounded-2xl border border-amber-400/30 space-y-3 block mobile-snap-item">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl">
+                            <div class="space-y-1">
+                                <span class="text-[10px] text-amber-400 font-bold uppercase">App OS</span>
+                                <h4 class="font-serif font-bold text-base text-white">Sanctuary OS Dashboard</h4>
+                                <p class="text-[11px] text-slate-300">Non-scrolling web app with sidebar, schedule tabs & spa cart.</p>
+                            </div>
+                        </a>
+
+                        <!-- Card 4 -->
+                        <a href="style-app-spatial-map.html" class="sunset-glow-card shrink-0 w-[78vw] sm:w-72 p-4 rounded-2xl border border-terra-500/30 space-y-3 block mobile-snap-item">
+                            <img src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=600&q=80" class="w-full h-32 object-cover rounded-xl">
+                            <div class="space-y-1">
+                                <span class="text-[10px] text-terra-400 font-bold uppercase">Spatial Map</span>
+                                <h4 class="font-serif font-bold text-base text-white">Costa Rica Spatial Map</h4>
+                                <p class="text-[11px] text-slate-300">Interactive map canvas with glowing pins for pools, shala & beach.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: WEB SANCTUARY STYLES (6) -->
+            <div id="tab-web-styles" class="hub-panel hidden space-y-6 max-w-6xl mx-auto">
+                <div class="flex items-center justify-between border-b border-fire-500/30 pb-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white flex items-center gap-2">
+                            <span>🌿</span> Web Sanctuary Styles <span class="text-xs text-amber-400 font-sans font-semibold ml-2">6 Full-Scroll Journeys</span>
+                        </h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Distinct aesthetic themes, typography, and interactive booking engines.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <a href="style1-luxe-biophilic.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-amber-500/40 space-y-3 sm:space-y-4 block">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=800&q=80" class="w-full h-36 sm:h-40 object-cover rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-amber-400 font-bold uppercase">Style 01</span>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-white">Luxe Warm Biophilic</h3>
+                            <p class="text-xs text-slate-300 mt-1">Warm terracotta, teakwood, box breathing regulator, 3D tilt cards & pricing engine.</p>
+                        </div>
+                        <div class="text-xs text-amber-400 font-bold pt-2 border-t border-white/10">Launch Experience ➔</div>
+                    </a>
+
+                    <a href="style2-modern-zen.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-slate-700 space-y-3 sm:space-y-4 block">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" class="w-full h-36 sm:h-40 object-cover rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-bold uppercase">Style 02</span>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-white">Modern Zen Minimalist</h3>
+                            <p class="text-xs text-slate-300 mt-1">Japandi-Costa Rica quiet luxury, muted sage & limestone whitespace, serene schedule accordion.</p>
+                        </div>
+                        <div class="text-xs text-slate-200 font-bold pt-2 border-t border-white/10">Launch Experience ➔</div>
+                    </a>
+
+                    <a href="style3-sunset-somatic.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-fire-500/40 space-y-3 sm:space-y-4 block">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80" class="w-full h-36 sm:h-40 object-cover rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-rose-400 font-bold uppercase">Style 03</span>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-white">Somatic Sunset Bohemian</h3>
+                            <p class="text-xs text-slate-300 mt-1">Fire arts, power vinyasa, sunset horseback gallops, and DJ celebration flow.</p>
+                        </div>
+                        <div class="text-xs text-rose-400 font-bold pt-2 border-t border-white/10">Launch Experience ➔</div>
+                    </a>
+
+                    <a href="style4-editorial-vogue.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-amber-400/30 space-y-3 sm:space-y-4 block">
+                        <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" class="w-full h-36 sm:h-40 object-cover rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-amber-300 font-bold uppercase">Style 04</span>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-white">Editorial Vogue Wellness</h3>
+                            <p class="text-xs text-slate-300 mt-1">Dark couture luxury, obsidian black backdrops, champagne gold framing & luxury lookbook.</p>
+                        </div>
+                        <div class="text-xs text-amber-300 font-bold pt-2 border-t border-white/10">Launch Experience ➔</div>
+                    </a>
+
+                    <a href="style5-odyssey-3d.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-cyan-500/30 space-y-3 sm:space-y-4 block">
+                        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=800&q=80" class="w-full h-36 sm:h-40 object-cover rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-cyan-400 font-bold uppercase">Style 05</span>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-white">3D Parallax & Sound Odyssey</h3>
+                            <p class="text-xs text-slate-300 mt-1">Multi-plane mouse parallax depth, 432Hz Costa Rica nature synthesizer & 3D villa explorer.</p>
+                        </div>
+                        <div class="text-xs text-cyan-400 font-bold pt-2 border-t border-white/10">Launch Experience ➔</div>
+                    </a>
+
+                    <a href="style6-cinematic-scroll.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-purple-500/30 space-y-3 sm:space-y-4 block">
+                        <img src="https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?auto=format&fit=crop&w=800&q=80" class="w-full h-36 sm:h-40 object-cover rounded-2xl">
+                        <div>
+                            <span class="text-[10px] text-purple-300 font-bold uppercase">Style 06</span>
+                            <h3 class="text-lg sm:text-xl font-serif font-bold text-white">Animated Scroll Journey</h3>
+                            <p class="text-xs text-slate-300 mt-1">Scroll-snapping presentation with smooth chapter reveals, floating typography & transitions.</p>
+                        </div>
+                        <div class="text-xs text-purple-400 font-bold pt-2 border-t border-white/10">Launch Experience ➔</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- TAB 3: APP & OS SYSTEMS (5) -->
+            <div id="tab-app-styles" class="hub-panel hidden space-y-6 max-w-6xl mx-auto">
+                <div class="flex items-center justify-between border-b border-fire-500/30 pb-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Non-Scrolling App & OS Systems</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Fixed-viewport command centers, spatial maps, slide decks, and Bento grids.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                    <a href="style-app-dashboard.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-amber-500/40 space-y-3 block">
+                        <div class="h-32 sm:h-36 rounded-2xl overflow-hidden bg-sunset-850 flex items-center justify-center text-3xl sm:text-4xl">📊</div>
+                        <span class="text-[10px] text-amber-400 font-bold uppercase">App 01</span>
+                        <h4 class="font-serif font-bold text-base sm:text-lg text-white">Sanctuary OS Dashboard</h4>
+                        <p class="text-xs text-slate-300">Sidebar navigation, 6 workspace tabs (Itinerary, Villas, Spa Cart, Somatics, Philanthropy).</p>
+                    </a>
+
+                    <a href="style-app-cinematic-deck.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-gold-500/40 space-y-3 block">
+                        <div class="h-32 sm:h-36 rounded-2xl overflow-hidden bg-sunset-850 flex items-center justify-center text-3xl sm:text-4xl">🎬</div>
+                        <span class="text-[10px] text-gold-400 font-bold uppercase">App 02</span>
+                        <h4 class="font-serif font-bold text-base sm:text-lg text-white">Fullscreen Slide Deck</h4>
+                        <p class="text-xs text-slate-300">Presentation deck with keyboard arrow navigation, slide crossfades & instant reservation.</p>
+                    </a>
+
+                    <a href="style-app-spatial-map.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-emerald-500/40 space-y-3 block">
+                        <div class="h-32 sm:h-36 rounded-2xl overflow-hidden bg-sunset-850 flex items-center justify-center text-3xl sm:text-4xl">🗺️</div>
+                        <span class="text-[10px] text-emerald-400 font-bold uppercase">App 03</span>
+                        <h4 class="font-serif font-bold text-base sm:text-lg text-white">Spatial Map Explorer</h4>
+                        <p class="text-xs text-slate-300">Interactive Costa Rica map canvas with clickable glowing hotspots for pools, shala, beach & waterfalls.</p>
+                    </a>
+
+                    <a href="style-app-split-studio.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-amber-500/40 space-y-3 block">
+                        <div class="h-32 sm:h-36 rounded-2xl overflow-hidden bg-sunset-850 flex items-center justify-center text-3xl sm:text-4xl">🎚️</div>
+                        <span class="text-[10px] text-amber-400 font-bold uppercase">App 04</span>
+                        <h4 class="font-serif font-bold text-base sm:text-lg text-white">Split Studio Console</h4>
+                        <p class="text-xs text-slate-300">50/50 split viewport with kinetic media visualizer on the left and tabbed somatic controller on the right.</p>
+                    </a>
+
+                    <a href="style-app-bento-portal.html" class="sunset-glow-card p-4 sm:p-5 rounded-3xl border border-terra-500/40 space-y-3 block">
+                        <div class="h-32 sm:h-36 rounded-2xl overflow-hidden bg-sunset-850 flex items-center justify-center text-3xl sm:text-4xl">🍱</div>
+                        <span class="text-[10px] text-terra-400 font-bold uppercase">App 05</span>
+                        <h4 class="font-serif font-bold text-base sm:text-lg text-white">Bento Command Center</h4>
+                        <p class="text-xs text-slate-300">Modern Bento Grid command center with countdown tile, live weather, breathing widget & quick checkout.</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- TAB 4: SPATIAL MAP TOUR -->
+            <div id="tab-spatial-map" class="hub-panel hidden space-y-6 max-w-6xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-fire-500/30 pb-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Amanti Resort Spatial Tour</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Explore the sanctuary hotspots in Playa Hermosa, Costa Rica.</p>
+                    </div>
+                    <a href="style-app-spatial-map.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-fire-500 to-rose-500 text-black font-extrabold text-xs uppercase tracking-wider text-center">Launch Fullscreen Map ➔</a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                    <div class="sunset-glow-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-2">
+                        <span class="text-3xl">🏊‍♀️</span>
+                        <h4 class="font-bold text-white text-base">2 Waterfall Pools & Jacuzzi</h4>
+                        <p class="text-xs text-slate-300">Two cascading waterfall pools, a 12+ person hydrotherapy jacuzzi, and cold plunge ice bath.</p>
+                    </div>
+                    <div class="sunset-glow-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-2">
+                        <span class="text-3xl">🧘‍♀️</span>
+                        <h4 class="font-bold text-white text-base">Open-Air Yoga Shala</h4>
+                        <p class="text-xs text-slate-300">Surrounded by Almendra nut trees that attract wild Scarlet Macaws and Toucans daily.</p>
+                    </div>
+                    <div class="sunset-glow-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-2">
+                        <span class="text-3xl">🌊</span>
+                        <h4 class="font-bold text-white text-base">Playa Hermosa Black Sand (2 Min)</h4>
+                        <p class="text-xs text-slate-300">Volcanic sands for sunset horseback gallops, grounding barefoot walks, and evening beach bonfires.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: LIVE DEVICE PREVIEWER -->
+            <div id="tab-previewer" class="hub-panel hidden space-y-6 max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-fire-500/30 pb-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Live Multi-Device Simulator</h2>
+                        <p class="text-xs text-slate-400">Test any experience across Desktop, Tablet, and Mobile viewports right now.</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                        <select id="preview-select" onchange="switchPreview(this.value)" class="bg-sunset-900 border border-fire-500/30 rounded-xl px-3 sm:px-4 py-2 text-xs text-white focus:outline-none">
+                            <optgroup label="Web Sanctuary Styles">
+                                <option value="style1-luxe-biophilic.html">1. Luxe Warm Biophilic</option>
+                                <option value="style2-modern-zen.html">2. Modern Zen Minimalist</option>
+                                <option value="style3-sunset-somatic.html">3. Somatic Sunset Bohemian</option>
+                                <option value="style4-editorial-vogue.html">4. Editorial Vogue Wellness</option>
+                                <option value="style5-odyssey-3d.html">5. 3D Parallax & Sound Odyssey</option>
+                                <option value="style6-cinematic-scroll.html">6. Animated Scroll Journey</option>
+                            </optgroup>
+                            <optgroup label="App & Dashboard Systems">
+                                <option value="style-app-dashboard.html">Sanctuary OS Dashboard</option>
+                                <option value="style-app-cinematic-deck.html">Fullscreen Slide Deck</option>
+                                <option value="style-app-spatial-map.html">Spatial Map Explorer</option>
+                                <option value="style-app-split-studio.html">Split Studio Console</option>
+                                <option value="style-app-bento-portal.html">Bento Grid Command Center</option>
+                                <option value="investors.html">Investors Growth Dashboard</option>
+                            </optgroup>
+                        </select>
+                        <div class="bg-sunset-900 p-1 rounded-xl border border-white/10 flex items-center gap-1 text-xs">
+                            <button onclick="setViewport('100%', this)" class="viewport-btn px-2.5 sm:px-3 py-1.5 rounded-lg font-bold bg-white/20 text-white">🖥️ Desktop</button>
+                            <button onclick="setViewport('768px', this)" class="viewport-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-400 hover:text-white">📱 Tablet</button>
+                            <button onclick="setViewport('390px', this)" class="viewport-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-400 hover:text-white">📱 Mobile</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-black border border-fire-500/30 rounded-2xl p-2 sm:p-3 shadow-inner flex justify-center">
+                    <div id="preview-container" class="w-full transition-all duration-300 bg-black rounded-xl overflow-hidden" style="height: 550px;">
+                        <iframe id="live-preview-iframe" src="style1-luxe-biophilic.html" class="w-full h-full border-0"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: INVESTOR DECK -->
+            <div id="tab-investor" class="hub-panel hidden space-y-6 max-w-6xl mx-auto">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-fire-500/30 pb-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white">Investor & Growth Deck Summary</h2>
+                        <p class="text-xs text-slate-400 mt-0.5">Cohort unit economics ($64.2K revenue / 64.6% EBITDA) & 2026-2028 roadmap.</p>
+                    </div>
+                    <a href="investors.html" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 via-fire-500 to-rose-500 text-black font-extrabold text-xs uppercase tracking-wider text-center">Open Full Investor Dashboard ➔</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                    <div class="sunset-glow-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-2">
+                        <span class="text-xs text-slate-400 uppercase font-bold">Gross Revenue / Cohort</span>
+                        <div class="text-3xl font-serif font-bold text-amber-400">$64,240</div>
+                        <span class="text-xs text-slate-300">22-guest sanctuary run</span>
+                    </div>
+                    <div class="sunset-glow-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-2">
+                        <span class="text-xs text-slate-400 uppercase font-bold">Net Cohort EBITDA</span>
+                        <div class="text-3xl font-serif font-bold text-emerald-400">$41,540</div>
+                        <span class="text-xs text-emerald-400 font-semibold">64.6% Gross Profit Margin</span>
+                    </div>
+                    <div class="sunset-glow-card p-5 sm:p-6 rounded-2xl border border-white/10 space-y-2">
+                        <span class="text-xs text-slate-400 uppercase font-bold">Global Scaling Roadmap</span>
+                        <div class="text-xl font-serif font-bold text-white">Costa Rica ➔ Bali</div>
+                        <span class="text-xs text-slate-300">Flagship Sanctuary Syndicate</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 7: SOMATICS LAB -->
+            <div id="tab-somatics" class="hub-panel hidden space-y-6 max-w-4xl mx-auto">
+                <div class="sunset-glow-card p-6 sm:p-8 rounded-3xl border border-fire-500/40 text-center space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full cheetah-badge text-white text-xs font-bold uppercase tracking-wider">
+                        <span>🐆</span> Somatic Breath & Audio Lab
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-white">4-4-4-4 Box Breathing Regulator</h3>
+                    <div class="flex justify-center my-4 sm:my-6">
+                        <div class="w-36 h-36 sm:w-40 sm:h-40 rounded-full bg-gradient-to-tr from-fire-500/30 to-rose-500/30 border-2 border-amber-400/60 breathe-animation flex items-center justify-center text-center p-4">
+                            <span class="text-[11px] sm:text-xs font-bold text-white uppercase tracking-widest leading-relaxed">Inhale 4s<br>Hold 4s<br>Exhale 4s<br>Hold 4s</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-4">
+                        <button onclick="window.ZenAudio.toggle()" class="w-full sm:w-auto px-6 py-3 rounded-full bg-gradient-to-r from-amber-400 via-fire-500 to-rose-600 text-black font-extrabold text-xs uppercase tracking-wider hover:brightness-125 transition-all shadow-lg shadow-fire-500/30">
+                            Toggle Costa Rica Nature Audio
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="js/shared.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initStyleSwitcherDock('hub');
+        });
+
+        function switchHubTab(tabId, btn) {
+            document.querySelectorAll('.hub-panel').forEach(p => p.classList.add('hidden'));
+            const panel = document.getElementById(`tab-${tabId}`);
+            if (panel) panel.classList.remove('hidden');
+
+            // Update desktop tabs
+            document.querySelectorAll('.hub-tab-btn').forEach(b => {
+                b.className = 'hub-tab-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-white/5 text-left transition-all';
+            });
+            // Update mobile tabs
+            document.querySelectorAll('.mobile-tab-btn').forEach(b => {
+                b.className = 'mobile-tab-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-sunset-850 text-slate-300 border border-white/10';
+            });
+
+            if (btn) {
+                if (btn.classList.contains('mobile-tab-btn')) {
+                    btn.className = 'mobile-tab-btn active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-gradient-to-r from-fire-600 to-rose-600 text-white shadow-sm border border-amber-400/40';
+                } else {
+                    btn.className = 'hub-tab-btn active w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold text-white bg-gradient-to-r from-fire-600 via-rose-600 to-amber-500 text-left transition-all shadow-lg shadow-fire-500/20 border border-amber-400/40';
+                }
+            }
+        }
+
+        function switchPreview(url) {
+            document.getElementById('live-preview-iframe').src = url;
+        }
+
+        function setViewport(width, btn) {
+            document.getElementById('preview-container').style.maxWidth = width;
+            document.querySelectorAll('.viewport-btn').forEach(b => {
+                b.className = 'viewport-btn px-2.5 sm:px-3 py-1.5 rounded-lg text-slate-400 hover:text-white';
+            });
+            btn.className = 'viewport-btn px-2.5 sm:px-3 py-1.5 rounded-lg font-bold bg-white/20 text-white';
+        }
+    </script>
+</body>
+</html>
